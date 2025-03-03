@@ -76,7 +76,7 @@
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
+    "light": "https://community.fliqr.ai/uploads/default/original/1X/be265d5d4c27bd7dd0380a424348321aa24fcc4c.png",
     "dark": "/logo/dark.svg"
   },
   "navbar": {
