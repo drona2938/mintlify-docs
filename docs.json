@@ -63,6 +63,56 @@
               "api-reference/accounts/delete-accountsbot_fields",
               "api-reference/accounts/delete-accountstags"
             ]
+          },
+          {
+            "group": "Ecommerce Endpoints",
+            "pages": [
+              "api-reference/ecommerce/get-products",
+              "api-reference/ecommerce/get-users-cart",
+              "api-reference/ecommerce/get-users-order",
+              "api-reference/ecommerce/post-products",
+              "api-reference/ecommerce/post-users-cart",
+              "api-reference/ecommerce/post-users-order",
+              "api-reference/ecommerce/post-users-pay",
+              "api-reference/ecommerce/post-users-sendproducts",
+              "api-reference/ecommerce/delete-users-cart-1",
+              "api-reference/ecommerce/delete-users-cart"
+            ]
+          },
+          {
+            "group": "Pipelines Endpoints",
+            "pages": [
+              "api-reference/pipelines/get-pipelines-1",
+              "api-reference/pipelines/get-pipelines-opportunities-1",
+              "api-reference/pipelines/get-pipelines-opportunities-comments",
+              "api-reference/pipelines/get-pipelines-opportunities",
+              "api-reference/pipelines/get-pipelines-stages",
+              "api-reference/pipelines/get-pipelines",
+              "api-reference/pipelines/post-pipelines-opportunities-1",
+              "api-reference/pipelines/post-pipelines-opportunities-comments",
+              "api-reference/pipelines/post-pipelines-opportunities",
+              "api-reference/pipelines/delete-pipelines-opportunities-comments",
+              "api-reference/pipelines/delete-pipelines-opportunities"
+            ]
+          },
+          {
+            "group": "Users Endpoints",
+            "pages": [
+              "api-reference/users/get-users-custom_fields-1",
+              "api-reference/users/get-users-custom_fields",
+              "api-reference/users/get-users-tags",
+              "api-reference/users/get-users",
+              "api-reference/users/get-usersfind_by_custom_field",
+              "api-reference/users/post-users-custom_fields",
+              "api-reference/users/post-users-send",
+              "api-reference/users/post-users-send_content",
+              "api-reference/users/post-users-sendfile",
+              "api-reference/users/post-users-sendtext",
+              "api-reference/users/post-users-tags",
+              "api-reference/users/post-users",
+              "api-reference/users/delete-users-custom_fields",
+              "api-reference/users/delete-users-tags"
+            ]
           }
         ]
       }
