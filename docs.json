@@ -44,12 +44,24 @@
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "Account Endpoints",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/accounts/get-accountsadmins",
+              "api-reference/accounts/get-accountsbot_fields",
+              "api-reference/accounts/get-accountscustom_fields-1",
+              "api-reference/accounts/get-accountscustom_fields",
+              "api-reference/accounts/get-accountscustom_fieldsname",
+              "api-reference/accounts/get-accountsflows",
+              "api-reference/accounts/get-accountsme",
+              "api-reference/accounts/get-accountstags-1",
+              "api-reference/accounts/get-accountstags",
+              "api-reference/accounts/get-accountstagsname",
+              "api-reference/accounts/post-accountsbot_fields",
+              "api-reference/accounts/post-accountscustom_fields",
+              "api-reference/accounts/post-accountstags",
+              "api-reference/accounts/post-accountstemplate-generatesingleuselink",
+              "api-reference/accounts/delete-accountsbot_fields",
+              "api-reference/accounts/delete-accountstags"
             ]
           }
         ]
