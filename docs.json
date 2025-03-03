@@ -98,6 +98,6 @@
       "github": "https://github.com/mintlify",
       "linkedin": "https://linkedin.com/company/mintlify"
     },
-  "openapi": ["api-refrence/openapi.json"]
+  "openapi": ["api-reference/openapi.json"]
   }
 }
