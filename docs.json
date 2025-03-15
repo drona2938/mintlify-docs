@@ -1,7 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Mint Starter Kit",  
+  "variables": {
+    "projectName": "My Awesome Project",
+    "version": "1.2.3"
+  },
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
