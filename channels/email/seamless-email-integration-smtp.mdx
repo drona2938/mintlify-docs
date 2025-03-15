@@ -1,0 +1,50 @@
+---
+title: "ChatbotBuilder Email Integration"
+description: "Description of your new file."
+---
+
+import { CalloutBox, CodeBlock, Steps, Image } from 'mintlify';
+
+ChatbotBuilder allows you to use any email service provider to send emails to your subscribers. Normally, email service providers offer a feature called SMTP to let you send email from any platform that supports SMTP integration.
+
+<Tip>
+  It is recommended to use Amazon Simple Email Service (SES). Follow the video tutorial below.
+</Tip>
+
+### Connect Your Email Account
+
+If you want to use another email service provider, follow the steps below to set up the email connection with your email service provider:
+
+1. **Connect Your Email Account**
+   - Go to **Settings > Channels > Email > Connect**.
+   - Choose the email service provider of your choice.
+
+   If your email service provider is not listed, choose "Others."
+
+   You will need to perform additional actions if you are using these email service providers:
+   - **Gmail**: We advise you to use an app password. [Learn how to create an app password here](https://support.google.com/accounts/answer/185201).
+     You will use the app password that was generated instead of your original Gmail password.
+   - **Zoho Mail**: If you have 2-factor authentication enabled in your account, you need to use an application-specific password. [Learn more here](https://www.zoho.com/mail/help/zoho-mail-app-password.html).
+
+### Collect Email Address and Consent
+
+Before you send an email to a user, you need to collect their email, and the person needs to give you consent to send an email.
+
+Now every user has a field called "email" that is used for email marketing. You can ask your users for their email address with the "Get User Data" block and save the user email in the "email" field.
+
+To save the user's consent to send emails, you need to use the "Set Email Opt-in" action. You can find this action in the "Actions" block. We advise you to use this action when the user presses a button to give consent. Your email will not be sent if you do not set the user consent using the "Set Email Opt-in."
+
+The flow can be similar to this:
+
+<Steps>
+  <Step title="Collect Email Address">
+    
+  </Step>
+  <Step title="Get Consent">
+    
+  </Step>
+</Steps>
+
+### Send Email
+
+You need to use the email step to email your subscribers. You will find the email step by clicking on the big “+” inside the flow builder.
