@@ -1,0 +1,211 @@
+import { CalloutBox, CodeBlock, Image, Table } from 'mintlify';
+
+## Common HTML Formatting for Webchat Content in CBB
+
+You can use the following guidelines to format your text in Chatbot Builder AI’s webchat. Please remember to use both conversation examples and instructions to follow the show-and-tell method, which demonstrates proper formatting through clear examples alongside explanations.
+
+This approach will help users better understand how to structure and present their content effectively in the webchat.
+
+**Important Note:** If you are looking for how to ensure your links in webchat are properly linked, click here.
+
+### 1. Headings (H1-H6)
+
+Use to define the hierarchy of content. Here’s the code:
+
+```html
+<h1>Main Heading (H1)</h1>
+<h2>Subheading (H2)</h2>
+<h3>Sub-subheading (H3)</h3>
+```
+
+**Example:**
+
+Main Heading (H1)  
+Subheading (H2)  
+Sub-subheading (H3)  
+
+### 2. Paragraphs
+
+Use for blocks of text. Here’s the code:
+
+```html
+<p>This is a paragraph of text.</p>
+```
+
+**Example:**
+
+This is a paragraph of text.
+
+### 3. Bold Text
+
+Emphasize important words. Here’s the code:
+
+```html
+<b>This is bold text.</b>
+```
+
+**Example:**
+
+This is bold text.
+
+### 4. Italic Text
+
+Use for emphasis or titles of works. Here’s the code:
+
+```html
+<i>This is italicized text.</i>
+```
+
+**Example:**
+
+This is italicized text.
+
+### 5. Lists (Ordered and Unordered)
+
+Organize content into lists. Here’s the code:
+
+**Unordered List:**
+```html
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+</ul>
+```
+
+**Ordered List:**
+```html
+<ol>
+    <li>First Item</li>
+    <li>Second Item</li>
+</ol>
+```
+
+**Example:**
+
+- Item 1
+- Item 2  
+1. First Item  
+2. Second Item  
+
+### 6. Links (Anchors)
+
+Create clickable links to other pages or resources. Here’s the code:
+
+```html
+<a href="https://example.com">Click here to visit example.com</a>
+```
+
+**Example:**
+
+Click here to visit example.com.
+
+### 7. Images
+
+Embed images. Here’s the code:
+
+```html
+<img src="image.jpg" alt="Description of image">
+```
+
+**Example:**
+
+Sample image.
+
+### 8. Divs
+
+Create container sections to group elements together. Here’s the code:
+
+```html
+<div>
+    <h2>Section Heading</h2>
+    <p>Content inside the div.</p>
+</div>
+```
+
+**Example:**
+
+Section Heading  
+Content inside the div.
+
+### 9. Span
+
+Inline container for text or content, mainly for styling purposes. Here’s the code:
+
+```html
+<span style="color: red;">This text is red.</span>
+```
+
+**Example:**
+
+This text is red.
+
+### 10. Tables
+
+Display data in tabular format. Here’s the code:
+
+```html
+<table>
+    <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+    </tr>
+    <tr>
+        <td>Data 1</td>
+        <td>Data 2</td>
+    </tr>
+</table>
+```
+
+**Example:**
+
+| Header 1 | Header 2 |
+|----------|----------|
+| Data 1   | Data 2   |
+
+### Line Spacing
+
+Line spacing (or line-height in CSS) determines the amount of vertical space between lines of text. Here’s how to control line spacing using CSS:
+
+```html
+<style>
+    p {
+        line-height: 1.5; /* Adjust this value to control line spacing */
+    }
+</style>
+```
+
+In this example, `line-height: 1.5` makes the space between lines 1.5 times the size of the font. Larger values increase spacing, and smaller values decrease it.
+
+**Example:**
+
+This paragraph has a line-height of 1.5. The space between the lines is 1.5 times the size of the font.  
+
+This paragraph has a line-height of 2. The space between the lines is double the size of the font.
+
+### Helpful Table for HTML Elements
+
+| Element                             | Purpose                                                                 | Example                                                                                 |
+|-------------------------------------|-------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| CSS Reset for Width                 | Ensures all elements stay within the parent container's width, useful for landing pages and email in CBB. | `<style>#root, #root * { max-width: 100% !important; }</style>`                      |
+| Headings (H1-H6)                   | Use to define the hierarchy of content.                                 | `<h1>Main Heading (H1)</h1><h2>Subheading (H2)</h2>`                                 |
+| Paragraphs                          | Use for blocks of text.                                                | `<p>This is a paragraph of text.</p>`                                                 |
+| Bold Text                           | Emphasize important words.                                             | `<b>This is bold text.</b>`                                                           |
+| Italic Text                         | Use for emphasis or titles of works.                                   | `<i>This is italicized text.</i>`                                                     |
+| Lists                               | Organize content into lists.                                           | `<ul><li>Item 1</li><li>Item 2</li></ul>`                                            |
+| Links (Anchors)                    | Create clickable links to other pages or resources.                    | `<a href="https://example.com">Click here to visit example.com</a>`                  |
+| Images                              | Embed images.                                                          | `<img src="image.jpg" alt="description of image">`                                   |
+| Divs                                | Create container sections to group elements together.                  | `<div><h2>Section Heading</h2><p>Content inside the div.</p></div>`                   |
+| Span                                | Inline container for text or content, mainly for styling purposes.     | `<span style="color: red;">This text is red.</span>`                                  |
+| Tables                              | Display data in tabular format.                                        | `<table><tr><th>Header 1</th><th>Header 2</th></tr><tr><td>Data 1</td><td>Data 2</td></tr></table>` |
+| Buttons                              | Trigger actions like JavaScript events.                                | `<button type="button" onclick="alert('clicked!')">Click me</button>`                 |
+| Iframes                             | Embed external content like videos, websites, or widgets.              | `<iframe src="https://example.com" width="600" height="400"></iframe>`               |
+| Audio/Video                        | Embed audio or video content.                                          | `<audio controls><source src="audio.mp3" type="audio/mpeg"></audio><br><video controls><source src="video.mp4" type="video/mp4"></video>` |
+| Line Breaks (br)                   | Insert single line breaks within text content.                         | `First line<br>Second line<br>Third line`                                             |
+| Horizontal Rule (hr)               | Add a thematic break (horizontal line) to separate sections.          | `<hr>`                                                                                 |
+| Blockquote                          | Highlight quoted text.                                                | `<blockquote cite="https://example.com">This is a quoted text block.</blockquote>`    |
+| Code                                | Display preformatted or inline code snippets.                          | `<code>console.log('hello, world!');</code>`                                        |
+| Preformatted Text (pre)            | Preserve whitespace and formatting for code or plain text.            | `<pre>This is preformatted text with preserved spaces.</pre>`                          |
+
+### Wrapping It Up
+
+By following these guidelines and examples, you’ll ensure your content is structured, visually appealing, and compatible with Chatbot Builder AI’s webchat. Whether it’s enhancing readability with proper headings or ensuring functional links and images, these HTML formatting techniques will elevate the user experience in your webchat.
