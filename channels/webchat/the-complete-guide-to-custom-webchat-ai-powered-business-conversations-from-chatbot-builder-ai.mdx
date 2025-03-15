@@ -1,0 +1,343 @@
+---
+title: "The Complete Guide to Custom Webchat: AI-Powered Business Conversations from Chatbot Builder AI"
+description: "Description of your new file."
+---
+
+import { CalloutBox, CodeBlock, Image, Steps, Tab, Tabs, Expandable } from 'mintlify';
+
+## Transform Your Website with Custom Webchat
+
+Transform your website with a custom webchat powered by Chatbot Builder AI. Unlike generic chatbots, this intelligent assistant is trained specifically on your business data and custom instructions to deliver personalized customer interactions. Here's how this advanced webchat solution adapts to your needs:
+
+### Features
+
+1. **Smart Chat Bubble**: The classic interface reimagined with AI. Your custom-trained chatbot lives in an unobtrusive bubble that can proactively engage visitors based on your business rules. It understands your products, services, and unique business context to provide informed responses.
+
+2. **Embedded Custom Chat**: Take full design control by integrating your AI-powered webchat anywhere on your site. Whether it's a branded button, a custom chat interface, or a seamless part of your webpage design, your business-trained chatbot maintains its intelligence while matching your aesthetic perfectly.
+
+3. **Immersive Full-Page Experience**: Deploy your custom chatbot as a dedicated conversational interface, perfect for complex interactions where your AI assistant can showcase its deep knowledge of your business.
+
+### Beyond the Screen
+
+Your custom webchat extends to the physical world through QR codes and NFC tags. Restaurants are revolutionizing contactless service by embedding their menu-trained chatbots in table tags - customers simply tap to start ordering through an AI that knows every dish, modification, and special.
+
+This isn't just another website chatbot - it's a custom web-based AI solution that thinks and speaks like your business, available wherever your customers need it.
+
+### Getting Started
+
+1. Use the main navigation menu and click **“Manage Webchats”** or go to **Settings > Channels > Web Chatbot > Manage**.
+
+### Ready to Set Up or Modify Your Webchat?
+
+Head to the main navigation bar and click **"Manage Webchats"** - or if you prefer, go through **Settings > Channels > Manage Webchat**.
+
+Now for the important part - keeping your chatbot secure. Think of this like setting up a digital security gate that ensures your chatbot only appears on websites you've approved.
+
+In the **Authorized Websites** section, simply add your website's domain (like "yourcompany.com") or specific subdomains (like "shop.yourcompany.com"). Your chatbot will then automatically restrict itself to only these approved sites. This means:
+
+- No unauthorized websites can use your chatbot.
+- Your brand stays protected.
+- Your customers always get the genuine experience you've designed.
+
+This simple but powerful security step ensures your custom-trained chatbot stays exclusively yours, appearing only where you want it to.
+
+### Managing Your Webchat
+
+Head to the main navigation bar and click **"Manage Webchats"** - or if you prefer, go through **Settings > Channels > Manage Webchat**. You'll see all your saved webchats listed right there.
+
+Find your newly created webchat and click the three dots menu beside it. You'll see several options, but right now we're interested in **"Get Code."** Click that, and you'll receive a simple script that makes the magic happen.
+
+Just copy this code and paste it into your website where you want the chat to appear. It's that straightforward - one piece of code and your custom AI assistant is ready to start helping your customers.
+
+Need to make changes later? Those same three dots give you other handy options:
+
+- Get Link (for a direct chat URL)
+- Duplicate (to create variations)
+- Rename
+- Copy to another account
+- Delete
+
+Your webchat is now ready to turn visitors into conversations.
+
+### Adding Custom Webchat to Your Website: Complete Guide
+
+Let's walk through getting your AI chatbot live on your website. Whether you want it as a chat bubble, embedded element, or its own dedicated page, we've got you covered.
+
+#### Basic Website Integration
+
+Copy this code snippet into your website's body or footer section:
+
+```html
+<script src="https://app.chatgptbuilder.io/webchat/plugin.js?v=5"></script>
+<script>
+    ktt10.setup({
+        id: "your-id-here",        // your webchat id
+        accountid: "your-id-here", // your account id
+        color: "your-color-here"   // your brand color (like #36d6b5)
+    });
+</script>
+```
+
+You'll need to get your two IDs and pick a color:
+
+- Your webchat ID and account ID (find both in your webchat settings)
+- The color code (use any hex color like #36d6b5 to match your brand)
+
+#### Want a Full-Page Chat Experience?
+
+Perfect for dedicated chat interfaces or customer service portals. Just use this URL format:
+
+```
+https://app.chatgptbuilder.io/webchat/?p=your_account_id&id=your_webchat_id
+```
+
+(replace `your_account_id` and `your_webchat_id` with your actual IDs)
+
+#### Making It Match Your Brand
+
+The color code above sets your basic theme, but for full customization, use our visual webchat editor. It lets you style everything from bubble size to chat backgrounds - just add your custom CSS in the designated section. No coding expertise needed - see your changes live as you make them.
+
+### Quick Setup Tips
+
+- The code works best in your website's body or footer section.
+- One installation covers all your pages.
+- Your chatbot won't appear until you've authorized your domain (as we covered earlier).
+- Test it on a development site first if you can.
+
+Now your website visitors can chat with your custom-trained AI assistant, getting instant help wherever they are on your site.
+
+### Switching Webchat Templates
+
+Chatbot Builder AI currently offers three webchat templates, with more options coming soon. To switch templates, include a template attribute within the setup function:
+
+Include the following script in your website:
+
+```html
+<script src="https://app.chatgptbuilder.io/webchat/plugin.js"></script>
+```
+
+Then, add the setup function:
+
+```html
+<script>
+    ktt10.setup({
+        pageid: your_account_id,
+        color: "#007bff",
+        hideheader: true,
+        template: "template1"
+    });
+</script>
+```
+
+Chatbot Builder AI offers three distinct webchat templates, each designed to accommodate different style preferences and branding requirements. While these templates provide a solid foundation, nearly every aspect of the webchat’s appearance can be further customized using CSS, allowing you to create a chat interface that perfectly aligns with your brand’s identity.
+
+### Displaying the Account Profile Picture as a Persona
+
+To display your account profile image as a persona within the chat, use the `showpersona` attribute in the setup function:
+
+```html
+<script src="https://app.chatgptbuilder.io/webchat/plugin.js"></script>
+<script>
+    ktt10.setup({
+        pageid: your_account_id,
+        showpersona: true
+    });
+</script>
+```
+
+### Modifying the Chat Bubble Icon
+
+To customize the chat bubble icon, follow these steps to personalize the look of your webchat. This process involves including Chatbot Builder AI's special script in your website’s HTML and using the setup function to specify the image you want as your chat bubble icon. The color of your chat bubble is defined in the webchat editor section.
+
+1. Add this script to your website’s HTML:
+
+```html
+<script src="https://app.chatgptbuilder.io/webchat/plugin.js"></script>
+```
+
+2. Configure the chat bubble icon:
+
+```html
+<script>
+    ktt10.setup({
+        id: "your_webchat_id",        // replace with your specific webchat id
+        accountid: "your_account_id", // replace with your actual account id
+        showpersona: true,            // enable persona to display the icon
+        icon: "your_image_url"        // replace with the URL of your chosen image
+    });
+</script>
+```
+
+3. Customize your icon:
+
+- Replace "your_webchat_id" with your specific webchat id.
+- Replace "your_account_id" with your actual account id.
+- Replace "your_image_url" with the URL of the image you want to use for the chat bubble icon.
+
+By following these steps, you'll update the chat bubble icon to your chosen design. You can also change the color of the chat interface in the webchat editor.
+
+### General Webchat Settings
+
+| Option Name      | Description                                                 | Possible Values                     | Default   |
+|------------------|-------------------------------------------------------------|-------------------------------------|-----------|
+| Type             | Determines how the chatbot appears on the page.            | floating / window / container        | floating  |
+| Template         | Choose the template for the webchat appearance.            | template1 / template2               | template1 |
+| Color            | Sets the primary color of the webchat interface.           | any color name or hex code          | #36d6b5  |
+| Headertitle      | The title displayed on the webchat header.                 | any text                            | account name |
+| Hideheader       | Option to hide the header section containing the business name. | true / false                      | false     |
+
+### Webchat Position Settings
+
+| Option Name | Description                                                  | Possible Values                       | Default   |
+|-------------|--------------------------------------------------------------|---------------------------------------|-----------|
+| Element     | Specifies the HTML element in which the chatbot will be embedded (only applicable if type is "container"). | any valid HTML element id or class    | —         |
+| Right       | Distance of the chat icon from the right edge of the screen. | any valid CSS unit (e.g., px, em)    | 20px      |
+| Bottom      | Distance of the chat icon from the bottom edge of the screen. | any valid CSS unit (e.g., px, em)    | 20px      |
+
+### Webchat Behavior Settings
+
+| Option Name    | Description                                                  | Possible Values | Default |
+|----------------|--------------------------------------------------------------|-----------------|---------|
+| Loadmessages    | Load past conversations with the contact when the webchat is opened. | true / false     | true    |
+| Hidecomposer    | Option to hide the message input area (composer).          | true / false     | false   |
+| Showpersona     | Display the account profile image as a persona within the chat. | true / false     | false   |
+
+### Advanced Webchat Actions
+
+| Option Name      | Description                                                  | Possible Values | Default |
+|------------------|--------------------------------------------------------------|-----------------|---------|
+| Ref              | Automatically sends a specific flow or step id when the chat icon is clicked. | any ref/flow/step id | —       |
+| Setcustomfields  | Allows setting multiple custom fields, including system fields like email, phone, etc. | cufs and system fields | —       |
+
+### Webchat Chat Bubble Icon Customization
+
+| Option Name | Description                                                  | Possible Values | Default |
+|-------------|--------------------------------------------------------------|-----------------|---------|
+| Icon        | URL for a custom chat bubble icon to replace the default icon in the bottom-right corner. | URL of the image | —       |
+| Chat-avatar  | CSS to adjust the size and appearance of the chat avatar, including width, height, and border radius. | width: 20px; height: 20px; border-radius: 50%; overflow: hidden; margin-left: -8px; | —       |
+
+### Routing Conversations from Any Channel into a Feature-Rich Webchat Experience
+
+Imagine a customer starts texting your business to learn more about a product. Over SMS, you can answer questions, but it’s hard to show videos, images, or guided menus. With webchat, you can display all of this and more, making the conversation richer and more interactive. By directing your customer from SMS (or another channel) into a webchat environment, you can offer a dynamic experience that helps them understand your offerings faster and better.
+
+### How It Works
+
+1. **Send a Webchat Link**: In your SMS or message, include `{{webchat}}`. When the customer taps or clicks this link, they’ll move straight into your webchat, where you can showcase images, buttons, or any other features that go beyond simple text.
+
+2. **Jump to a Specific Flow**: To guide customers straight into a particular segment of the conversation—like a product demo or a FAQ section—add `&ref=flow_or_step_id` at the end of `{{webchat}}`. For example, `{{webchat}}&ref=111111` directs them straight to the flow with ID 111111. This way, they can instantly see what you want to highlight, whether it’s a new product line, a special promotion, or a detailed guide.
+
+3. **Preserve or Start Fresh**: By default, webchat saves previous messages so customers can pick up where they left off. If you’d rather start fresh (for example, when showing a limited-time offer or a special demo), add `&lc=0`. The link `{{webchat}}&ref=111111&lc=0` takes the customer to the specified flow without any past conversation showing. This creates a clean, focused experience.
+
+### Real-World Use Cases
+
+- **Showcasing Products**: A furniture store could send a customer from SMS into a webchat that displays product images, dimensions, and prices, along with quick-reply buttons to browse different categories.
+  
+- **Customer Support**: If a user wants help troubleshooting an issue, you can move them into a webchat sequence that shows step-by-step instructions, helpful images, or even embedded videos.
+  
+- **Guided Onboarding**: A software company could welcome a new user via SMS and then guide them into a webchat-based interactive tour with clickable tips, FAQs, and how-to videos.
+
+### Example Conversation
+
+**User (via SMS)**: “Hi, can you tell me more about the ‘Greenfield Gardening Kit’? I’m really interested in seeing what it looks like or maybe a quick video demo before I buy.”
+
+**Assistant (via SMS)**: “Absolutely! We’ve got a great interactive demo with product images, a short video, and full details available in our webchat. Just click the link to learn more: `{{webchat}}&ref=111111`.”
+
+When the user taps the link, they’ll be taken to webchat, where they’ll see all the product details, including the video, images, and guided options to help them decide if it’s the right purchase.
+
+### Example Image and Code
+
+```html
+<script src="https://app.chatgptbuilder.io/webchat/plugin.js"></script>
+<script>
+    ktt10.setup({
+        "pageid": "1970516",
+        "headertitle": "ChatGPT Builder",
+        "ref": "1679880775117",
+        "icon": "https://i.ibb.co/p9kd08v/untitled-2.png",
+        "color": "#36d6b5",
+        "template": "template1"
+    });
+</script>
+```
+
+### Iframe
+
+**Note**: We strongly recommend using the webchat channel’s provided script or full-page link to integrate webchat into your website, rather than relying on a published webchat flow link. While using a published flow link can be a quick and flexible solution, it has a few drawbacks like losing the ability to use features like the webchat microphone, due to cross-domain restrictions. However, if you still choose to proceed with this method, here’s how you can do so:
+
+To embed an iframed flow link, use the following structure:
+
+```html
+<div style="width:100%; padding-bottom:56.25%; position:relative;">
+    <iframe src="{{your published flow link here}}" style="position:absolute; top:0px; left:0px; width:100%; height:100%; border:none; overflow:hidden;"></iframe>
+</div>
+```
+
+### How to Automatically Open Webchat
+
+To set up the Chatbot Builder AI plugin and include a `setTimeout` function to automatically click a button after 4 seconds, follow the script format below:
+
+#### Loading the Plugin
+
+This step loads the necessary plugin for Chatbot Builder AI to function on your website. Insert the following script tag into your website's HTML:
+
+```html
+<script src="https://app.chatgptbuilder.io/webchat/plugin.js?v=5"></script>
+```
+
+#### Initializing the Plugin
+
+After loading the plugin, you need to initialize it with your specific configuration. This involves setting up parameters such as the plugin ID, account ID, and the color theme for the webchat. Here’s an example of how to do this:
+
+```html
+<script>
+    ktt10.setup({
+        id: "uxz1a5wvqj3tpqlgnaz",  // replace with your specific plugin id
+        accountid: "your-id-here",  // replace with your actual account id
+        color: "#36d6b5"             // customize the webchat's color
+    });
+</script>
+```
+
+- **ID**: This is the unique identifier for the plugin instance.
+- **Account ID**: Replace "your-id-here" with your actual account ID.
+- **Color**: Customize the webchat's color by setting your desired color code.
+
+#### Auto-Open Webchat After 4 Seconds (or Your Preferred Timing)
+
+The `setTimeout` function is a simple tool that lets you automate actions on your website. In this case, it’s used to automatically click the webchat button after 4 seconds. This means that the chat window will pop up on its own shortly after the page loads, making it easier to catch the visitor's attention and encourage them to start a conversation.
+
+You can also customize the timing to open the chat at any interval you prefer, not just 4 seconds. This feature is especially helpful for engaging users without requiring them to manually open the chat.
+
+Add the following code snippet to enable this functionality:
+
+```html
+setTimeout(function() {
+    ktt10btn.click();
+}, 4000);
+```
+
+This code will trigger the `ktt10btn` button to be clicked automatically 4 seconds after the webchat loads.
+
+### Example Code for a Webchat That Will Open After 4 Seconds
+
+```html
+<script src="https://app.chatgptbuilder.io/webchat/plugin.js?v=5"></script>
+<script>
+    ktt10.setup({
+        id: "uxz1a5wvqj3tpqlgnaz",  // replace with your specific plugin id
+        accountid: "your-id-here",  // replace with your actual account id
+        color: "#36d6b5"             // customize the webchat's color
+    });
+</script>
+<script>
+    setTimeout(function() {
+        ktt10btn.click();
+    }, 4000);
+</script>
+```
+
+Chatbot Builder AI makes it easier than ever to connect with your audience through powerful webchat solutions. By providing visitors with a fast, easy, and friendly way to ask questions, get help, or explore your offerings in real time, webchat creates an interactive experience that builds trust, increases satisfaction, and turns casual visitors into loyal customers. It’s a simple yet transformative tool that can elevate your website and make every interaction meaningful.
+
+This is all made possible by our proprietary `ktt10` setup script, which powers web-based GPT and AI chatbot experiences for thousands of our co-creators, white-label agencies, and enterprise customers who run their own chatbot SaaS platforms.
+
+Trusted by industry leaders around the world, the `ktt10` script ensures reliable performance, seamless integration, and robust security, making it easy to create customized webchat solutions. With Chatbot Builder AI, you have the tools to build engaging, professional chatbot experiences that delight your users and help your business stand out. Let’s get started!
