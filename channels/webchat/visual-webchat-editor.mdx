@@ -1,5 +1,160 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: "Visual Webchat Editor"
+description: "Description of your new file."
 ---
 
+import { CalloutBox, CodeBlock, Image, Table, Steps } from 'mintlify';
+
+## Chatbot Builder AI's New Visual Editor for Webchat
+
+Chatbot Builder AI is excited to introduce the visual editor for webchat, a revolutionary tool that empowers users to customize their chatbot interfaces effortlessly. Say goodbye to complex coding and hello to an intuitive platform where you can adjust colors, fonts, layouts, and more to bring your chatbot's appearance to life.
+
+### Key Features of the Visual Editor
+
+- **Real-time Preview**: Instantly see the effects of your customization changes, ensuring your chatbot looks exactly as you envision.
+- **Comprehensive Customization**: Modify a wide array of elements, including headers, chat areas, messages, avatars, icons, and input fields.
+- **User-friendly Controls**: Utilize intuitive sliders, color pickers, dropdown menus, and text inputs to make adjustments effortlessly.
+- **Generated CSS Output**: Easily export your customized styles with a single click, facilitating seamless integration into your website or application.
+- **Responsive Design**: Ensure your chatbot maintains a polished appearance across all devices and screen sizes.
+
+### Getting Started with the Visual Editor
+
+1. **Access the Visual Editor**: Log in to your Chatbot Builder AI dashboard and select the chatbot you wish to customize. Navigate to the "Settings" section, select the “Channels” tab, then select “Webchat” and click “Manage” to begin.
+2. **Explore Customization Sections**: The editor is organized into various sections, including header settings, chat area settings, message settings, font settings, avatar settings, icon settings, and chat input settings. Click on each section to access the available customization options.
+3. **Adjust Settings**: Use the provided controls—such as color pickers, sliders, dropdown menus, and text inputs—to modify your chatbot's appearance. As you make changes, the preview pane updates in real-time to reflect your adjustments.
+4. **Generate and Export CSS**: Once satisfied with your customizations, navigate to the "Generated CSS" section. Here, you can view and copy the CSS code that corresponds to your settings for easy integration.
+5. **Save Your Configuration**: After finalizing your customizations, save your settings to apply them to your live chatbot.
+
+### Tips for Effective Customization
+
+- **Maintain Consistency**: Use a consistent color scheme and font style throughout your chatbot to ensure a cohesive and professional appearance.
+- **Enhance Readability**: Choose font sizes and colors that improve readability. High contrast between text and background enhances user experience.
+- **Align with Branding**: Incorporate your brand's colors, logos, and preferred fonts to ensure your chatbot aligns with your overall brand identity.
+- **Test Across Devices**: Ensure your customized chatbot looks great on all devices by testing the interface on various screen sizes and resolutions.
+
+### Launcher and Icon Customization
+
+Customizing the launcher and icons of your webchat can significantly enhance user experience and align the chatbot's appearance with your brand identity. The visual editor provides straightforward options to change both the chat bubble launcher and the icon inside it.
+
+#### Example: Custom Chat Bubble Icon and Launcher Color
+
+To implement a custom chat bubble icon and adjust the launcher color, you can use the following script example. This script includes a custom icon URL and a specified color for the launcher.
+
+```html
+<script src="https://app.chatgptbuilder.io/webchat/plugin.js"></script> 
+<script>
+    ktt10.setup({
+        "pageid": "your_page_id",
+        "headertitle": "your chatbot title",
+        "ref": "your_ref",
+        "icon": "https://yourdomain.com/your-icon.png", // custom icon url
+        "color": "#yourcolor", // launcher color in hex code
+        "template": "template1"
+    });
+</script>
+```
+
+Replace `your_page_id`, `your chatbot title`, `your_ref`, `https://yourdomain.com/your-icon.png`, and `#yourcolor` with your actual values.
+
+### Auto-open Webchat After a Specified Time
+
+Engaging users promptly can enhance interaction rates. The `setTimeout` function allows you to automate the opening of the webchat after a specified interval. Here's how you can implement this feature to auto-open the chat window after 4 seconds:
+
+```html
+<!-- Include the Chatbot Builder AI webchat script -->
+<script src="https://app.chatgptbuilder.io/webchat/plugin.js?v=5"></script>
+
+<!-- Initialize the webchat with your specific configurations -->
+<script>
+    ktt10.setup({
+        id: "uxz1a5wvqj3tpqlgnaz",  // replace with your specific webchat id
+        accountid: "your-id-here",  // replace with your actual account id
+        color: "#36d6b5"           // customize the webchat's color
+    });
+</script>
+
+<!-- Automatically open the webchat button after 4 seconds -->
+<script>
+    setTimeout(function() {
+        ktt10btn.click();
+    }, 4000);
+</script>
+```
+
+**Explanation:**
+
+- **setTimeout Function**: Delays the execution of a specified function by the given time (in milliseconds).
+- **Auto-open Action**: Simulates a click on the chat launcher button after 4 seconds, causing the chat window to open automatically.
+- **Customization**: Adjust the timing by changing the value `4000` to your preferred number of milliseconds.
+
+**Benefits:**
+
+- **Immediate Engagement**: Automatically opening the chat window captures the visitor's attention without requiring manual action.
+- **Increased Interaction**: Reduces friction for users to start a conversation, potentially increasing engagement and conversion rates.
+- **Flexible Timing**: Customize the delay to suit your website's loading speed and user behavior patterns.
+
+### Enhance Your Customization with PromptGPT
+
+While the visual editor provides extensive customization options, you might want to take your chatbot's design even further. PromptGPT offers advanced capabilities to refine and enhance your generated CSS, including the addition of sophisticated animation effects.
+
+By taking the CSS you generate from the visual editor and inputting it into PromptGPT, you can:
+
+- **Customize Further**: Modify existing styles to better fit your brand or personal preferences.
+- **Add Animations**: Incorporate smooth transitions and engaging animations to make your chatbot more interactive and visually appealing.
+- **Optimize Performance**: Enhance the efficiency and responsiveness of your chatbot's interface.
+
+To explore these advanced customization options, visit PromptGPT using the following link:
+
+[PromptGPT](https://chatgpt.com/g/g-vjbce7byc-knowledgebasegpt)
+
+Leverage PromptGPT to create a truly unique and dynamic chatbot experience.
+
+### Customization Options Summary
+
+Below is a comprehensive table summarizing all available customization options for your webchat interface. These settings allow you to personalize the chat launcher, icons, avatars, animations, and more to align perfectly with your brand and user engagement strategies.
+
+| Category            | Option Name                   | Description                                                | Possible Values                                                                    | Default                        |
+| ------------------- | ----------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------ |
+| Colors              | --primarycolor                | Primary color for elements such as buttons and highlights. | Hex color code (e.g., #36d6b5)                                                     | #36d6b5                        |
+|                     | --secondarycolor              | Secondary color, typically used for backgrounds or text.   | Hex color code (e.g., #ffffff)                                                     | #ffffff                        |
+| Font Settings       | --fontfamily                  | Font family used across the chatbot interface.             | CSS font-family values (e.g., helvetica, arial, sans-serif)                        | helvetica, arial, sans-serif   |
+|                     | --fontweight                  | Font weight for text.                                      | CSS font-weight values (e.g., bold, normal)                                        | bold                           |
+| Header Settings     | --headertextsize              | Font size for the header text.                             | CSS size (e.g., 18px)                                                              | 18px                           |
+|                     | --headertextcolor             | Color of the header text.                                  | Hex color code (e.g., #ffffff)                                                     | #ffffff                        |
+|                     | --headerbackgroundlayers      | Background color or gradient for the header.               | Hex color code or gradient CSS (e.g., linear-gradient(to right, #36d6b5, #1abc9c)) | #36d6b5                        |
+|                     | --headerheight                | Height of the header.                                      | CSS size (e.g., 60px)                                                              | 60px                           |
+|                     | --headertextalign             | Text alignment within the header.                          | left, center, right                                                                | center                         |
+|                     | --cornerstyle                 | Corner style for the header (rounded or square).           | CSS border radius (e.g., 20px)                                                     | 20px                           |
+|                     | --headerpaddingleft           | Padding on the left of the header content.                 | CSS size (e.g., 20px)                                                              | 20px                           |
+| Chat Area Settings  | --chatareabackgroundcolor     | Background color of the chat area.                         | Hex color code (e.g., #f8f9fa)                                                     | #f8f9fa                        |
+|                     | --chatareabackgroundimage     | URL for a background image in the chat area.               |                                                                                    | none                           |
+|                     | --chatareabackgroundposition  | Positioning of the background image.                       | CSS position (e.g., center, top, bottom)                                           | center                         |
+|                     | --chatareabackgroundrepeat    | Whether the background image repeats.                      | repeat, no-repeat, repeat-x, repeat-y                                              | no-repeat                      |
+|                     | --chatareabackgroundsize      | Size of the background image.                              | cover, contain, auto                                                               | cover                          |
+| Message Settings    | --messagetextsize             | Font size for messages.                                    | CSS size (e.g., 14px)                                                              | 14px                           |
+|                     | --messagecornerstyle          | Corner style for message bubbles.                          | CSS border radius (e.g., 20px)                                                     | 20px                           |
+|                     | --botmessagetextcolor         | Text color for bot messages.                               | Hex color code (e.g., #212529)                                                     | #212529                        |
+|                     | --botmessagebg                | Background color for bot messages.                         | Hex color code (e.g., #eeeeee)                                                     | #eeeeee                        |
+|                     | --usermessagetextcolor        | Text color for user messages.                              | Hex color code (e.g., #ffffff)                                                     | #ffffff                        |
+|                     | --usermessagebg               | Background color for user messages.                        | Hex color code (e.g., #36d6b5)                                                     | #36d6b5                        |
+| Avatar Settings     | --avatarsize                  | Size of the avatar image.                                  | CSS size (e.g., 50px)                                                              | 50px                           |
+|                     | --avatarbordercolor           | Border color of the avatar image.                          | Hex color code (e.g., #36d6b5)                                                     | #36d6b5                        |
+|                     | --avatarimageurl              | URL for the avatar image.                                  |                                                                                    |                                |
+|                     | --avatardisplay               | Whether the avatar is displayed.                           | inline-block, none                                                                 | inline-block                   |
+|                     | --avatarshape                 | Shape of the avatar (circle or square).                    | Percentage or pixel value (e.g., 50% for circle, 0% for square)                    | 50%                            |
+| Chat Input Settings | --chatinputbackground         | Background color or gradient for the input area.           | Hex color code or gradient CSS                                                     | #ffffff                        |
+|                     | --chatinputtextfieldbg        | Background color of the input text field.                  | Hex color code (e.g., #f1f1f1)                                                     | #f1f1f1                        |
+|                     | --chatinputtextfieldtextcolor | Text color in the input text field.                        | Hex color code (e.g., #333333)                                                     | #333333                        |
+|                     | --chatinputborderradius       | Border radius for the input field.                         | CSS border radius (e.g., 18px)                                                     | 18px                           |
+| Icon Settings       | --iconsdisplay                | Display or hide icons such as mic and upload buttons.      | inline-block, none                                                                 | inline-block                   |
+| Button Styles       | --buttontextsize              | Font size for buttons.                                     | CSS size (e.g., 14px)                                                              | 14px                           |
+|                     | --buttonfontweight            | Font weight for buttons.                                   | CSS font-weight (e.g., bold)                                                       | bold                           |
+|                     | --buttonpadding               | Padding inside buttons.                                    | CSS size (e.g., 10px 20px)                                                         | 10px 20px                      |
+
+### Conclusion
+
+With Chatbot Builder AI's best-in-class visual editor for webchat, customizing your chatbot’s design is easier than ever. Personalize colors, fonts, layouts, and more—no coding required—to create an interface that perfectly aligns with your brand.
+
+See it in action in our live demo on YouTube, where we showcase its features and guide you through designing a professional, engaging chatbot in minutes.
+
+The combination of a user-friendly interface and comprehensive customization options ensures that your chatbot not only functions seamlessly but also aligns perfectly with your brand's aesthetic. By integrating with PromptGPT, you can further elevate your chatbot's design with advanced customizations and animations. Dive into the visual editor today and transform your chatbot experience\!

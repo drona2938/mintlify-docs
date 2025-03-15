@@ -28,6 +28,13 @@
             ]
           },
           {
+            "group": "Channels",
+            "pages": [
+              "essentials/markdown",
+              "essentials/code"
+            ]
+          },
+          {
             "group": "Essentials",
             "pages": [
               "essentials/markdown",
