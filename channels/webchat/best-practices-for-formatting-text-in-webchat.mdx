@@ -1,3 +1,7 @@
+---
+title: "Best Practices for Formatting Text in Webchat"
+---
+
 import { CalloutBox, CodeBlock, Image, Table } from 'mintlify';
 
 ## Common HTML Formatting for Webchat Content in CBB
@@ -8,7 +12,7 @@ This approach will help users better understand how to structure and present the
 
 **Important Note:** If you are looking for how to ensure your links in webchat are properly linked, click here.
 
-### 1. Headings (H1-H6)
+### 1\. Headings (H1-H6)
 
 Use to define the hierarchy of content. Here’s the code:
 
@@ -20,11 +24,11 @@ Use to define the hierarchy of content. Here’s the code:
 
 **Example:**
 
-Main Heading (H1)  
-Subheading (H2)  
-Sub-subheading (H3)  
+Main Heading (H1)\
+Subheading (H2)\
+Sub-subheading (H3)
 
-### 2. Paragraphs
+### 2\. Paragraphs
 
 Use for blocks of text. Here’s the code:
 
@@ -36,7 +40,7 @@ Use for blocks of text. Here’s the code:
 
 This is a paragraph of text.
 
-### 3. Bold Text
+### 3\. Bold Text
 
 Emphasize important words. Here’s the code:
 
@@ -48,7 +52,7 @@ Emphasize important words. Here’s the code:
 
 This is bold text.
 
-### 4. Italic Text
+### 4\. Italic Text
 
 Use for emphasis or titles of works. Here’s the code:
 
@@ -60,11 +64,12 @@ Use for emphasis or titles of works. Here’s the code:
 
 This is italicized text.
 
-### 5. Lists (Ordered and Unordered)
+### 5\. Lists (Ordered and Unordered)
 
 Organize content into lists. Here’s the code:
 
 **Unordered List:**
+
 ```html
 <ul>
     <li>Item 1</li>
@@ -73,6 +78,7 @@ Organize content into lists. Here’s the code:
 ```
 
 **Ordered List:**
+
 ```html
 <ol>
     <li>First Item</li>
@@ -83,11 +89,12 @@ Organize content into lists. Here’s the code:
 **Example:**
 
 - Item 1
-- Item 2  
-1. First Item  
-2. Second Item  
+- Item 2
 
-### 6. Links (Anchors)
+1. First Item
+2. Second Item
+
+### 6\. Links (Anchors)
 
 Create clickable links to other pages or resources. Here’s the code:
 
@@ -99,7 +106,7 @@ Create clickable links to other pages or resources. Here’s the code:
 
 Click here to visit example.com.
 
-### 7. Images
+### 7\. Images
 
 Embed images. Here’s the code:
 
@@ -111,7 +118,7 @@ Embed images. Here’s the code:
 
 Sample image.
 
-### 8. Divs
+### 8\. Divs
 
 Create container sections to group elements together. Here’s the code:
 
@@ -124,10 +131,10 @@ Create container sections to group elements together. Here’s the code:
 
 **Example:**
 
-Section Heading  
+Section Heading\
 Content inside the div.
 
-### 9. Span
+### 9\. Span
 
 Inline container for text or content, mainly for styling purposes. Here’s the code:
 
@@ -139,7 +146,7 @@ Inline container for text or content, mainly for styling purposes. Here’s the 
 
 This text is red.
 
-### 10. Tables
+### 10\. Tables
 
 Display data in tabular format. Here’s the code:
 
@@ -159,7 +166,7 @@ Display data in tabular format. Here’s the code:
 **Example:**
 
 | Header 1 | Header 2 |
-|----------|----------|
+| -------- | -------- |
 | Data 1   | Data 2   |
 
 ### Line Spacing
@@ -178,33 +185,33 @@ In this example, `line-height: 1.5` makes the space between lines 1.5 times the 
 
 **Example:**
 
-This paragraph has a line-height of 1.5. The space between the lines is 1.5 times the size of the font.  
+This paragraph has a line-height of 1.5. The space between the lines is 1.5 times the size of the font.
 
 This paragraph has a line-height of 2. The space between the lines is double the size of the font.
 
 ### Helpful Table for HTML Elements
 
-| Element                             | Purpose                                                                 | Example                                                                                 |
-|-------------------------------------|-------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| CSS Reset for Width                 | Ensures all elements stay within the parent container's width, useful for landing pages and email in CBB. | `<style>#root, #root * { max-width: 100% !important; }</style>`                      |
-| Headings (H1-H6)                   | Use to define the hierarchy of content.                                 | `<h1>Main Heading (H1)</h1><h2>Subheading (H2)</h2>`                                 |
-| Paragraphs                          | Use for blocks of text.                                                | `<p>This is a paragraph of text.</p>`                                                 |
-| Bold Text                           | Emphasize important words.                                             | `<b>This is bold text.</b>`                                                           |
-| Italic Text                         | Use for emphasis or titles of works.                                   | `<i>This is italicized text.</i>`                                                     |
-| Lists                               | Organize content into lists.                                           | `<ul><li>Item 1</li><li>Item 2</li></ul>`                                            |
-| Links (Anchors)                    | Create clickable links to other pages or resources.                    | `<a href="https://example.com">Click here to visit example.com</a>`                  |
-| Images                              | Embed images.                                                          | `<img src="image.jpg" alt="description of image">`                                   |
-| Divs                                | Create container sections to group elements together.                  | `<div><h2>Section Heading</h2><p>Content inside the div.</p></div>`                   |
-| Span                                | Inline container for text or content, mainly for styling purposes.     | `<span style="color: red;">This text is red.</span>`                                  |
-| Tables                              | Display data in tabular format.                                        | `<table><tr><th>Header 1</th><th>Header 2</th></tr><tr><td>Data 1</td><td>Data 2</td></tr></table>` |
-| Buttons                              | Trigger actions like JavaScript events.                                | `<button type="button" onclick="alert('clicked!')">Click me</button>`                 |
-| Iframes                             | Embed external content like videos, websites, or widgets.              | `<iframe src="https://example.com" width="600" height="400"></iframe>`               |
-| Audio/Video                        | Embed audio or video content.                                          | `<audio controls><source src="audio.mp3" type="audio/mpeg"></audio><br><video controls><source src="video.mp4" type="video/mp4"></video>` |
-| Line Breaks (br)                   | Insert single line breaks within text content.                         | `First line<br>Second line<br>Third line`                                             |
-| Horizontal Rule (hr)               | Add a thematic break (horizontal line) to separate sections.          | `<hr>`                                                                                 |
-| Blockquote                          | Highlight quoted text.                                                | `<blockquote cite="https://example.com">This is a quoted text block.</blockquote>`    |
-| Code                                | Display preformatted or inline code snippets.                          | `<code>console.log('hello, world!');</code>`                                        |
-| Preformatted Text (pre)            | Preserve whitespace and formatting for code or plain text.            | `<pre>This is preformatted text with preserved spaces.</pre>`                          |
+| Element                 | Purpose                                                                                                   | Example                                                                                                                                 |
+| ----------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| CSS Reset for Width     | Ensures all elements stay within the parent container's width, useful for landing pages and email in CBB. |                                                                                                                                         |
+| Headings (H1-H6)        | Use to define the hierarchy of content.                                                                   |                                                                                                                                         |
+| Paragraphs              | Use for blocks of text.                                                                                   |                                                                                                                                         |
+| Bold Text               | Emphasize important words.                                                                                |                                                                                                                                         |
+| Italic Text             | Use for emphasis or titles of works.                                                                      |                                                                                                                                         |
+| Lists                   | Organize content into lists.                                                                              |                                                                                                                                         |
+| Links (Anchors)         | Create clickable links to other pages or resources.                                                       |                                                                                                                                         |
+| Images                  | Embed images.                                                                                             |                                                                                                                                         |
+| Divs                    | Create container sections to group elements together.                                                     |                                                                                                                                         |
+| Span                    | Inline container for text or content, mainly for styling purposes.                                        |                                                                                                                                         |
+| Tables                  | Display data in tabular format.                                                                           |                                                                                                                                         |
+| Buttons                 | Trigger actions like JavaScript events.                                                                   |                                                                                                                                         |
+| Iframes                 | Embed external content like videos, websites, or widgets.                                                 |                                                                                                                                         |
+| Audio/Video             | Embed audio or video content.                                                                             |                                                                                                                                         |
+| Line Breaks (br)        | Insert single line breaks within text content.                                                            |                                                                                                                                         |
+| Horizontal Rule (hr)    | Add a thematic break (horizontal line) to separate sections.                                              |                                                                                                                                         |
+| Blockquote              | Highlight quoted text.                                                                                    |                                                                                                                                         |
+| Code                    | Display preformatted or inline code snippets.                                                             |                                                                                                                                         |
+| Preformatted Text (pre) | Preserve whitespace and formatting for code or plain text.                                                |                                                                                                                                         |
 
 ### Wrapping It Up
 
