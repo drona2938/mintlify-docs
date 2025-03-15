@@ -1,0 +1,112 @@
+---
+title: 'New file'
+description: 'Description of your new file.'
+---
+
+# Dynamic URL Detection with Webchat
+
+*Modified on Fri, 17 Jan at 8:50 AM*
+
+## How to Enable Automatic URL Tracking with Webchat
+
+With Chatbot Builder AI, your webchat agent can now automatically detect the current URL of the page it’s embedded on. This functionality enables your bot to deliver more contextual responses, gather page-specific analytics, and streamline user interactions. Below are two primary ways to leverage this feature, along with notes on how to reference the captured URL inside your bot’s scripts.
+
+### 1. Default Usage (Simple Script Embed)
+
+By default, you can embed the Chatbot Builder AI script as shown below. No further configuration is needed for basic functionality:
+
+```html
+<script src="https://app.chatgptbuilder.io/webchat/plugin.js?v=6"></script>
+
+<script>
+  ktt10.setup({
+    id: "ko7oedc9lpy",
+    accountid: "1970516",
+    color: "#36d6b5"
+  });
+</script>
+```
+
+#### How the URL is Tracked:
+The script (`plugin.js?v=6`) automatically captures the URL if loaded on the same page. You can reference the current URL in your chatbot logic using the custom field `{{webchat_parent_url}}`.
+
+### 2. Advanced Usage (Dynamic Script Loading)
+
+If you need greater control over how the chatbot script operates—such as dynamically loading the script, managing specific states, or automatically opening the chat—you can use a custom initialization function. This approach provides flexibility and allows you to tailor the chatbot's behavior to your specific needs.
+
+#### Custom Webchat Initialization
+
+```javascript
+let webchatInitialized = false; // ensure the script is only loaded once
+
+function initializeWebchat() {
+  if (webchatInitialized) return; // prevent multiple initializations
+
+  webchatInitialized = true; // capture the current page URL and encode it
+  const parentUrl = encodeURIComponent(window.location.href); // dynamically load the chatbot script with the 'parent' parameter
+
+  const script = document.createElement('script');
+  script.src = `https://app.chatgptbuilder.io/webchat/plugin.js?v=6&parent=${parentUrl}`; // configure the chatbot after the script loads
+
+  script.onload = () => {
+    window.ktt10.setup({
+      id: "c7rhymsmxuh", // replace with your chatbot id
+      accountid: "1970516", // replace with your account id
+      color: "#36d6b5", // customize the chat widget color
+      type: "container", // embed the chat widget in a container
+      element: "#fgzirjtkavlym2", // target HTML element for the chatbot
+      headertitle: "Get in Touch", // header text for the chat widget
+      hideheader: false, // show or hide the header
+      loadmessages: true, // automatically load chat history
+      showpersona: false // enable or disable chatbot persona display
+    });
+
+    // optionally open the chat widget immediately
+    window.ktt10.open();
+  };
+
+  // append the script to the document
+  document.head.appendChild(script);
+}
+
+// trigger the initialization on page load or user action
+window.addEventListener('DOMContentLoaded', initializeWebchat);
+```
+
+### 3. Optional `<iframe>` Embedding
+
+If you embed the chatbot within an `<iframe>`, you must manually pass the parent parameter to the webchat URL:
+
+```html
+<iframe  
+  src="https://app.chatgptbuilder.io/webchat/?v=6&p=1970516&hideheader=true&parent=encoded_url"  
+  width="400"  
+  height="600">
+</iframe>
+```
+
+Where `encoded_url` = `encodeURIComponent(window.location.href)`.
+
+### Usage Notes
+
+- Embedding via `<iframe>` is typically less flexible than loading the script directly on the page.
+- Remember to keep the parent parameter updated for accurate URL tracking if the user navigates within a Single Page Application (SPA).
+- Referencing the current URL (`{{webchat_parent_url}}`): Inside your chatbot’s flows, logic, or custom scripts, use the `{{webchat_parent_url}}` field to retrieve the current page URL.
+
+## Quick Reference Table
+
+| Scenario                  | Embed Method                                      | Script URL                                          | URL Access                                  |
+|---------------------------|--------------------------------------------------|----------------------------------------------------|---------------------------------------------|
+| Default Setup             | Inline `<script>` with `ktt10.setup`            | `https://app.chatgptbuilder.io/webchat/plugin.js?v=6` | Automatically sets `{{webchat_parent_url}}` |
+| Advanced / Dynamic        | Dynamically load `<script>` in JavaScript       | `https://app.chatgptbuilder.io/webchat/plugin.js?v=6&parent=encoded_url` | Must encode `window.location.href` manually  |
+| Iframe Embedding          | `<iframe>` with src set to Chatbot Builder AI URL | `https://app.chatgptbuilder.io/webchat/?v=6&parent=encoded_url` | Pass parent in the query string              |
+
+## Important Notes & Best Practices
+
+- **Use the Latest Version (v=6)**: If you’re still using v=5, update your script source to v=6 for automatic URL tracking.
+- **Single-Page Applications (SPA)**: If your site uses an SPA framework, ensure you update or reinitialize the chatbot on route changes, so the parent parameter remains accurate.
+- **Monitoring & Analytics**: Use the URL data for detailed analytics. For instance, see which pages trigger the most chatbot interactions or track user engagement flows across your site.
+
+## Support
+
+If you have additional questions or run into any issues, feel free to reach out to our support team at [support@chatbotbuilder.ai](mailto:support@chatbotbuilder.ai). We’re here to help you get the most out of Chatbot Builder AI!
