@@ -5,16 +5,12 @@ description: "Description of your new file."
 
 import { CalloutBox, CodeBlock, Image, Steps, Tab, Tabs, Expandable } from 'mintlify';
 
-## Transform Your Website with Custom Webchat
-
 Transform your website with a custom webchat powered by Chatbot Builder AI. Unlike generic chatbots, this intelligent assistant is trained specifically on your business data and custom instructions to deliver personalized customer interactions. Here's how this advanced webchat solution adapts to your needs:
 
 ### Features
 
 1. **Smart Chat Bubble**: The classic interface reimagined with AI. Your custom-trained chatbot lives in an unobtrusive bubble that can proactively engage visitors based on your business rules. It understands your products, services, and unique business context to provide informed responses.
-
 2. **Embedded Custom Chat**: Take full design control by integrating your AI-powered webchat anywhere on your site. Whether it's a branded button, a custom chat interface, or a seamless part of your webpage design, your business-trained chatbot maintains its intelligence while matching your aesthetic perfectly.
-
 3. **Immersive Full-Page Experience**: Deploy your custom chatbot as a dedicated conversational interface, perfect for complex interactions where your AI assistant can showcase its deep knowledge of your business.
 
 ### Beyond the Screen
@@ -155,7 +151,7 @@ To customize the chat bubble icon, follow these steps to personalize the look of
 <script src="https://app.chatgptbuilder.io/webchat/plugin.js"></script>
 ```
 
-2. Configure the chat bubble icon:
+1. Configure the chat bubble icon:
 
 ```html
 <script>
@@ -168,7 +164,7 @@ To customize the chat bubble icon, follow these steps to personalize the look of
 </script>
 ```
 
-3. Customize your icon:
+1. Customize your icon:
 
 - Replace "your_webchat_id" with your specific webchat id.
 - Replace "your_account_id" with your actual account id.
@@ -178,43 +174,43 @@ By following these steps, you'll update the chat bubble icon to your chosen desi
 
 ### General Webchat Settings
 
-| Option Name      | Description                                                 | Possible Values                     | Default   |
-|------------------|-------------------------------------------------------------|-------------------------------------|-----------|
-| Type             | Determines how the chatbot appears on the page.            | floating / window / container        | floating  |
-| Template         | Choose the template for the webchat appearance.            | template1 / template2               | template1 |
-| Color            | Sets the primary color of the webchat interface.           | any color name or hex code          | #36d6b5  |
-| Headertitle      | The title displayed on the webchat header.                 | any text                            | account name |
-| Hideheader       | Option to hide the header section containing the business name. | true / false                      | false     |
+| Option Name | Description                                                     | Possible Values               | Default      |
+| ----------- | --------------------------------------------------------------- | ----------------------------- | ------------ |
+| Type        | Determines how the chatbot appears on the page.                 | floating / window / container | floating     |
+| Template    | Choose the template for the webchat appearance.                 | template1 / template2         | template1    |
+| Color       | Sets the primary color of the webchat interface.                | any color name or hex code    | #36d6b5      |
+| Headertitle | The title displayed on the webchat header.                      | any text                      | account name |
+| Hideheader  | Option to hide the header section containing the business name. | true / false                  | false        |
 
 ### Webchat Position Settings
 
-| Option Name | Description                                                  | Possible Values                       | Default   |
-|-------------|--------------------------------------------------------------|---------------------------------------|-----------|
-| Element     | Specifies the HTML element in which the chatbot will be embedded (only applicable if type is "container"). | any valid HTML element id or class    | —         |
-| Right       | Distance of the chat icon from the right edge of the screen. | any valid CSS unit (e.g., px, em)    | 20px      |
-| Bottom      | Distance of the chat icon from the bottom edge of the screen. | any valid CSS unit (e.g., px, em)    | 20px      |
+| Option Name | Description                                                                                                | Possible Values                    | Default |
+| ----------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------- | ------- |
+| Element     | Specifies the HTML element in which the chatbot will be embedded (only applicable if type is "container"). | any valid HTML element id or class | —       |
+| Right       | Distance of the chat icon from the right edge of the screen.                                               | any valid CSS unit (e.g., px, em)  | 20px    |
+| Bottom      | Distance of the chat icon from the bottom edge of the screen.                                              | any valid CSS unit (e.g., px, em)  | 20px    |
 
 ### Webchat Behavior Settings
 
-| Option Name    | Description                                                  | Possible Values | Default |
-|----------------|--------------------------------------------------------------|-----------------|---------|
-| Loadmessages    | Load past conversations with the contact when the webchat is opened. | true / false     | true    |
-| Hidecomposer    | Option to hide the message input area (composer).          | true / false     | false   |
-| Showpersona     | Display the account profile image as a persona within the chat. | true / false     | false   |
+| Option Name  | Description                                                          | Possible Values | Default |
+| ------------ | -------------------------------------------------------------------- | --------------- | ------- |
+| Loadmessages | Load past conversations with the contact when the webchat is opened. | true / false    | true    |
+| Hidecomposer | Option to hide the message input area (composer).                    | true / false    | false   |
+| Showpersona  | Display the account profile image as a persona within the chat.      | true / false    | false   |
 
 ### Advanced Webchat Actions
 
-| Option Name      | Description                                                  | Possible Values | Default |
-|------------------|--------------------------------------------------------------|-----------------|---------|
-| Ref              | Automatically sends a specific flow or step id when the chat icon is clicked. | any ref/flow/step id | —       |
-| Setcustomfields  | Allows setting multiple custom fields, including system fields like email, phone, etc. | cufs and system fields | —       |
+| Option Name     | Description                                                                            | Possible Values        | Default |
+| --------------- | -------------------------------------------------------------------------------------- | ---------------------- | ------- |
+| Ref             | Automatically sends a specific flow or step id when the chat icon is clicked.          | any ref/flow/step id   | —       |
+| Setcustomfields | Allows setting multiple custom fields, including system fields like email, phone, etc. | cufs and system fields | —       |
 
 ### Webchat Chat Bubble Icon Customization
 
-| Option Name | Description                                                  | Possible Values | Default |
-|-------------|--------------------------------------------------------------|-----------------|---------|
-| Icon        | URL for a custom chat bubble icon to replace the default icon in the bottom-right corner. | URL of the image | —       |
-| Chat-avatar  | CSS to adjust the size and appearance of the chat avatar, including width, height, and border radius. | width: 20px; height: 20px; border-radius: 50%; overflow: hidden; margin-left: -8px; | —       |
+| Option Name | Description                                                                                           | Possible Values                                                                     | Default |
+| ----------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------- |
+| Icon        | URL for a custom chat bubble icon to replace the default icon in the bottom-right corner.             | URL of the image                                                                    | —       |
+| Chat-avatar | CSS to adjust the size and appearance of the chat avatar, including width, height, and border radius. | width: 20px; height: 20px; border-radius: 50%; overflow: hidden; margin-left: -8px; | —       |
 
 ### Routing Conversations from Any Channel into a Feature-Rich Webchat Experience
 
@@ -223,24 +219,20 @@ Imagine a customer starts texting your business to learn more about a product. O
 ### How It Works
 
 1. **Send a Webchat Link**: In your SMS or message, include `{{webchat}}`. When the customer taps or clicks this link, they’ll move straight into your webchat, where you can showcase images, buttons, or any other features that go beyond simple text.
-
 2. **Jump to a Specific Flow**: To guide customers straight into a particular segment of the conversation—like a product demo or a FAQ section—add `&ref=flow_or_step_id` at the end of `{{webchat}}`. For example, `{{webchat}}&ref=111111` directs them straight to the flow with ID 111111. This way, they can instantly see what you want to highlight, whether it’s a new product line, a special promotion, or a detailed guide.
-
 3. **Preserve or Start Fresh**: By default, webchat saves previous messages so customers can pick up where they left off. If you’d rather start fresh (for example, when showing a limited-time offer or a special demo), add `&lc=0`. The link `{{webchat}}&ref=111111&lc=0` takes the customer to the specified flow without any past conversation showing. This creates a clean, focused experience.
 
 ### Real-World Use Cases
 
 - **Showcasing Products**: A furniture store could send a customer from SMS into a webchat that displays product images, dimensions, and prices, along with quick-reply buttons to browse different categories.
-  
 - **Customer Support**: If a user wants help troubleshooting an issue, you can move them into a webchat sequence that shows step-by-step instructions, helpful images, or even embedded videos.
-  
 - **Guided Onboarding**: A software company could welcome a new user via SMS and then guide them into a webchat-based interactive tour with clickable tips, FAQs, and how-to videos.
 
 ### Example Conversation
 
 **User (via SMS)**: “Hi, can you tell me more about the ‘Greenfield Gardening Kit’? I’m really interested in seeing what it looks like or maybe a quick video demo before I buy.”
 
-**Assistant (via SMS)**: “Absolutely! We’ve got a great interactive demo with product images, a short video, and full details available in our webchat. Just click the link to learn more: `{{webchat}}&ref=111111`.”
+**Assistant (via SMS)**: “Absolutely\! We’ve got a great interactive demo with product images, a short video, and full details available in our webchat. Just click the link to learn more: `{{webchat}}&ref=111111`.”
 
 When the user taps the link, they’ll be taken to webchat, where they’ll see all the product details, including the video, images, and guided options to help them decide if it’s the right purchase.
 
@@ -340,4 +332,4 @@ Chatbot Builder AI makes it easier than ever to connect with your audience throu
 
 This is all made possible by our proprietary `ktt10` setup script, which powers web-based GPT and AI chatbot experiences for thousands of our co-creators, white-label agencies, and enterprise customers who run their own chatbot SaaS platforms.
 
-Trusted by industry leaders around the world, the `ktt10` script ensures reliable performance, seamless integration, and robust security, making it easy to create customized webchat solutions. With Chatbot Builder AI, you have the tools to build engaging, professional chatbot experiences that delight your users and help your business stand out. Let’s get started!
+Trusted by industry leaders around the world, the `ktt10` script ensures reliable performance, seamless integration, and robust security, making it easy to create customized webchat solutions. With Chatbot Builder AI, you have the tools to build engaging, professional chatbot experiences that delight your users and help your business stand out. Let’s get started\!
