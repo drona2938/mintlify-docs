@@ -30,7 +30,7 @@
           {
             "group": "Channels",
             "pages": [
-              "essentials/markdown",
+              "channels/webchat/best-practices-for-formatting-text-in-webchat",
               "essentials/code"
             ]
           },
