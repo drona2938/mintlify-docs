@@ -3,8 +3,10 @@
   "theme": "mint",
   "name": "Mint Starter Kit",  
   "variables": {
-    "projectName": "My Awesome Project",
-    "version": "1.2.3"
+    "myName": "John Doe",
+    "myObject": {
+      "fruit": "mango"
+    }
   },
   "colors": {
     "primary": "#16A34A",
