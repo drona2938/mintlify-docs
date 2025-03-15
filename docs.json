@@ -33,7 +33,10 @@
               {
                 "group": "Webchat",
                 "pages": [
-                  "channels/webchat/best-practices-for-formatting-text-in-webchat"
+                  "channels/webchat/best-practices-for-formatting-text-in-webchat",
+                  "channels/webchat/chatbot-builder-ai-webchat-installer-wordpress-plugin",
+                  "channels/webchat/visual-webchat-editor",
+                  "channels/webchat/dynamic-url-detection-with-webchat"
                 ]
               },
               "essentials/code"
