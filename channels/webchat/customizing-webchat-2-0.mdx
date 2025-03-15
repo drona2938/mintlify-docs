@@ -1,6 +1,6 @@
 ---
+description: "Modified on Sat, 31 Aug, 2024 at 1:13 AM"
 title: "Customizing Webchat 2.0"
-description: "Description of your new file."
 ---
 
 import { CalloutBox, CodeBlock, Image, Table, Steps } from 'mintlify';
@@ -11,161 +11,117 @@ import { CalloutBox, CodeBlock, Image, Table, Steps } from 'mintlify';
 
 Chatbot Builder Webchat allows you to easily integrate a chatbot on your website without needing third-party platforms. This guide will help you set up and customize your webchat, including changing the chat bubble icon and controlling its size, with easy-to-follow steps for non-coders and beginners.
 
-![Webchat Customization](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150077616249/original/cxzeyfttqzhlxc4dmatciwj7o9nrymd1ow.png?1723916808)
-
 ### Embedding the Webchat Code Into Your Website
 
 #### Steps to Embed Webchat
 
 1. **Navigate to Settings** (inside your CBB account)
    - Go to Settings > Channels > Web Chatbot > Manage inside your CBB account.
-   
 2. **Add Authorized Websites** (inside the Manage Webchat section)
-   - Inside the Manage Webchat section, add your website domain or subdomain to the authorized websites list. The chatbot will only load on these authorized sites.
-
+   - Inside the manage webchat section, add your website domain or subdomain to the authorized websites list. The chatbot will only load on these authorized sites.
 3. **Get the Webchat Code** (inside the Manage Webchat section)
-   - After creating and saving your webchat inside your CBB account, click the three dots in the Manage Webchat section to get the code.
-
+   - After creating and saving your webchat inside your CBB account, click the three dots in the manage webchat section to get the code.
 4. **Insert the Code into Your Website**
-   - Warning: Always ensure that both IDs (your-webchat-id and your-account-id) provided in the webchat section are included in the script.
-   - Example code to insert:
+   - **Warning**: Always ensure that both IDs (`your-webchat-id` and `your-account-id`) provided in the webchat section are included in the script.
+
+   Example code to insert:
+
    ```html
    <script src="https://app.chatgptbuilder.io/webchat/plugin.js?v=5"></script>
    <script>
-     ktt10.setup({
-       id: "your-webchat-id", // webchat id
-       accountid: "your-account-id", // account id
-       color: "#36d6b5"
-     });
+       ktt10.setup({
+           id: "your-webchat-id",  // webchat id
+           accountid: "your-account-id",  // account id
+           color: "#36d6b5"
+       });
    </script>
    ```
-   This code will embed the webchat on your website, ensuring proper functionality with both required IDs.
 
----
+   This code will embed the webchat on your website, ensuring proper functionality with both required IDs.
 
 ### Webchat Customization Table
 
 Follow the instructions below to insert the necessary CSS or scripts into the designated areas of your webchat editor in CBB for customizing your chatbot interface.
 
-<Table>
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>CSS Class</th>
-      <th>Description</th>
-      <th>Example Implementation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>.chat-header</td>
-      <td>Styles the chat header area.</td>
-      <td>.chat-header { background-color: #f4f4f4; padding: 10px; }</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>.m-0</td>
-      <td>Removes all margins (margin: 0).</td>
-      <td>.m-0 { margin: 0; }</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>.py-3</td>
-      <td>Adds padding to the top and bottom (padding: 1rem).</td>
-      <td>.py-3 { padding-top: 1rem; padding-bottom: 1rem; }</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>.chat-area</td>
-      <td>Styles the main chat area.</td>
-      <td>.chat-area { background: linear-gradient(90deg, #ffdee9 0%, #b5fffc 100%); padding: 20px; }</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>.my-message</td>
-      <td>Styles the user's own chat messages.</td>
-      <td>.my-message { background-color: #d1e7dd; padding: 10px; border-radius: 10px; }</td>
-    </tr>
-    <!-- Add additional rows as needed -->
-  </tbody>
-</Table>
+| \#  | CSS Class              | Description                                                                        | Example Implementation                                                                      |
+| --- | ---------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| 1   | .chat-header           | Styles the chat header area.                                                       |                                                                                             |
+| 2   | .m-0                   | Removes all margins (margin: 0).                                                   |                                                                                             |
+| 3   | .py-3                  | Adds padding to the top and bottom (padding: 1rem).                                |                                                                                             |
+| 4   | .chat-area             | Styles the main chat area.                                                         |                                                                                             |
+| 5   | .py-4                  | Adds padding to the top and bottom (padding: 1.5rem).                              |                                                                                             |
+| 6   | .px-4                  | Adds padding to the left and right (padding: 1.5rem).                              |                                                                                             |
+| 7   | .chat-area2            | Alternate styling for the chat area when the header is hidden.                     |                                                                                             |
+| 8   | .my-message            | Styles the user's own chat messages.                                               |                                                                                             |
+| 9   | .animate__animated     | Applies animation to the element (from animate.css library).                       |                                                                                             |
+| 10  | .animate__slideinright | Animates the element with a slide-in-from-right effect (from animate.css library). |                                                                                             |
+| ... | ...                    | ...                                                                                | ...                                                                                         |
 
-### Switching Webchat Templates
+### Switching Webchat Templates (Inside the Webchat Editor in Your CBB Account)
 
 **Warning**: Insert the following code into the designated script area inside your webchat editor.
 
 ```html
 <script src="https://app.chatgptbuilder.io/webchat/plugin.js"></script>
 <script>
-  ktt10.setup({
-    pageid: "your-account-id",
-    color: "#007bff",
-    hideheader: true,
-    template: "template1"
-  });
+    ktt10.setup({
+        pageid: "your-account-id",
+        color: "#007bff",
+        hideheader: true,
+        template: "template1"
+    });
 </script>
 ```
 
-### Displaying the Account Profile Picture as a Persona
+### Displaying the Account Profile Picture as a Persona (Inside the Webchat Editor in Your CBB Account)
 
 **Warning**: Insert the following code into the designated script area inside your webchat editor.
 
 ```html
 <script src="https://app.chatgptbuilder.io/webchat/plugin.js"></script>
 <script>
-  ktt10.setup({
-    pageid: "your-account-id",
-    showpersona: true
-  });
+    ktt10.setup({
+        pageid: "your-account-id",
+        showpersona: true
+    });
 </script>
 ```
 
-### Modifying the Chat Icon
+### Modifying the Chat Icon (Inside the Webchat Editor in Your CBB Account)
 
 **Warning**: Insert the following code into the designated script area inside your webchat editor.
 
-```html
+````html
 <script src="https://app.chatgptbuilder.io/webchat/plugin.js"></script>
 <script>
-  ktt10.setup({
-    pageid: "your-account-id",
-    icon: "your_image_url"
-  });
+    ktt10.setup({
+        pageid: "your-account-id",
+        icon: "your_image_url"
+    });
 </script>
-```
-Replace `your_image_url` with the URL of your desired image.
+
+Replace "your_image_url" with the URL of your desired image.
 
 ### Open the Webchat After a Defined Time (Timeout)
 
-Simply substitute `your_webchat_id` with your unique webchat id, and `your_account_id` with your account id. This ensures that your webchat will automatically open after 3 seconds, using the correct identifiers for seamless integration.
+Simply substitute `your_webchat_id` with your unique webchat ID, and `your_account_id` with your account ID. This ensures that your webchat will automatically open after 3 seconds, using the correct identifiers for seamless integration.
 
-**Example Code:**
+Example code:
 
 ```html
 <script src="https://app.chatgptbuilder.io/webchat/plugin.js"></script>
 <script>
-  ktt10.setup({
-    id: "your_webchat_id", // this is your webchat id
-    accountid: "your_account_id", // this is your account id
-    color: "#36d6b5"
-  });
-  setTimeout(function() {
-    ktt10btn.click();
-  }, 3000); // automatically open after 3 seconds
+    ktt10.setup({
+        id: "your_webchat_id",  // this is your webchat id
+        accountid: "your_account_id",  // this is your account id
+        color: "#36d6b5"
+    });
+    setTimeout(function() {
+        ktt10btn.click();
+    }, 3000);  // automatically open after 3 seconds
 </script>
-```
+````
 
 ### Free Templates
 
-Access a collection of [**free templates here**](https://app.chatgptbuilder.io/store/template.php?id=595918).
-
-![Free Templates](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150077616198/original/nbfhibmx_cdkg85p8q1g-lgxyzkosq_x4w.gif?1723916683)
-
-<script type="text/javascript">
-  const attachment_error_image = (attachment) => {
-    const parentelement = attachment.parentelement;
-    const defaulticon = `<span class="icon-file-empty"></span><span class="fw-attachment-ext">${attachment.dataset.extension}</span>`;
-    parentelement.innerHTML = defaulticon;
-  };
-</script>
+Access a collection of free templates here.
