@@ -30,7 +30,12 @@
           {
             "group": "Channels",
             "pages": [
-              "channels/webchat/best-practices-for-formatting-text-in-webchat",
+              {
+                "group": "Webchat",
+                "pages": [
+                  "channels/webchat/best-practices-for-formatting-text-in-webchat"
+                ]
+              },
               "essentials/code"
             ]
           },
