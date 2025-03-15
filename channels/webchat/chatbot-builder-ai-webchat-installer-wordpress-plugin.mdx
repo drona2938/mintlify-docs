@@ -1,0 +1,65 @@
+---
+title: "Chatbot Builder AI Webchat Installer Wordpress Plugin"
+description: "Description of your new file."
+---
+
+import { CalloutBox, CodeBlock, Steps } from 'mintlify';
+
+## Follow These Steps to Install and Configure the Chatbot Builder AI Webchat Plugin on Your WordPress Site:
+
+### Step 1: Set Up Webchat in Chatbot Builder AI
+
+1. **Log in to Chatbot Builder AI:**
+   - Go to your Chatbot Builder AI dashboard.
+
+2. **Navigate to Webchat Settings:**
+   - Click **Settings** in the left-hand menu.
+   - Select **Channels > Webchat > Manage**.
+
+3. **Create or Edit a Webchat:**
+   - Click **Create New Webchat** or select an existing webchat to edit.
+   - In the webchat editor, add your website domain under the domain settings.
+   - Click **Save** to apply the changes.
+
+4. **Get the Webchat Code:**
+   - Locate the webchat you want to use, click the three dots (...) on the right side, and then click **Get Code**.
+   - Copy the entire webchat script.
+
+### Download Free WordPress Plugin
+
+### Step 2: Install the Official CBB Webchat WordPress Plugin
+
+1. **Download the Plugin Zip File:**
+   - Make sure you have the plugin zip file downloaded on your computer.
+
+2. **Upload and Activate the Plugin:**
+   - Go to your WordPress admin dashboard.
+   - Navigate to **Plugins > Add New**.
+   - Click **Upload Plugin** at the top of the page.
+   - Choose the plugin zip file and click **Install Now**.
+   - Once installed, click **Activate Plugin**.
+
+### Step 3: Configure the Webchat Script in WordPress
+
+1. **Go to Settings > Chatbot Builder AI Webchat in Your WordPress Admin Dashboard:**
+   - You will find options to paste the default webchat script, which will be used on all pages unless specified otherwise.
+   - To add different webchats for specific pages, use the page-specific webchat scripts field and input the configurations in a simple JSON format. For example:
+
+   ```json
+   {
+       "home": "",
+       "about": "",
+       "/contact": ""
+   }
+   ```
+
+   - In the JSON configuration, specify the script for each page. Use "home" for the home page, the page name (e.g., "about") for specific pages, or the URL path (e.g., "/contact") for specific page URLs.
+   - Click **Save Changes** to apply your settings.
+
+### Quick Recap:
+
+- **Webchat Setup:** In Chatbot Builder AI, create or edit a webchat, add your domain, save, and copy the webchat script code.
+- **Installation:** Upload and activate the CBB Webchat WordPress plugin.
+- **Configuration:** Paste the webchat script in the plugin settings in WordPress.
+
+Once completed, the Chatbot Builder AI webchat will be live on your website, allowing your users to interact seamlessly.
