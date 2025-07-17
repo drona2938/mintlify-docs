@@ -1,0 +1,295 @@
+---
+title: "How to Create Default Agents and Default Flows Tutorial with Chatbot Builder AI"
+description: "Learn how to create and customize a Default Flow for your AI chatbot to handle user questions outside of specific flows, and how to integrate Agents, Assistants, and other technologies for enhanced responsiveness."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+### How to Create a Default Flow for Your AI Chatbot
+
+After setting up a welcome message, the next essential component of your AI chatbot is the **Default Flow**. The Default Flow ensures that whenever a user asks a question outside the context of a specific flow, your bot can respond intelligently and consistently. In this tutorial, we’ll guide you through creating a Default Flow, customizing its prompts, and integrating various technologies like Agents, Assistants, Dialogflow, traditional chatbot logic, or a hybrid mix to enhance your bot’s responsiveness.
+
+#### Step 1: Understand the Default Flow vs. Default Agent and Assistant
+
+Before diving into creating a Default Flow, it's crucial to understand the differences between **Default Flow**, **Default Agent**, and **Default Assistant**:
+
+<CardGroup cols={2}>
+  <Card title="Default Flow">
+    **Function:** Acts as a fallback when no specific flow handles the user’s request.
+
+    <br />
+
+    **Features:**
+
+    - **Direct Control:** Customize responses to maintain your brand voice.
+    - **Media & Buttons:** Ideal for incorporating multimedia elements and interactive buttons.
+    - **Flexibility:** Can integrate with Agents, Assistants, Dialogflow, traditional logic, or a hybrid mix.
+
+    <br />
+
+    **Best For:**
+
+    - Handling unrecognized inputs with tailored, interactive responses.
+    - Providing a consistent and engaging fallback experience.
+  </Card>
+  <Card title="Default Agent">
+    **Function:** The chatbot’s primary responder using your custom instructions.
+
+    <br />
+
+    **Features:**
+
+    - **Speed & Autonomy:** Delivers quick responses based solely on predefined instructions.
+    - **No Uploaded Data:** Relies only on the instructions you provide without additional documents or files.
+
+    <br />
+
+    **Best For:**
+
+    - Handling general, straightforward questions with predefined answers.
+    - Scenarios where speed and simplicity are prioritized over detailed responses.
+  </Card>
+  <Card title="Default Assistant">
+    **Function:** An enhanced responder that accesses additional information from uploaded files like menus, FAQs, or product details.
+
+    <br />
+
+    **Features:**
+
+    - **Knowledge Base Reliance:** Utilizes uploaded data for comprehensive responses.
+    - **Detailed Responses:** Can handle more complex queries by referencing specific documents.
+
+    <br />
+
+    **Best For:**
+
+    - Providing specific and data-driven answers to user inquiries.
+    - Businesses that need the chatbot to reference detailed information.
+  </Card>
+</CardGroup>
+
+##### When to Use Each
+
+- **Default Flow:** Use If: You need interactive elements (media/buttons) and complete control over fallback responses.
+- **Default Agent:** Use If: You need quick, autonomous responses for general questions without detailed information.
+- **Default Assistant:** Use If: Your chatbot requires access to detailed information from uploaded files for accurate answers.
+
+<Steps>
+  <Step>
+    **Review Your Current Setup**
+
+    **Check the Default Agent**
+
+    - **Navigate to Integrations:** Go to your chatbot builder’s **Integrations** section.
+    - **Select OpenAI.**
+    - **Verify Default Agent:** Ensure the Default Agent is enabled by default.
+    - **Customize Instructions (optional):**
+
+      ```plaintext
+      You’re the helpful assistant for Ryan’s restaurant. Encourage customers to make reservations. We’re open 24 hours a day, six days a week (closed on Sundays).
+      ```
+
+    **Test Your Agent**
+
+    - **Preview Your Chatbot:** Under your existing welcome message, open the chatbot’s preview.
+    - **Ask Sample Questions:**
+      - "Who are you?"
+      - "Do you serve pizza?"
+    - **Agent Responses:** Should follow the custom instructions you set.
+  </Step>
+  <Step>
+    **Create a New Default Flow**
+
+    **Add a New Flow**
+
+    - **Navigate to Flows:** Click on the **Flows** section in your dashboard.
+    - **Create Flow:** Click **Add**.
+    - Name the flow **Default Flow**.
+    - Click **Continue**.
+
+    **Open the Blank Canvas**
+
+    - You’ll see an empty flow ready for configuration.
+  </Step>
+  <Step>
+    **Add an AI-Generated Reply Node**
+
+    **Add OpenAI Step**
+
+    - **Insert Step:** Click the first block.
+    - Choose **Add Content / Actions**.
+    - Select **OpenAI** and then the **OpenAI element**.
+
+    **Provide Custom Instructions**
+
+    - **Define Prompt:**
+
+      ```plaintext
+      You’re a helpful assistant for Ryan’s restaurant on Hilton Head Island. We’re open 24 hours, six days a week, closed on Sundays. We only serve seafood—no pizza, burgers, or other cuisines. Always remind customers of these rules when asked.
+      ```
+
+    **Use Last Input Field**
+
+    - **Configuration:** Allows the bot to consider the user’s most recent message.
+    - Typically, no adjustments needed for a simple Default Flow.
+
+    **Create a Custom Field for the Response**
+
+    - **Add Field:** Click **Add New Custom Field**.
+    - Name it `default_reply`.
+    - Click **Continue**.
+    - **Result:** The OpenAI step will generate a response based on the user’s latest message and your instructions, saving it into `default_reply`.
+  </Step>
+  <Step>
+    **Add a Send Message Step**
+
+    **Drag the Continue Arrow**
+
+    - From the OpenAI step, drag the **Continue** arrow to a new **Send Message** step.
+
+    **Insert the Dynamic Variable**
+
+    - **Configure Message:** Replace any static text with your custom field: `{{default_reply}}`.
+    - This ensures the AI-generated answer is displayed to the user.
+
+    **Rename Your Steps for Clarity**
+
+    - **OpenAI Step:** Rename to `Generate Reply`.
+    - **Send Message Step:** Rename to `Send Text Reply`.
+  </Step>
+  <Step>
+    **Publish and Activate Your Default Flow**
+
+    **Publish Your Flow**
+
+    - Click **Publish** to save your changes.
+
+    **Set the Default Flow**
+
+    - **Navigate to Settings:** Go to **Settings \> General**.
+    - **Select Default Flow:** Find the **Default Flow** dropdown menu.
+    - Select **Default Flow** (the flow you just created).
+
+    **Disable the Default Agent**
+
+    - **Return to Integrations:** Go back to **Integrations \> OpenAI**.
+    - **Turn Off Default Agent:** Uncheck or disable the Default Agent.
+    - Click **Save**.
+    - **Outcome:** Your custom Default Flow is now active and will handle all queries that don’t fall under a specific flow.
+  </Step>
+  <Step>
+    **Test Your Default Flow**
+
+    **Preview Your Chatbot**
+
+    - Return to the **Welcome Message** and click **Preview** to start a conversation.
+
+    **Ask a General Question**
+
+    - **Example Query:** "Do you serve pizza?"
+    - **Expected Response:** "I’m sorry, but we only serve seafood at Ryan’s restaurant."
+
+    **Ask About Hours or Reservations**
+
+    - **Example Query:** "Can I reserve a table on Sunday?"
+    - **Expected Response:** "We are closed on Sundays, so we won't be able to accommodate reservations on that day."
+    - **Result:** Your Default Flow responds based on custom instructions, maintaining consistency and brand voice.
+  </Step>
+  <Step>
+    **Fine-Tune Your Responses Using an Agent**
+
+    For even greater control and personalized, on-brand replies, integrate Agents, Assistants, Dialogflow, traditional chatbot logic, or a hybrid mix into your Default Flow.
+
+    **Create an Agent**
+
+    - **Navigate to Manage Agents:** Go to the **Manage Agents** tab.
+    - **Add a New Agent:** Click **Add**.
+    - Name it (e.g., `Ryan’s Restaurant Agent`).
+
+    **Add Detailed Prompts and Examples**
+
+    - **Enhance Instructions:**
+
+      ```plaintext
+      It's highly important to remain on brand and use Ryan's restaurant's funny tone when guests ask about cuisines other than seafood. For instance, respond humorously but firmly to pizza or burger requests.
+      ```
+    - **Example Scenarios:**
+      - **User:** "Do you have pepperoni pizza?"
+      - **Agent:** "No pizza ever\! We only serve fresh seafood here, my friend."
+
+    **Use the Agent in Your Default Flow**
+
+    - **Return to Default Flow:** Open your **Default Flow**.
+    - **Select the OpenAI Step:** Choose the **Generate Reply** step.
+    - **Integrate Agent:** Instead of custom instructions, select the **Ryan’s Restaurant Agent** from your agents’ menu.
+    - **Publish Changes:** Click **Publish** to save the updated flow.
+
+    **Test the Enhanced Default Flow**
+
+    - **Preview Chatbot:** Go back to the **Assistant** tab and click **Preview**.
+    - **Ask Off-Brand Questions:**
+      - "I want to order three large pizzas."
+      - "Can I get 12 hamburgers?"
+    - **Expected Responses:**
+      - "No pizza ever\! We only serve seafood here, my friend."
+      - "No hamburgers ever\! We're all about seafood here."
+    - **Result:** Your chatbot responds in a consistent, on-brand manner using the integrated Agent.
+  </Step>
+  <Step>
+    **Integrate Additional Technologies for a Robust Default Flow**
+
+    Enhance your Default Flow by incorporating various technologies to handle a wide range of user interactions:
+
+    <CardGroup cols={2}>
+      <Card title="Agents and Assistants">
+        - **Agents:** Use for quick, autonomous responses based on custom instructions.
+        - **Assistants:** Utilize for detailed, data-driven answers using uploaded files.
+      </Card>
+      <Card title="Machine Learning with Dialogflow">
+        - **Advanced Understanding:** Leverage Dialogflow for sophisticated natural language processing and intent recognition. (Legacy)
+      </Card>
+      <Card title="Traditional Chatbot Logic">
+        - **Rule-Based Responses:** Implement predictable, keyword-driven responses for straightforward tasks.
+      </Card>
+      <Card title="Hybrid Mix">
+        - **Best of Both Worlds:** Combine Agents, Assistants, Dialogflow, and traditional logic to create a versatile and comprehensive Default Flow.
+      </Card>
+    </CardGroup>
+    **Example Integration:**
+
+    - **Common Questions:** Handled by Agents for speed.
+    - **Detailed Inquiries:** Managed by Assistants with access to uploaded data.
+    - **Complex Conversations:** Routed through Dialogflow for nuanced understanding.
+    - **Specific Tasks:** Managed via traditional logic, such as booking reservations.
+  </Step>
+</Steps>
+
+### Quick Recap
+
+<CardGroup cols={2}>
+  <Card title="Default Flow">
+    **Function:** Fallback for unrecognized inputs with customizable, media-rich responses.
+
+    <br />
+
+    **Best For:** Interactive and branded fallback scenarios.
+  </Card>
+  <Card title="Default Agent">
+    **Function:** Fast, autonomous responder based on custom instructions.
+
+    <br />
+
+    **Best For:** General, predefined queries requiring quick answers.
+  </Card>
+  <Card title="Default Assistant">
+    **Function:** Detailed responder using uploaded data for comprehensive answers.
+
+    <br />
+
+    **Best For:** Specific, data-driven inquiries needing detailed information.
+  </Card>
+</CardGroup>
+
+By choosing the right combination of Default Flow, Agents, Assistants, Dialogflow, and traditional chatbot logic, you can create a chatbot that responds intelligently to a wide range of queries while providing a seamless and engaging user experience tailored to your brand’s needs.
+
+**Congratulations\!** You’ve successfully created and activated a Default Flow for your AI chatbot. By combining a welcome message and a customizable Default Flow, along with integrating Agents and Assistants, you’ve established both the initial greeting and the fallback responses, ensuring a smooth and branded user experience every time.

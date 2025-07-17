@@ -1,0 +1,311 @@
+---
+title: "Custom Fields (CUFs), System Fields, and User Input"
+description: "Learn how to use Custom User Fields (CUFs), system fields, and user input to create personalized and dynamic chatbot interactions."
+---
+
+import { Card, CardGroup } from '@mintlify/components';
+
+## Custom User Fields (CUFs)
+
+### What are Custom Fields?
+
+In Chatbot Builder AI, **fields** are crucial for building personalized and effective chatbot interactions. Think of Custom User Fields (CUFs) as your chatbot's **permanent memory**, allowing it to store and recall important user details across multiple conversations. This is different from `{{chat_history}}`, which only tracks messages within a single session. With CUFs, your chatbot can remember user preferences, past actions, or important information for future interactions, making conversations more engaging and providing a better user experience.
+
+<Info>
+  Due to the large number of CUFs available across the platform, not all are listed in every dropdown menu. However, all CUFs mentioned in this document will function seamlessly wherever you use them in your chatbot flows.
+</Info>
+
+Chatbot Builder AI offers three main types of fields for managing and storing data:
+
+<CardGroup cols={2}>
+  <Card title="System Fields">
+    System Fields automatically collect key user information, such as first name, last name, and email, allowing for easy personalization.
+  </Card>
+  <Card title="Account Fields">
+    Account Fields are used to store bot-specific settings and preferences, helping ensure the chatbot functions smoothly in different scenarios.
+  </Card>
+  <Card title="Custom User Fields (CUFs)">
+    CUFs enable you to store unique user details, making interactions more personal and relevant.
+  </Card>
+</CardGroup>
+
+For certain fields, like `{{last_input}}`, you may need to create a new CUF and use the **Set Custom Field** action to assign its value. This is necessary because fields like `{{last_input}}` track real-time data, such as the user’s most recent message. By setting this value in a CUF, you can save and reuse it throughout the conversation. This flexibility enables you to customize how your chatbot processes data, resulting in more personalized and engaging interactions for your users.
+
+### Types of CUFs
+
+<Tabs>
+  <Tab title="Text">
+    This is for storing simple text messages and text strings.
+  </Tab>
+  <Tab title="Number">
+    Holds numerical values.
+  </Tab>
+  <Tab title="Date">
+    Stores specific dates.
+  </Tab>
+  <Tab title="Date and Time">
+    Combines both date and time data.
+  </Tab>
+  <Tab title="True/False">
+    For binary (yes or no) data.
+  </Tab>
+  <Tab title="Long Text">
+    Generally, Custom Fields have a limit of 10,000 characters. However, this **Long Text Account Field** can hold up to 16 million characters, ideal for storing lengthy content such as your prompt.
+  </Tab>
+</Tabs>
+
+CUFs can also be combined with other CUFs to create dynamic and flexible interactions within your chatbot.
+
+This is what the structure of the custom field inside the platform looks like:
+
+`{{custom_field_name}}`
+
+### Creating Custom Fields
+
+<Steps>
+  <Step>
+    Define the field **Name**, **Type**, and add a **Description** that best fits your custom field function.
+  </Step>
+</Steps>
+
+### Using Custom Field on the Flow Builder
+
+If you’ve already created a custom field to store user input, you’re all set. However, you can also create a custom field directly while building your chat flow.
+
+<Steps>
+  <Step>
+    Within the flow, use the “Get User Data” block to collect input from your
+    subscribers.
+
+    ![Get User Data block](https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000063553/A-guide-to-custom-fields-and-user-input-in-Chatbot-Builder-AI-1.png)
+  </Step>
+  <Step>
+    Then click on the “Edit” button to configure the custom field.
+
+    ![Edit button](https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000063553/A-guide-to-custom-fields-and-user-input-in-Chatbot-Builder-AI-2.png)
+  </Step>
+  <Step>
+    Now, choose the custom field if you have created it already or you can
+    create a new custom field here in the wizard itself.
+
+    ![Choose or create a custom field](https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000063553/A-guide-to-custom-fields-and-user-input-in-Chatbot-Builder-AI-3.png)
+  </Step>
+</Steps>
+
+When any subscriber on this flow provides the input on this user input, it will get stored on the custom field named “preferred color_laptop bags”.
+
+The user input will be saved in the designated custom field and can be viewed on the inbox and contact pages. For example, the green color provided by the user is stored in the corresponding custom field on these pages.
+
+![User input saved in custom field](https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000063553/A-guide-to-custom-fields-and-user-input-in-Chatbot-Builder-AI-4.png)
+
+### Practical Use Cases:
+
+Custom fields on platforms offer immense value for personalization, enabling you to customize your messages and interactions for individual users, resulting in a more engaging and relevant experience. Here are three practical examples of how you can leverage custom fields for personalization:
+
+#### User Input with the Get User Data Element
+
+**1. Understanding User Input**
+
+In Chatbot Builder AI, the **Get User Data** element helps you capture and store information provided by users, such as messages, responses, or other data. User input is essential for chatbot interactions and can come in many forms—text messages, voice commands, button clicks, or form submissions. This input represents what users communicate to the chatbot, including their questions, preferences, or requests.
+
+**2. Setting Up User Input Prompts**
+
+To create successful chatbot interactions, it’s important to set up prompts that guide users to provide the information you need. Here’s how you can effectively collect and use user input:
+
+- **Personalized Greetings:** Use custom fields to personalize the interaction by greeting users by name. For example, when a user subscribes or provides their name, you can store it in a custom field like `{{first_name}}`. You can then use this field in your chatbot messages to personalize greetings: "Hi `{{first_name}}`, welcome to our chatbot\! How can we assist you today?"
+- **Product Recommendations:** For e-commerce chatbots, you can take advantage of custom fields to recommend products based on a user’s preferences or purchase history. For example, you can store data like `{{favorite_category}}` or `{{recent_purchase}}`.
+- **Configure Validation Rules:** If you're collecting an email address, set a validation rule to check for the presence of an "@" symbol and a valid domain.
+
+<Note>
+  To use custom fields in your chat flow, enclose the field name in double curly brackets `{{ }}` within a text block to reference the desired custom field.
+</Note>
+
+![Using custom fields in a text block](https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000063553/A-guide-to-custom-fields-and-user-input-in-Chatbot-Builder-AI-5.png)
+
+## List of System Fields and Custom User Fields (CUFs)
+
+<Accordion title="Contact and Account Management">
+  | Field Variable                   | Description                                                                                                                                                                        |
+  | :------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | `{{first_name}}`                 | The user’s first name, useful for creating personalized and friendly messages.                                                                                                     |
+  | `{{last_name}}`                  | The user’s last name, used to create a more formal personalized experience.                                                                                                        |
+  | `{{full_name}}`                  | Combines the first and last names of the user for full name usage in communications.                                                                                               |
+  | `{{email}}`                      | The user’s email address, typically used for follow-ups and email notifications.                                                                                                   |
+  | `{{phone}}`                      | The user’s phone number, commonly used for SMS campaigns or support calls.                                                                                                         |
+  | `{{user_country}}`               | The user’s country, helpful for location-based services, offers, or region-specific messaging.                                                                                     |
+  | `{{user_state}}`                 | The user’s state or region, relevant for more localized interactions or offers.                                                                                                    |
+  | `{{user_city}}`                  | The user’s city, useful for ultra-local personalized messaging or promotions.                                                                                                      |
+  | `{{inbox_link}}`                 | The link to the inbox on Chatbot Builder AI, allowing agents or admins to access user interactions directly.                                                                       |
+  | `{{gender}}`                     | The user’s gender, used for personalized messaging that can be gender-specific.                                                                                                    |
+  | `{{locale}}`                     | User’s full locale (e.g., en_US), indicating both language and regional preferences for communication.                                                                             |
+  | `{{locale2}}`                    | A shortened version of the locale (e.g., en) to determine the user’s preferred language only.                                                                                      |
+  | `{{username}}`                   | The Instagram username of the user, used for social interactions or reference.                                                                                                     |
+  | `{{profile_pic}}`                | URL of the user’s profile picture, allowing richer personalization with visual elements.                                                                                           |
+  | `{{timezone}}`                   | The user’s timezone, enabling the bot to send time-specific messages and perform actions based on the user’s local time.                                                           |
+  | `{{user_id}}`                    | A unique identifier for the user in the Chatbot Builder AI system, typically used for internal tracking and API interactions.                                                      |
+  | `{{subscribed_date}}`            | The date the user subscribed or was added to the system, useful for calculating user tenure or for subscription-based campaigns.                                                   |
+  | `{{fb_chat_link}}`               | A direct link to the user’s Facebook Messenger inbox for easy access to ongoing chats.                                                                                             |
+  | `{{me}}`                         | A link allowing users to view or delete their data to comply with GDPR regulations, ensuring transparency and user control.                                                        |
+  | `{{webchat}}`                    | A webchat link that can be shared with users, allowing tracking and retrieval purposes. It is compatible with payloads and offers flexible use cases.                              |
+  | `{{user_code}}`                  | A unique code assigned to the user, often used for tracking or identification in internal systems.                                                                                 |
+  | `{{last_btt_title}}`             | The title of the last button clicked by the user, useful for tracking user interactions and preferences.                                                                           |
+  | `{{last_interaction}}`           | The timestamp of the user’s last interaction with the chatbot, useful for follow-ups or engagement strategies.                                                                     |
+  | `{{last_order}}`                 | The details of the last order made by the user, particularly relevant for e-commerce and transactional bots.                                                                       |
+  | `{{last_seen}}`                  | The last time the user was seen interacting with the chatbot, providing insights into user engagement.                                                                             |
+  | `{{last_text_input}}`            | The last text message the user sent to the chatbot, useful for analyzing user input and providing contextual replies.                                                              |
+  | `{{last_input}}`                 | The last input (text, image, video, audio, or file) sent by the user to the chatbot, offering insight into user activity.                                                          |
+  | `{{last_input_type}}`            | Specifies the type of the last input provided by the user (e.g., text, image, video), helping to categorize interactions.                                                          |
+  | `{{consecutive_failed_reply}}`   | The number of consecutive failed responses from the chatbot, used for error handling or triggering fallback messages.                                                              |
+  | `{{last_ref}}`                   | Refers to the last entry point or referral link clicked by the user, helping track user sources.                                                                                   |
+  | `{{last_ad}}`                    | The ID of the last Facebook Ad that led the user to the chatbot, used for marketing attribution and tracking.                                                                      |
+  | `{{user_channel}}`               | Indicates the primary communication channel used by the user (e.g., Messenger, Webchat), helping tailor responses to the platform.                                                 |
+  | `{{user_hash}}`                  | A unique hashed value of the user, offering secure tracking and identification across multiple platforms.                                                                          |
+  | `{{user_tags}}`                  | A list of tags applied to the user for segmentation, categorization, or targeting in campaigns.                                                                                    |
+  | `{{user_external_id}}`           | External user ID used for third-party platforms like Messenger or Instagram.                                                                                                       |
+  | `{{user_source}}`                | Indicates the source from which the user originated (e.g., Ads, Facebook comment), useful for marketing analysis.                                                                  |
+  | `{{assigned_admin_name}}`        | The name of the admin assigned to the user, allowing for agent tracking or task assignment.                                                                                        |
+  | `{{assigned_admin_id}}`          | The ID of the admin assigned to the user, useful for managing team interactions and accountability.                                                                                |
+  | `{{current_user_time}}`          | The current local time of the user, based on their timezone, useful for delivering time-sensitive messages or notifications.                                                       |
+  | `{{chat_history}}`               | Returns the last 50 messages exchanged between the user and the business, useful for review or context.                                                                            |
+  | `{{chat_history_large}}`         | Returns the last 200 messages exchanged between the user and the business for a more extended review of past conversations.                                                        |
+  | `{{chat_history_details}}`       | Returns the last 50 messages exchanged with the sender’s details, helpful for identifying the flow of the conversation.                                                            |
+  | `{{chat_history_details_large}}` | Returns the last 200 messages exchanged with sender details, providing an extended history for deeper analysis.                                                                    |
+  | `{{last_points}}`                | Holds the user’s most recent questionnaire score. Recommended to store in a questionnaire-specific CUF after each completion.                                                      |
+  | `{{user_notes}}`                 | Returns all notes added to the user profile, including feedback, past interactions, and comments for agent reference.                                                              |
+  | `{{last_user_note}}`             | Retrieves the most recent note or comment added to the user profile, providing a quick reference to the latest activity.                                                           |
+  | `{{last_call_recorded}}`         | Contains the URL link to the most recent call recording associated with the user, useful for reviewing phone interactions. \*Note: Only Twilio supports this feature at this time. |
+  | `{{last_step}}`                  | Stores the STEP ID of the last executed step in a published flow, enabling tracking of the user’s progress through the flow.                                                       |
+  | `{{current_step}}`               | Contains the STEP ID of the currently active step in a published flow, showing the step the user is currently interacting with.                                                    |
+  | `{{account_name}}`               | The name of the account associated with the chatbot, often used for branding or identification purposes.                                                                           |
+  | `{{account_id}}`                 | The unique identifier for the account, typically used for internal tracking and system integrations.                                                                               |
+  | `{{account_image}}`              | The profile image associated with the account, useful for branding or displaying account-specific visuals.                                                                         |
+  | `{{api_key}}`                    | The API key associated with the account, used for integrations and accessing external services.                                                                                    |
+  | `{{webchat_parent_url}}`         | The URL of the parent webpage where the webchat is being viewed or chat is taking place.                                                                                           |
+  | `{{active_call_id}}`             | AudioCodes Call ID                                                                                                                                                                 |
+  | `{{assigned_admin_email}}`       | The email address of the admin assigned to the user. Useful for internal tracking, team accountability, or routing conversations to the right agent                                |
+  | `{{last_input_failure}}`         | Describes why the last "Get User Data" attempt failed. Possible values include timeout, user_skipped, or invalid_input_attempts. Helpful for error handling and fallback logic.    |
+  | `{{admin_name}}`                 | The name of the admin who sent the last message or flow to the user from the inbox. Useful for maintaining a personal tone in follow-ups or tracking human-agent interactions.     |
+</Accordion>
+
+<Accordion title="Instagram CUFs">
+  | Field Variable                | Description                                                                                               |
+  | :---------------------------- | :-------------------------------------------------------------------------------------------------------- |
+  | `{{ig_user_name}}`            | The Instagram username of the user.                                                                       |
+  | `{{ig_followers}}`            | The total follower count for the user's Instagram account.                                                |
+  | `{{ig_verified}}`             | Indicates whether the user's Instagram account is verified (true/false).                                  |
+  | `{{ig_follow_business}}`      | Whether the user follows the business account on Instagram (true/false).                                  |
+  | `{{ig_business_follow_user}}` | Whether the business follows the user's Instagram account (true/false).                                   |
+  | `{{last_story_id}}`           | The story ID of the last Instagram story replied to by the user.                                          |
+  | `{{last_fb_comment}}`         | The text of the user's most recent Instagram comment (cross-platform for Instagram/Facebook).             |
+  | `{{last_post_id}}`            | The ID of the last post commented on by the user (cross-platform for Instagram/Facebook).                 |
+  | `{{last_comment_id}}`         | The ID of the user’s most recent comment (cross-platform for Instagram/Facebook).                         |
+  | `{{total_new_tagged}}`        | Number of users that aren’t in your contact list that were tagged in the comment. Works only on Facebook. |
+  | `{{total_tagged}}`            | Number of users that aren’t tagged in the comment. Works only on Facebook.                                |
+</Accordion>
+
+<Accordion title="Facebook Messenger CUFs">
+  | Field Variable         | Description                                                                                                   |
+  | :--------------------- | :------------------------------------------------------------------------------------------------------------ |
+  | `{{last_fb_comment}}`  | The text of the user's most recent Facebook comment.                                                          |
+  | `{{last_post_id}}`     | The ID of the last post commented on by the user.                                                             |
+  | `{{last_comment_id}}`  | The ID of the user’s most recent comment.                                                                     |
+  | `{{page_user_name}}`   | The username of the user interacting via Facebook Messenger.                                                  |
+  | `{{fb_chat_link}}`     | A direct link to the user’s Facebook Messenger inbox for easy access to ongoing chats.                        |
+  | `{{last_ad}}`          | The ID of the last Facebook Ad that led the user to the chatbot, used for marketing attribution and tracking. |
+  | `{{total_new_tagged}}` | Number of users that aren’t in your contact list that were tagged in the comment. Works only on Facebook.     |
+  | `{{total_tagged}}`     | Number of users that aren’t tagged in the comment. Works only on Facebook.                                    |
+</Accordion>
+
+<Accordion title="Location CUFs">
+  | Field Variable       | Description                                                                                 |
+  | :------------------- | :------------------------------------------------------------------------------------------ |
+  | `{{last_latitude}}`  | The last known latitude of the user, available only if the user has shared their location.  |
+  | `{{last_longitude}}` | The last known longitude of the user, available only if the user has shared their location. |
+</Accordion>
+
+<Accordion title="Appointment CUFs">
+  | Field Variable         | Description                                                                             |
+  | :--------------------- | :-------------------------------------------------------------------------------------- |
+  | `{{booking_date}}`     | The date of the user’s scheduled appointment.                                           |
+  | `{{booking_link}}`     | The link to the booking confirmation or details for the appointment.                    |
+  | `{{booking_id}}`       | The unique identifier for the user’s appointment booking.                               |
+  | `{{booking_calendar}}` | The calendar associated with the appointment, often used to view or manage the booking. |
+</Accordion>
+
+<Accordion title="Ecommerce CUFs">
+  | Field Variable                    | Description                                                                                                                                                                         |
+  | :-------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | `{{cart_checkout_link}}`          | Link to the user’s checkout page for completing the purchase.                                                                                                                       |
+  | `{{cart_last_item_name}}`         | Name of the last item added to the user’s cart.                                                                                                                                     |
+  | `{{cart_last_item_quantity}}`     | Quantity of the last item added to the user’s cart.                                                                                                                                 |
+  | `{{cart_num_items}}`              | Total number of items in the user’s cart.                                                                                                                                           |
+  | `{{cart_other_fees}}`             | Additional fees associated with the user’s cart (e.g., service fees).                                                                                                               |
+  | `{{cart_shipping_cost}}`          | Shipping cost for the items in the user’s cart.                                                                                                                                     |
+  | `{{cart_subtotal}}`               | Subtotal of the user’s cart before taxes and additional fees.                                                                                                                       |
+  | `{{cart_total}}`                  | Total cost of the user’s cart, including all fees and taxes.                                                                                                                        |
+  | `{{shop_link}}`                   | Link to the e-commerce shop or store page.                                                                                                                                          |
+  | `{{money_symbol}}`                | Currency symbol used for the transaction (e.g., \$, €, £).                                                                                                                          |
+  | `{{order_coupon_code}}`           | Coupon code applied to the order, if any.                                                                                                                                           |
+  | `{{order_coupon_discount}}`       | Discount applied to the order from the coupon code.                                                                                                                                 |
+  | `{{order_date_account_timezone}}` | The date of the order in the user’s account timezone.                                                                                                                               |
+  | `{{order_date_timestamp}}`        | The exact timestamp of when the order was placed.                                                                                                                                   |
+  | `{{order_date_utc}}`              | The UTC time of when the order was placed.                                                                                                                                          |
+  | `{{order_discount}}`              | Total discount applied to the order.                                                                                                                                                |
+  | `{{order_email}}`                 | The email address associated with the order.                                                                                                                                        |
+  | `{{order_id}}`                    | Unique identifier for the order.                                                                                                                                                    |
+  | `{{order_name}}`                  | Full name of the person who placed the order.                                                                                                                                       |
+  | `{{order_payment_method}}`        | The payment method used for the order (e.g., credit card, PayPal).                                                                                                                  |
+  | `{{order_phone}}`                 | Phone number associated with the order.                                                                                                                                             |
+  | `{{order_products}}`              | List of products included in the order.                                                                                                                                             |
+  | `{{order_shipping_type}}`         | Type of shipping chosen for the order (e.g., standard, express).                                                                                                                    |
+  | `{{order_shipping_address1}}`     | First line of the shipping address for the order.                                                                                                                                   |
+  | `{{order_shipping_address2}}`     | Second line of the shipping address (e.g., apartment number).                                                                                                                       |
+  | `{{order_shipping_city}}`         | City of the shipping address for the order.                                                                                                                                         |
+  | `{{order_shipping_cost}}`         | Shipping cost for the order.                                                                                                                                                        |
+  | `{{order_shipping_state}}`        | State of the shipping address for the order.                                                                                                                                        |
+  | `{{order_shipping_zip}}`          | Zip code of the shipping address for the order.                                                                                                                                     |
+  | `{{order_shipping_country}}`      | Country of the shipping address for the order.                                                                                                                                      |
+  | `{{order_shipping}}`              | Full shipping information for the order.                                                                                                                                            |
+  | `{{order_status}}`                | Current status of the order (e.g., pending, shipped, delivered).                                                                                                                    |
+  | `{{order_subtotal}}`              | Subtotal of the order before taxes and shipping.                                                                                                                                    |
+  | `{{order_taxes}}`                 | Total taxes applied to the order.                                                                                                                                                   |
+  | `{{order_total}}`                 | Total amount of the order, including all fees, taxes, and shipping.                                                                                                                 |
+  | `{{product_name}}`                | Name of the product, used with triggers like “Product Ordered” or “Product added to cart.”                                                                                          |
+  | `{{product_quantity}}`            | Quantity of the product, used with triggers like “Product Ordered” or “Product added to cart.”                                                                                      |
+  | `{{product_id}}`                  | Unique identifier for the product, used with triggers like “Product Ordered”, “Product added to cart”, or “Product removed from cart.”                                              |
+  | `{{cart_products}}`               | A structured list of all products currently in the user's shopping cart, including names, quantities, and pricing details. Useful for building cart summaries or dynamic reminders. |
+</Accordion>
+
+<Accordion title="Pipelines fields">
+  | Field Variable            | Description                                                                                                                                                       |
+  | :------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | `{{last_opportunity_id}}` | The ID of the last opportunity (lead or deal) updated or created in the pipeline for the user. Essential for tracking CRM interactions and automating follow-ups. |
+</Accordion>
+
+### What to Do If a System Field Isn't Visible
+
+In the flow builder, you might not always see system fields in the suggestions list. If you need to use a system field for tasks like sending data to Google Sheets or other integrations, but it’s not showing up, you can still work around this.
+
+The solution is to **create a custom field** and use the **"Set Custom Field" action** to transfer the value from the system field to your custom field. This way, you can reference and use the system field data where needed, even if it's not directly available in the dropdown list.
+
+### Practical Use cases
+
+Incorporate system fields into your chatbot messages. Here is a practical example:
+
+#### Email Subscription Confirmation:
+
+You can use system fields to capture a user's email address and confirm their subscription:
+
+**Assistant:** "Thanks for chatting with us, `{{first_name}}`\! Would you like to subscribe to our newsletter? We already have your email address as `{{email}}`, is that correct?"
+
+This approach simplifies the subscription process by using the email address already associated with the user's messaging platform account.
+
+<Warning>
+  For dates, make sure they are entered in the correct format (e.g., MM/DD/YYYY) and fall within a sensible time range, like not being too far in the past or future. This ensures the date is usable and makes sense for your chatbot's needs.
+</Warning>
+
+## CUFs Empower You to Build Better Chatbots
+
+Custom User Fields (CUFs), system fields, and account fields in Chatbot Builder AI are essential tools that enable you to craft more intelligent and personalized chatbot experiences. By storing and utilizing user information effectively, you can enhance interactions, make conversations more engaging, and ensure that your chatbot delivers relevant, tailored responses every time.
+
+Whether it's personalizing greetings, recommending products, or integrating with tools like Google Sheets, these fields give you the power to build better, more responsive chatbots that connect with users on a deeper level.

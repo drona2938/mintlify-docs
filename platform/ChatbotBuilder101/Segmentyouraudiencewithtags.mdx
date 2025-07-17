@@ -1,0 +1,91 @@
+---
+title: "Segment Your Audience with Tags"
+description: "Learn how to use tags to segment and target your Messenger subscribers for effective marketing campaigns."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+**Tags** are a useful and important feature to segment and target your Messenger subscribers for your marketing campaigns. For example, you can use tags to group your audience for different campaigns, products or services, targeting, and much more.
+
+### Where Can I Create Tags?
+
+You can create tags in the **Flows** section.
+
+<Steps>
+  <Step>
+    You can also enable the **sync tags** to integrate the tags that you are assigning to your subscribers with the Facebook Page Manager Inbox.
+
+    ![Sync Tags option](https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000058599/segment-your-audience-with-tags-1.png)
+  </Step>
+</Steps>
+
+This is how the tags on ChatbotBuilder will synchronize and reflect on your Facebook Page Manager Inbox:
+
+![Tags in Facebook Page Manager Inbox](https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000058599/segment-your-audience-with-tags-2.png)
+
+<Warning>
+  **IMPORTANT:** You won't be able to sync tags until you have agreed to the **Page Contact Terms of Service**. Please visit the link below to review and agree:
+
+  <a href="https://business.facebook.com/latest/inbox/all/" target="_blank">
+  https://business.facebook.com/latest/inbox/all/
+
+  </a>
+</Warning>
+
+Now you know how to create a tag. Next, we will see how to add a tag to your subscribers to segment the audience.
+
+### Adding Tags to Subscribers
+
+Adding tags to subscribers can be done in two ways:
+
+1. **Manually**
+2. **Automatically**
+
+#### Add Tags Manually
+
+Tags that you created can be assigned to your subscribers manually, but note that it is a time-consuming process.
+
+<CardGroup cols={2}>
+  <Card title="Add Tag to Individual Subscriber">
+    To apply a tag to a particular subscriber, go to the “Contacts” tab by navigating through the main menu.
+
+    ![Contacts Tab](https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000058599/segment-your-audience-with-tags-3.png)
+
+    <br />
+
+    Now, select the subscriber by clicking their name on the list and add the tag in the given field as you need.
+
+    ![Add tag to subscriber](https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000058599/segment-your-audience-with-tags-4.png)
+  </Card>
+  <Card title="Add Tag to Multiple Subscribers">
+    You can also add tags to multiple subscribers manually by selecting “Contacts” (use the checkbox) and clicking the 'three horizontal lines'. Select “Add Tag” to add the tags to multiple subscribers manually.
+  </Card>
+</CardGroup>
+
+#### Add Tags Automatically in the Funnel
+
+Assigning tags for your Messenger subscribers can also be done automatically in the flow builder using Messenger chatbots.
+
+To do this:
+
+1. **Create a Tag first** and select the flow on which you want to add an automatic tagging feature to subscribers.
+2. You can use this automatic tagging feature in three places in the flow builder:
+
+<Tabs>
+  <Tab title="Using the Action Tab">
+    While creating a chat flow, you can use the action “Add Tag” at a certain point to tag your subscribers on the flow automatically.
+
+    <Steps>
+      <Step>
+        Click on \+ or double-click on the canvas \> action (to choose the action block).
+      </Step>
+      
+      <Step>
+        Click on the action block \> add content \> actions \> add tag.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Using Buttons">
+    Both buttons & quick reply buttons can be used to assign tags to subscribers. When the user clicks the button in the chat flow, the tag which is integrated with the button will automatically be assigned to that subscriber.
+  </Tab>
+</Tabs>

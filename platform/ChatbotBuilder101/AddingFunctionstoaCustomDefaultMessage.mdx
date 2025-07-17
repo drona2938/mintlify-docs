@@ -1,0 +1,61 @@
+---
+title: "Adding Functions to a Custom Default Message (When not using Default Agent - Formerly Auto-GPT)"
+description: "A step-by-step guide to adding functions to a custom default message to improve your AI model's functionality."
+---
+
+import { Card, CardGroup, Steps, Note, Info, Accordion } from '@mintlify/components';
+
+### Purpose
+The purpose of this guide is to provide a clear, step-by-step process for adding functions to a custom default message.
+
+### Procedure
+#### Inputs (what you need to get started)
+* Access to the platform where you've created the default message.
+* Knowledge of the functions you want to add.
+
+<Steps>
+    <Step>
+        Navigate to the flow section where your default message is located.
+        <img
+          src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000194811/adding-functions-1.png"
+          alt="Flow Section"
+        />
+    </Step>
+    <Step>
+        Find the default message you built, for example, "AI default message," and open it.
+    </Step>
+    <Step>
+        Identify the part of the flow where the AI is managed. This is typically indicated by the presence of OpenAI or a similar LLM tool.
+        <img
+          src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000194811/adding-functions-2.png"
+          alt="AI Management in Flow"
+        />
+    </Step>
+    <Step>
+        Review the existing functions. Anything in blue is already added. To add a new function, click on the uncolored function option. This is likely the new function you want to include.
+        <img
+          src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000194811/adding-functions-3.png"
+          alt="Adding a new function"
+        />
+    </Step>
+    <Step>
+        After adding the function, provide a prompt note to instruct the AI on when and how to trigger the function.
+        <img
+            src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000194811/adding-functions-4.png"
+            alt="Prompt note for the function"
+        />
+    </Step>
+</Steps>
+
+#### Outputs (what you get when you're done)
+* Updated default message with added functions.
+* Improved functionality for your AI model.
+
+### FAQs
+<Accordion title="How do I know which function to add?">
+    A: Identify the specific actions or triggers you want your AI to perform, then select the corresponding function to add. All functions that are in a blue color are already active. All functions in gray would still need to be added if you want them to be active.
+</Accordion>
+
+<Accordion title="What if my function does not work properly?">
+    A: Nearly 100% of the time, this comes down to your prompt. You need to be very clear in your prompt what you want the AI to do, what to collect, and when to trigger that specific function.
+</Accordion>

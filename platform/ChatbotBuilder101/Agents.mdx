@@ -1,0 +1,76 @@
+---
+title: "Agents (formerly Prompt Templates)"
+description: "Learn how to use Agents to create adaptable, context-rich conversations and enhance your chatbot’s capabilities with custom instructions for LLM prompts."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+### Overview
+
+Agents are custom instructions for LLM prompts that enhance your chatbot’s capabilities, building on OpenAI’s latest **SWARM** framework.
+
+By using Agents, you can create adaptable and context-rich conversations within Default Agent (Formerly Auto-GPT) or Flow Builder. Each Agent allows you to set precise instructions that guide the LLM to ensure accurate and on-brand responses.
+
+<img
+  src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000194652/agents-1.png"
+  alt="Agents Overview"
+/>
+
+### Setting Up Agents
+
+<Steps>
+    <Step>
+        **Navigate to Integrations**
+        
+        Go to **Settings > Integrations > LLM** and select the language model of your choice.
+    </Step>
+    <Step>
+        **View and Manage Agents**
+        
+        Here, you’ll find a list of your existing Agents. You can add a new Agent or edit an existing one. Each Agent has a customizable Prompt field where you can input specific instructions that will guide the LLM’s behavior.
+    </Step>
+    <Step>
+        **Define Custom Instructions**
+        
+        Inside each Agent setup, you’ll find a text field for **Prompt** (custom instructions). Use this field to define the guidelines the LLM should follow for this specific Agent, allowing for a high degree of customization.
+    </Step>
+    <Step>
+        **Unlimited User and Bot Messages**
+        
+        You can set up a sequence of user and bot messages, ensuring these accompany every API call. This feature lets you create a structured context that the Agent uses consistently, ensuring accuracy and alignment with user interactions.
+    </Step>
+    <Step>
+        **Using Functions with Agents**
+        
+        You can integrate Functions within your Agent. Functions provide added flexibility, allowing Agents to retrieve data, execute tasks, or calculate values within the conversation. Functions can be enabled in both Default Agent (Formerly Auto-GPT) and Flow Builder.
+    </Step>
+</Steps>
+
+### How to Use an Agent by Default & in the Flow Builder
+
+* **Default Agent (Formerly Auto-GPT):** Activate an Agent directly within Default Agent (Formerly Auto-GPT), giving it the ability to dynamically respond and interact with the prompts you set.
+* **Flow builder Action Block:** In Flow builder, add an Agent to any **Action Block** and customize its interaction based on the chosen LLM.
+
+### Agent Key Benefits
+
+* **Enhanced Contextual Accuracy:** Agents maintain specific prompts and structured messages that streamline the accuracy of responses.
+* **Seamless Integration with Functions:** Use Agents alongside Functions for a robust and interactive conversation experience.
+* **Flexibility Across LLMs:** Customize your Agents with any LLM of choice to ensure they meet the demands of your application.
+
+Building Agents in Chatbot Builder AI unlocks advanced capabilities, enabling precise, goal-focused conversations within your chatbot workflows.
+
+<img
+  src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000194652/agents-2.png"
+  alt="Agent Benefits"
+/>
+
+### Bonus: AI Assistant vs. AI Agent
+
+<CardGroup>
+    <Card title="AI Assistant">
+        An AI Assistant primarily answers questions and uses your uploaded files to provide information.
+    </Card>
+    <Card title="AI Agent">
+        An AI Agent is action-oriented, executing specific tasks or workflows based on custom prompts and instructions, making it ideal for more targeted, goal-driven interactions.
+    </Card>
+</CardGroup>

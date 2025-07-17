@@ -1,0 +1,65 @@
+---
+title: "Get Data from JSON"
+description: "Learn how to integrate external JSON data into your chatbot flows to provide dynamic and real-time information to your users."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+This feature allows users to integrate external JSON data into their chatbot flows. The "Get Data from JSON" action lets the chatbot retrieve data from a specified JSON source and utilize that data within the chatbot's conversation flow.
+
+### Real-World Use Case: Real-Time Product Availability
+
+An e-commerce business can use this feature to provide real-time product availability and details to their customers.
+
+For instance, an online retail store's chatbot could pull product data from a JSON API provided by the store's inventory system. When a user inquires about a specific product, the chatbot can dynamically fetch and display the current stock status, price, and other details using the "Get Data from JSON" action.
+
+This ensures that the information provided is accurate and up-to-date.
+
+### Steps to Implement:
+
+<Steps>
+    <Step>
+        **Select the Action**
+        
+        In the chatbot builder, navigate to the action list and select "Get Data from JSON".
+        <img
+          src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000184166/get-data-from-json-1.png"
+          alt="Select Get Data from JSON action"
+        />
+    </Step>
+    <Step>
+        **Configure the JSON Source**
+        
+        Specify the JSON data source (e.g., a URL to the e-commerce API endpoint) and define the JSON path to extract the required product information.
+         <img
+          src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000184166/get-data-from-json-2.png"
+          alt="Configure JSON Source"
+        />
+    </Step>
+    <Step>
+        **Map the Data**
+        
+        Map the extracted JSON data to custom fields in the chatbot, which can then be used in messages or further logic.
+        <img
+          src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000184166/get-data-from-json-3.png"
+          alt="Map JSON Data to Custom Fields"
+        />
+    </Step>
+    <Step>
+        **Handle Success and Failure**
+        
+        Define the chatbot's response for successful data retrieval and any fallback actions in case of failure.
+        <img
+          src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000184166/get-data-from-json-4.png"
+          alt="Handle Success and Failure"
+        />
+    </Step>
+</Steps>
+
+### Implementation Example:
+
+1.  **User Inquiry:** A customer asks the chatbot, "Is the XYZ smartwatch available?"
+2.  **Data Retrieval:** The chatbot uses the "Get Data from JSON" action to fetch the latest data from the store's inventory system.
+3.  **Response:** The chatbot responds, "The XYZ smartwatch is currently in stock for $199. Would you like to add it to your cart?"
+
+This feature allows e-commerce chatbots to be more dynamic and responsive by leveraging external data sources, enhancing user interaction with timely and relevant product information.

@@ -1,0 +1,71 @@
+---
+title: "Notify Admins"
+description: "Learn how to alert administrators about conversations that need their attention, and how to set up notifications through various channels."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+Alerting admins means sending a message to the chosen administrators, letting them know there's a conversation that needs their attention. This can happen after a certain time, when there's an order update, a purchase is confirmed, or other specific triggers in your prompts.
+
+### Setting Up Admin Notifications
+
+<Steps>
+    <Step>Go to **Menu > Settings > Admins**.</Step>
+    <Step>Click on **Manage**, then click on the three-dotted line next to the admin you want to configure and select **Edit**.</Step>
+    <Step>
+        Go to the **Notifications** tab.
+        <img
+          src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000058605/notify-admins-1.png"
+          alt="Admin Notifications Settings"
+        />
+    </Step>
+    <Step>
+        Set the type of notifications you want and the Channels you wish to receive notifications from.
+        <img
+          src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000058605/notify-admins-2.png"
+          alt="Notification Channels"
+        />
+    </Step>
+</Steps>
+
+### Including Notifications in Your Flow
+
+You can also include this feature in your flow by following these steps:
+
+<Steps>
+    <Step>Go to **Menu > Flows** and open a flow.</Step>
+    <Step>
+        Inside the flow, search for the **Notify Admins** tab among many other tabs.
+        <img
+          src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000058605/notify-admins-3.png"
+          alt="Notify Admins tab in Flow Builder"
+        />
+    </Step>
+    <Step>Fill in the flow name, select/deselect the admins who are going to receive a notification, and place the description of what this notification is about.</Step>
+    <Step>Merge this into your flow.</Step>
+</Steps>
+
+### Notifying Admins via SMS
+
+Additionally, you can configure these notifications to also be sent as text messages (SMS) to the designated administrators' phone numbers, thus ensuring an even more direct and immediate notification.
+
+To define the steps for sending SMS to administrators:
+
+<Steps>
+    <Step>Go to **Flows > Add Content > Actions > SMS > Send SMS to Admins**.</Step>
+    <Step>
+        <img
+          src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000058605/notify-admins-4.png"
+          alt="Send SMS to Admins action"
+        />
+    </Step>
+    <Step>
+        Then, click on the **"Send SMS"** option, enter the administrator's phone number, and personalize the notification message.
+        <img
+          src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000058605/notify-admins-5.png"
+          alt="Configure SMS notification"
+        />
+    </Step>
+</Steps>
+
+<Info>Keep your team informed instantly.</Info>

@@ -1,0 +1,87 @@
+---
+title: 'Keywords (formerly "Automated Responses")'
+description: "Learn how to train your bot to understand and automatically reply to customer messages using short keywords and business FAQs."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+ChatBot Builder allows you to create bots capable of understanding any message related to your business, even if your customers type it wrong. When you train your bot, never worry about lowercase and uppercase since your bot will handle it for you.
+
+There are two ways to train your bot to auto-reply to customers’ messages:
+
+<CardGroup>
+    <Card title="1. Short Keywords">
+       The bot will only reply if the user message contains a short keyword. Short keywords normally have no direct relation with your business and they are very short. Greetings and Thank You messages like “good morning”, “good evening”, “hello”, “hi”, “How are you”, and “thank you” are good examples.
+    </Card>
+    <Card title="2. Business Frequently Asked Questions (FAQ)">
+        FAQs are questions related to your business. The bot will only answer a FAQ if the user message is at least 98% similar to the question.
+    </Card>
+</CardGroup>
+
+### Short Keywords
+
+Never add long sentences as Short Keywords. We advise you to combine a maximum of 2 words as Short Keywords; otherwise, use **Business Frequently Asked Questions**.
+
+To add a **Short Keyword**, go to **Keywords** and click the **“Add”** button.
+
+If you specify “thank you” as a User Expression, your bot will reply to “thank you man”, "any text thank you any text”, “thank youu”, and so on.
+
+### Business Frequently Asked Questions (FAQ)
+
+If the customer’s message includes **Business Keywords**, the customer will be presented with a list of all questions that contain those keywords. After that, the customer chooses the question they want to ask and gets the answer.
+
+To add a **FAQ**, go to **Keywords > click the “Add” button**.
+
+<img
+  src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000166088/keywords-1.png"
+  alt="Add FAQ"
+/>
+
+<Note>
+    Whenever you add a FAQ, make sure the FAQ contains at least one **Business Keyword**. Otherwise, identify 1 or more important words contained in the question (FAQ) and add them to the **Business Keyword** list.
+</Note>
+
+### Business Keywords
+
+**Business Keywords** are important words related to your business. For example, for **Paypal**, Business Keywords could be “money”, “refund”, “payment”, “account”, “transaction”, “card”, “send”, “receive”, “business”, “personal”, “fraud”, etc.
+
+To add **Business Keywords**, go to **Keywords > Business Keywords**.
+
+<img
+  src="https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000166088/keywords-2.png"
+  alt="Add Business Keywords"
+/>
+
+For example:
+
+* **What are your opening hours?** (Business Keyword: `hours`)
+* **How much does this product cost?** (Business Keywords: `product`, `cost`)
+* **How to send money?** (Business Keywords: `send`, `money`)
+* **How to use the Google Sheets integration?** (keywords: `sheets`, `integration`)
+
+### Practical Use Case of Frequently Asked Questions
+
+You have certainly already searched on Google and despite writing something wrong, Google showed the correct result. When you use FAQ and Business keywords, your bot will be able to understand any question related to your business, regardless of how users ask the question or if they typed it with an error.
+
+Imagine a bot, and different users ask questions like:
+
+* How much did Facebook earn in 2019?
+* How much did Facebok earn in 2019?
+* How much did FB earn in 2019?
+* How much did Zuckerberg’s company earn in 2019?
+
+Thanks to the FAQ and Business Keywords, you don’t need to enter several variations of the same question. In the above scenario, you would only have to choose the first version of the question and teach your bot that **Facebook**, **Facebok**, **earn**, and **Zuckerberg** have the same meaning.
+
+### Synonyms and Variations
+
+Keywords make your **Frequently Asked Questions** easily discoverable by your users. For example, if you have the question on your bot:
+
+“Who is the president of Facebook?”
+
+If the above question does not contain a keyword, the user will have to type that question exactly as you registered it. But if you add **Facebook** as a keyword, and the user asks “president of Facebook?”, “Who is the president of Facebook”, or “CEO of Facebook”, the user will discover this question and get the answer.
+
+You can even make your bot smarter by adding variations (synonyms) of the word **“Facebook”** like “fb”, “Facebok”, “Facibook”, etc. If the user asks “Who is the president of Facebok?” or “Who is president of FB”, they can also discover the question above and get the answer.
+
+**Business Keywords** also work in eCommerce to help your customers find your products more easily inside your chatbot. Product names are searchable by default, but you can register product names and synonyms or wrong spellings to help your customer discover products faster. For example, a restaurant bot can register **pizza** as a Business Keyword and add **piza** as a variation. That way if one client types “piza”, the bot will understand it as **pizza** and show them a **pizza**.
+
+As you can see, variations are normally synonyms or wrong spellings of a Business Keyword. But sometimes you need to use related words to help your customers find the questions. For example, you have a training phrase “What messaging platform do you support?“. But normally people ask “what about WhatsApp …”,, “… Instagram ….”. So you register **messaging** as a keyword and you add WhatsApp, Instagram, and Telegram as variations. When the user sends any of these words, the bot will understand it as **messaging** and show the user this question.
