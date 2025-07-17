@@ -28,6 +28,23 @@
             ]
           },
           {
+            "group": "Platform",
+            "pages": [
+              {
+                "group": "Chatbot Builder 101",
+                "pages": [
+                  "channels/webchat/best-practices-for-formatting-text-in-webchat",
+                  "channels/webchat/chatbot-builder-ai-webchat-installer-wordpress-plugin",
+                  "channels/webchat/visual-webchat-editor",
+                  "channels/webchat/customizing-webchat-2-0",
+                  "channels/webchat/dynamic-url-detection-with-webchat",
+                  "channels/webchat/the-complete-guide-to-custom-webchat-ai-powered-business-conversations-from-chatbot-builder-ai"
+                ]
+              },
+              "channels/email/seamless-email-integration-smtp"
+            ]
+          },
+          {
             "group": "Channels",
             "pages": [
               {
