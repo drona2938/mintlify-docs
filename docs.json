@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Chatbot Builder AI | Documentation",  
+  "name": "Chatbot Builder AI | Documentation",
   "variables": {
     "myName": "John Doe",
     "myObject": {
@@ -33,12 +33,25 @@
               {
                 "group": "Chatbot Builder 101",
                 "pages": [
-                  "channels/webchat/best-practices-for-formatting-text-in-webchat",
-                  "channels/webchat/chatbot-builder-ai-webchat-installer-wordpress-plugin",
-                  "channels/webchat/visual-webchat-editor",
-                  "channels/webchat/customizing-webchat-2-0",
-                  "channels/webchat/dynamic-url-detection-with-webchat",
-                  "channels/webchat/the-complete-guide-to-custom-webchat-ai-powered-business-conversations-from-chatbot-builder-ai"
+                  "platform/ChatbotBuilder101/SignUpandLogin",
+                  "platform/ChatbotBuilder101/CBBsStructure",
+                  "platform/ChatbotBuilder101/SupportedChannels",
+                  "platform/ChatbotBuilder101/SupportedIntegrations",
+                  "platform/ChatbotBuilder101/CreateyourFirstFlow",
+                  "platform/ChatbotBuilder101/CustomFieldsCUFsSystemfieldsandUserinput",
+                  "platform/ChatbotBuilder101/Keywords",
+                  "platform/ChatbotBuilder101/Segmentyouraudiencewithtags",
+                  "platform/ChatbotBuilder101/CreateNewContacts",
+                  "platform/ChatbotBuilder101/InboxTab",
+                  "platform/ChatbotBuilder101/NotifyAdmins",
+                  "platform/ChatbotBuilder101/EnableDisableLivechat",
+                  "platform/ChatbotBuilder101/GuidetoproperlysettingupHandoverProtocol",
+                  "platform/ChatbotBuilder101/GetDatafromJSON",
+                  "platform/ChatbotBuilder101/Agents",
+                  "platform/ChatbotBuilder101/AddingFunctionstoaCustomDefaultMessage",
+                  "platform/ChatbotBuilder101/HowtoCreateaWelcomeMessageforYourAIAgentorAIAssistantChatbot",
+                  "platform/ChatbotBuilder101/HowtoCreateDefaultAgentsandDefaultFlows",
+                  "platform/ChatbotBuilder101/ManagingPipelines"
                 ]
               },
               "channels/email/seamless-email-integration-smtp"
@@ -200,6 +213,8 @@
       "instagram": "https://www.instagram.com/officialchatbotbuilder/",
       "facebook": "https://www.facebook.com/groups/1500226967478034"
     },
-  "openapi": ["api-reference/openapi.json"]
+    "openapi": [
+      "api-reference/openapi.json"
+    ]
   }
 }
