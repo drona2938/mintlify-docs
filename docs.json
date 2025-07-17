@@ -54,7 +54,7 @@
                   "platform/ChatbotBuilder101/ManagingPipelines"
                 ]
               },
-              "channels/email/seamless-email-integration-smtp"
+              "platform/General/ExternalRequests"
             ]
           },
           {
