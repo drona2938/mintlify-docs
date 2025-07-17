@@ -1,0 +1,527 @@
+---
+title: "External Requests"
+description: "Learn how to use external requests to enable your chatbot to communicate with other services on the internet, retrieve information, and perform actions."
+---
+
+### Understanding External Requests
+
+External requests are your chatbot's means of communicating with other software or services on the internet. It enables your chatbot to retrieve information from these services or share information with them seamlessly. Essentially, it's your chatbot's way of asking questions or exchanging information with the broader digital world.
+
+The External Request feature enables interaction with external services, APIs (Application Programming Interfaces), or websites to retrieve data or perform actions. It allows you to fetch data from any other system and present it to the user within your Chatbot.
+
+### Types of External Requests
+
+There are two main types of external requests: **HTTP GET** and **HTTP POST**, each serving distinct purposes. Let's delve into these types and understand when to employ each:
+
+<CardGroup cols={2}>
+  <Card title="HTTP GET">
+    **Purpose:** The HTTP GET request is used to retrieve data from a specified resource without altering or modifying it. It is primarily used for fetching information.
+
+    <br />
+
+    **Use Cases:**
+
+    - Retrieving data from a public API, like weather information or news headlines.
+    - Fetching a user's profile by passing their username in the URL.
+    - Accessing web pages or resources in a web browser by clicking links.
+  </Card>
+  <Card title="HTTP POST">
+    **Purpose:** The HTTP POST request is used to submit data to be processed to a specified resource. It is primarily used for sending data and creating or updating resources on the server.
+
+    <br />
+
+    **Use Cases:**
+
+    - Submitting a form on a website to create a new user account.
+    - Uploading a file to a server.
+    - Sending data to an API to update a user's preferences.
+  </Card>
+</CardGroup>
+
+### Setting up the External Request
+
+On the **Flow Builder**, add **Actions \> External API Request**.
+
+![Add External API Request](https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000147733/external-requests-1.png)
+
+### How to save data to a custom field?
+
+You can use Response Mapping to save data from an API to a Custom Field If the API returns data in JSON format. Many times you may want to get data from an API and show the data to the user.
+
+For example, we will use a currency exchange API to show how you could save the data returned from an API to a custom field. Below is the response from the API.
+
+```json
+{
+    "success": true,
+    "timestamp": 1519296206,
+    "base": "EUR",
+    "date": "2021-03-17",
+    "rates": {
+        "AUD": 1.566015,
+        "CAD": 1.560132,
+        "CHF": 1.154727,
+        "CNY": 7.827874,
+        "GBP": 0.882047,
+        "JPY": 132.360679,
+        "USD": 1.23396
+    }
+}
+```
+
+If you want to display the value in US dollars (USD), you'll need to use exchange rates to convert from another currency to USD.
+
+To do this, you can test your request, copy the response you receive, and use a service that helps you extract the right data using **JSONPath** (a way to navigate and extract data from JSON format).
+
+This service can also verify if your **JSONPath** is correct. You don't need to begin your **JSONPath** expression with "x" when using this service. It's a tool to make sure you're getting the right information from the data you receive.
+
+There are two ways to show the data you get from an API to the user in your chatbot:
+
+1. **Custom Field and Response Mapping:** You can store the data from the API response in a custom field, acting as a storage space. Once stored, you can later use this custom field in your chatbot's conversation flow to display the information to the user.
+2. **Dynamic Contents:** Alternatively, the API can be configured to provide messages or content directly suitable for display within your chatbot. This implies that the API response includes text or information ready for presentation to the user without additional processing.
+
+You can select the method that best aligns with your chatbot's requirements and the API's structure.
+
+### How to get the HTTP status code or the whole response body?
+
+In response mapping, you can use the following elements to work with the API response:
+
+1. `http_status_code`: This element allows you to capture the HTTP status code from the API response. It tells you whether the API request was successful or encountered an error. You can save this status code into a custom field for further processing.
+2. `http_response_body`: This element allows you to capture the entire response body from the API. It contains the data or content sent back by the API, which you can also save into a custom field if you want to use it later in your chatbot's conversation.
+3. `http_download_EXTENSION`: If you need to download a specific type of file, you can use this element. For example, if you want to download an audio file in MP3 format, you would use `http_download_mp3`.
+
+### Dynamic Content
+
+Dynamic content in your chatbot empowers you to generate and display content directly from your server, ensuring compatibility across all communication channels. The system automatically adapts the content to the appropriate format for the user's channel in real-time.
+
+However, a crucial limitation exists: You can only employ the Dynamic Content feature if you own and manage the API providing the data. If you lack control over the API, you can still work with its data by saving it into a Custom Field using Response Mapping. Subsequently, you can display that data to the user in your chatbot's flow using the Custom Field.
+
+The response format for Dynamic Content typically looks like this:
+
+```json
+{
+    "messages": [],
+    "actions": []
+}
+```
+
+Messages contain messages sent to contacts. You can send any message supported by Messenger Bots.
+
+For additional capabilities, refer to Facebook documentation. **Chatbot Builder** includes the 'X-USER-ID' header in every request, and using quick_replies is optional.
+
+You can send a text message as follows:
+
+```json
+{
+    "messages": [
+        {
+            "message": {
+                "text": "Hello world",
+                "quick_replies": []
+            }
+        }
+    ]
+}
+```
+
+#### Sending more than a single message
+
+```json
+{
+    "messages": [
+        {
+            "message": {
+                "text": "Hello world"
+            }
+        },
+        {
+            "message": {
+                "text": "This is the second Message",
+                "quick_replies": []
+            }
+        }
+    ]
+}
+```
+
+You can send a text message with buttons, and you're allowed to have up to 3 buttons. Each button's name can be up to 20 letters long. If you want something to happen when someone clicks a button, you use a special code called a "Flow ID" as the button's trigger.
+
+```json
+{
+    "messages": [
+        {
+            "message": {
+                "attachment": {
+                    "payload": {
+                        "buttons": [
+                            {
+                                "title": "Open Website",
+                                "type": "web_url",
+                                "url": "your_URL"
+                            },
+                            {
+                                "title": "Send FLow",
+                                "payload": "FLOW_OR_STEP_ID",
+                                "type": "postback"
+                            },
+                            {
+                                "title": "Call Number",
+                                "type": "phone_number",
+                                "payload": "<your_phone_number_with_county_code>"
+                            }
+                        ],
+                        "template_type": "button",
+                        "text": "Hello world"
+                    },
+                    "type": "template"
+                },
+                "quick_replies": []
+            }
+        }
+    ]
+}
+```
+
+**Payload:**
+
+You can use any flow or step ID as a payload. For example, if you want to take someone to a specific conversation when they click a button, you can use the conversation's ID as the payload. This article also explains how to use actions as payloads.
+
+When sending a message, you can add quick replies to it. Quick replies work with different types of messages like text, files, and galleries. Facebook lets you include up to 11 quick replies in a message. The payload you use for quick replies is similar to what you use for buttons.
+
+In the case that you have more than 11 options, kindly use the “Multiple Choice” option from the Get user Input action in a message block.
+
+```json
+{
+    "messages": [
+        {
+            "message": {
+                "text": "Hello world",
+                "quick_replies": [
+                    {
+                        "content_type": "text",
+                        "title": "Quick Reply 1",
+                        "payload": "FLOW_OR_STEP_ID"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "Any Text Here",
+                        "payload": "FLOW_OR_STEP_ID"
+                    }
+                ]
+            }
+        }
+    ]
+}
+```
+
+The structure for payloads on quick replies and buttons is the same.
+
+To send an image, video, audio, or file, you can use the following structure. Just change the "media_type" to specify whether it's an image, video, audio, or file. The "URL" should be the link to the specific image, audio, video, or file you want to send.
+
+```json
+{
+    "messages": [
+        {
+            "message": {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "<ASSET_URL>"
+                    }
+                },
+                "quick_replies": []
+            }
+        }
+    ]
+}
+```
+
+You can send a single card, and on that card, both the title and subtitle can have up to 80 characters each.
+
+```json
+{
+    "messages": [
+        {
+            "message": {
+                "attachment": {
+                    "payload": {
+                        "elements": [
+                            {
+                                "title": "Card Title",
+                                "subtitle": "Card Subtitle",
+                                "image_url": "image_url"
+                            }
+                        ],
+                        "template_type": "generic"
+                    },
+                    "type": "template"
+                },
+                "quick_replies": []
+            }
+        }
+    ]
+}
+```
+
+You can send a single card, and that card can have up to 3 buttons on it.
+
+```json
+{
+    "messages": [
+        {
+            "message": {
+                "attachment": {
+                    "payload": {
+                        "elements": [
+                            {
+                                "title": "Card Title",
+                                "subtitle": "Card Subtitle",
+                                "image_url": "image_url",
+                                "buttons": [
+                                    {
+                                        "title": "Button Label",
+                                        "type": "web_url",
+                                        "url": "your_URL"
+                                    },
+                                    {
+                                        "title": "Button Label",
+                                        "payload": "FLOW_OR_STEP_ID",
+                                        "type": "postback"
+                                    },
+                                    {
+                                        "title": "Button Label",
+                                        "type": "phone_number",
+                                        "payload": "+your_phone_number"
+                                    }
+                                ]
+                            }
+                        ],
+                        "template_type": "generic"
+                    },
+                    "type": "template"
+                },
+                "quick_replies": []
+            }
+        }
+    ]
+}
+```
+
+#### Sending a Gallery
+
+Sending a gallery is like sending a collection of cards. You can include up to 10 cards in a gallery. For each card in the gallery, you can also add a button.
+
+```json
+{
+    "messages": [
+        {
+            "message": {
+                "attachment": {
+                    "payload": {
+                        "elements": [
+                            {
+                                "title": "Card Title 1",
+                                "subtitle": "Card Subtitle 1",
+                                "image_url": "image_url 1",
+                                "buttons": []
+                            },
+                            {
+                                "title": "Card Title 2",
+                                "subtitle": "Card Subtitle 2",
+                                "image_url": "image_url 2",
+                                "buttons": []
+                            }
+                        ],
+                        "template_type": "generic"
+                    },
+                    "type": "template"
+                },
+                "quick_replies": []
+            }
+        }
+    ]
+}
+```
+
+#### Sending messages supported only by WhatsApp
+
+WhatsApp supports various message types that aren't compatible with Messenger bots, including List, Contacts, Locations, or Catalogs Messages. However, with **Chatbot Builder**, you can send any message type supported by WhatsApp. You just need to use the message structure outlined in WhatsApp's documentation, and **Chatbot Builder** will handle the "To" parameter automatically for you.
+
+```json
+{
+    "messages": [
+        {
+            "messaging_product": "WhatsApp",
+            "recipient_type": "individual",
+            "to": null,
+            "type": "interactive",
+            "interactive": {
+                "type": "button",
+                "body": {
+                    "text": "ANY TEXT"
+                },
+                "action": {
+                    "buttons": [
+                        {
+                            "type": "reply",
+                            "reply": {
+                                "id": "FLOW_OR_STEP_ID",
+                                "title": "BUTTON_TITLE_1"
+                            }
+                        },
+                        {
+                            "type": "reply",
+                            "reply": {
+                                "id": "FLOW_OR_STEP_ID",
+                                "title": "BUTTON_TITLE_2"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
+
+#### Actions
+
+The "Actions" field is optional, meaning you don't have to include it. Actions allow you to do things like adding or removing tags, setting or unsetting custom fields, and sending a flow.
+
+**Add Tags**
+
+```json
+{
+    "messages": [],
+    "actions": [
+        {
+            "action": "add_tag",
+            "tag_name": "..."
+        }
+    ]
+}
+```
+
+**Remove Tag**
+
+```json
+{
+    "messages": [],
+    "actions": [
+        {
+            "action": "remove_tag",
+            "tag_name": "..."
+        }
+    ]
+}
+```
+
+**Set Custom Field**
+
+This action not only lets you use any custom field name, but it also allows you to modify system fields such as phone number, email, full name, first name, and last name.
+
+```json
+{
+    "messages": [],
+    "actions": [
+        {
+            "action": "set_field_value",
+            "field_name": "...",
+            "value": ""
+        }
+    ]
+}
+```
+
+**Unset Custom Field**
+
+```json
+{
+    "messages": [],
+    "actions": [
+        {
+            "action": "unset_field_value",
+            "field_name": "..."
+        }
+    ]
+}
+```
+
+**Send Flow**
+
+To find the flow ID, go to the list of flows, click the three dots, and select "Get Link." The flow ID is the numeric value in the link. It's always a number. You can combine as many actions as you need.
+
+```json
+{
+    "messages": [],
+    "actions": [
+        {
+            "action": "send_flow",
+            "flow_id": "..."
+        }
+    ]
+}
+```
+
+**Combine Multiple actions**
+
+You have the flexibility to combine multiple actions in a single request, which enables you to execute several actions simultaneously. For instance, you can set a custom field and trigger a flow with just one request.
+
+```json
+{
+    "messages": [],
+    "actions": [
+        {
+            "action": "set_field_value",
+            "field_name": "...",
+            "value": ""
+        },
+        {
+            "action": "send_flow",
+            "flow_id": "..."
+        }
+    ]
+}
+```
+
+**Use actions as a payload of buttons and quick_replies:**
+
+To use an action as a payload on buttons, you can follow this format. However, keep in mind that a payload is typically a string. So, you'll need to convert your actions object to a JSON string. If you're using PHP, you can use the `json_encode` function to transform your actions object into a string representation.
+
+```json
+{
+    "actions": [
+        {
+            "action": "send_flow",
+            "flow_id": "..."
+        }
+    ]
+}
+```
+
+Below, the action above is used as a payload of the button:
+
+```json
+{
+    "messages": [
+        {
+            "message": {
+                "attachment": {
+                    "payload": {
+                        "buttons": [
+                            {
+                                "title": "Click Here",
+                                "payload": "{\"actions\":[{\"action\":\"send_flow\",\"flow_id\":\"FLOW_OR_STEP_ID\" } ]}",
+                                "type": "postback"
+                            }
+                        ],
+                        "template_type": "button",
+                        "text": "Hello world"
+                    },
+                    "type": "template"
+                },
+                "quick_replies": []
+            }
+        }
+    ]
+}
+```
