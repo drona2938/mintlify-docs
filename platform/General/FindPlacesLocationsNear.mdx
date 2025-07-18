@@ -1,0 +1,58 @@
+---
+title: "Allow your Customer to Find Places / Locations Near to Them"
+description: "Learn how to enable your bot to assist customers in finding your business locations near them."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+Businesses with multiple locations can enable their bot to assist customers in finding a location near them. User shares their location inside the bot, and the bot finds the location closest to the user.
+
+### Supported Channels
+
+Not all channels allow users to share their location with the bot. Currently, this feature is supported by **WhatsApp, Telegram, and Messenger (Android)**.
+
+### To Register your business locations inside the bot;
+
+You need to register all your business locations inside the bot to allow your bot to help your customers find locations near them.
+
+<Steps>
+  <Step>
+    Navigate to **MENU \> Marketing \> Places Near Me**
+
+    ![Places Near Me](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150054371955/original/HKOK_M0fpXeN1kkVO23gXAXNyNQu98b2NA.png?1710945112)
+  </Step>
+  <Step>
+    Click **Add**
+
+    ![Places Near Me](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150054371555/original/7PvCPR6VbVpHBv776wGvId9XAhT8EGehaw.png?1710945013)
+  </Step>
+  <Step>
+    As seen in the image above, you must know the **Latitude** and **Longitude** of your business location. You can find both on **Google Maps**. To find your location on Google Maps, click on your location, and you will see the **Latitude** and **Longitude** of your location.
+
+    ![Latitude and Longitude on Google Maps](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036861230/original/UKZwEIx-wt6Wu8JF25ySetdMX4Qkzt7OGw.png?1699999269)
+  </Step>
+</Steps>
+
+### Setup the Flow
+
+You need to use the **Get User Data** to ask for the user's **Location**. You can save the user location in any custom field.
+
+![Get User Location in Flow](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036861803/original/9HDT9c5qjRtOWwqiXkpBkk2Fm4NUwlXReA.png?1699999549)
+
+After the user shares the location, use **Action \> More Options \> Find locations near me**
+
+![Find locations near me action](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036861892/original/O7Ngk_kcrrl-JwVI7wBUSSaPxY3rqCeX4A.png?1699999591)
+
+### Find categories of locations (Advanced use case)
+
+It is possible to add many types of locations to a single bot and allow your contacts to find a specific category of location near them. For instance, you can add restaurants, Conference Centres, and ATMs to a single bot and allow your contacts to select what type of location they are looking for. For such a case, you should create a category and associate each location with a category.
+
+Click here to create a category.
+
+![Places Near Me](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150037000611/original/9P-_jgVH-Fqs07KR_eww2vcEEcQpRdmkbQ.png?1700077429)
+
+After you create a category, you will see more options when you are creating a location.
+
+![Places Near Me](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150037000944/original/vDPmlz0KFliiCDeVnWaEK6Pv6nYyYE-84w.png?1700077572)
+
+On the flow builder, if you click the action “Find places near me”, you will see the option to create a category.

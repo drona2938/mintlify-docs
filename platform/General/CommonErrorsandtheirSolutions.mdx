@@ -1,0 +1,232 @@
+---
+title: "Common Errors and their Solutions"
+description: "A list of commonly encountered issues by channel along with their respective solutions, empowering you to address and rectify your errors immediately."
+---
+
+import { Card, CardGroup, Steps, Note, Info, Accordion } from '@mintlify/components';
+
+Here, we provide a list of commonly encountered issues by channel along with their respective solutions, empowering you to address and rectify your errors immediately.
+
+### MESSENGER / INSTAGRAM CHANNEL
+
+<Accordion title="Messenger/IG(#100) Message cannot be empty, must provide valid attachment or text – code: 100">
+  This error happens when you are trying to send an empty message block within your flow.
+
+  ![Empty message block](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036221961/original/fujTPj5tSXr8Z_72ST9zoWYCZX-3SuVVQg.png?1699536913)
+
+  The message block cannot be empty.
+
+  ![Empty message block](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036222187/original/fxXAgmWk3-hvj5lb819Sooti4RO4cSMuew.png?1699536995)
+
+  If the custom field `{{Response}}` has no value, the error will be generated. Make sure the custom field has a value.
+</Accordion>
+
+<Accordion title="Messenger/IG(#10) This message is sent outside of the allowed window. – code: 10">
+  You get this error when you try sending a message to a contact outside the 24hrs window. The contact needs to interact with your bot.
+
+  <br />
+
+  You can also get this error when you try to preview a flow when you are outside the 24hrs window. Interact with your bot and try again.
+</Accordion>
+
+<Accordion title="Messenger/IGPlease go to Settings > Channels and reconnect your Messenger/Instagram bot">
+  You basically need to go to **Settings \> Channel \> Reconnect** your Messenger or Instagram bot (whichever bot is not responding).
+</Accordion>
+
+<Accordion title="Messenger/IG(#10) Message failed to send because another app is controlling this thread now. – code: 10">
+  - Make sure our App (ChatbotBuilder) is the primary receiver on your Facebook page (Handover Protocol Settings)
+  - Disable live chat for the user on both ChatbotBuilder Inbox and Facebook Page inbox (move the conversation to the Done folder).
+</Accordion>
+
+<Accordion title="Messenger/IG(#100) name_placeholder[buttons][0][url] should represent a valid URL – code: 100">
+  Every URL button/image URL must start with `https://`
+
+  <br />
+
+  You could find a similar error if you use the wrong URL on the image block.
+</Accordion>
+
+<Accordion title="Messenger/IGError #551 This person isn’t available right now">
+  1 – This error happens if you try to send a message to a person who blocked messages from your page. You can ask the admin to find the user on Page Inbox and try to manually send a message to the user.
+
+  <br />
+
+  2 – This happens if a person comments on your post but doesn’t interact with your opted-in Message and your page tries to send a message using Sequences/Drip Campaign, Wait, or Typing. Below are examples that can cause this problem if you use a similar flow as the commented tool opt-in Message.
+
+  ![Error #551 examples](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036589621/original/bIoKEHfmcw2TAVg2sATbI3H2z-0gkwFKxA.png?1699885363)
+
+  ![Error #551 examples](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036596667/original/Ve1VOKWWsfdFBjiVEiADJTijPRvIR9wzFg.png?1699887483)
+
+  ![Error #551 examples](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036597813/original/czB80jWk1teDUGRpnHSmC5bE5rqzjIaJTQ.png?1699887796)
+</Accordion>
+
+<Accordion title="Messenger/IG(#100) Cannot set thread level persistent menu now because another app is controlling the thread – code: 100">
+  This error is happening because you are trying to set a persistent menu when our App is not the primary receiver on your Facebook page.
+
+  <br />
+
+  Make sure our app (ChatbotBuilder) is the primary receiver on your Facebook Page settings (Handover Protocol)
+</Accordion>
+
+<Accordion title="Messenger/IG(#100) Upload failed – code: 100">
+  The file you are trying to upload is not supported on Messenger. Please try a different file or another file with a different extension.
+</Accordion>
+
+<Accordion title="Messenger/IG(#10) You need one time notification permission for this message. To get that go to Advanced Messaging under your Page Settings to request the permission. – code: 10">
+  Before you can send a message using a messenger notification tag, you need to request one-time notification permission on your Facebook Page.
+
+  <br />
+
+  Go to your **Page Settings \> Advanced Messaging**. Scroll down you will see the option to request one-time notification permission.
+
+  ![One-time notification permission](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036600283/original/XiqfRrX1tfhkwASvfJPCMvxm-LK2FbMDcQ.png?1699888518)
+</Accordion>
+
+<Accordion title="Messenger/IG(#200) User does not have sufficient administrative permission for this action on this page. If the page business requires Two Factor Authentication, the user also needs to enable Two Factor Authentication.">
+  You need to have admin permission on the Facebook Page before you can create a persistent menu on the Facebook Messenger bot.
+    ![Error #551 examples](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036605799/original/L-6bZrfNnafg4yhqQMItr2y_TNmh2SB95w.png?1699890389)
+    ![Error #551 examples](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036604350/original/afW-t6axuwmhMUrKqLsRCMVDYPwzXRN-kg.png?1699889937)
+</Accordion>
+
+<Accordion title="Facebook Comment">
+  Facebook comment can only reply with 1 message due to Facebook limitation.
+
+  <br />
+
+  For Facebook Comment Automation, you can only reply with a message (NOT multiple messages)
+
+  <br />
+
+  You can simply reply with a text that has a button. The button on the text block can connect to other messages in the flow.
+
+  <br />
+
+  You cannot use the continue node on the start step.
+
+  ![Facebook Comment limitation](https://gb-v2-upload-prod.s3.amazonaws.com/uploads/150000166104/common-errors-4.png)
+</Accordion>
+
+<Accordion title="Facebook Ads - Error validating access token">
+  Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.
+
+  <br />
+
+  You need to reconnect your bot.
+</Accordion>
+
+### WHATSAPP CHANNEL
+
+<Accordion title="WhatsApp - URL button is not supported">
+  Regular WhatsApp flow does not support URLs (opening website). You can only insert a URL in a button on WhatsApp template message.
+</Accordion>
+
+<Accordion title="WhatsApp - {“meta”:{“api_status”:”stable”,”version”:”2.43.2″},”errors”:[{“code”:1008,”title”:”Required parameter is missing”,”details”:”body: Parameter of type text is missing text value”}]}">
+  Parameters in the Whatsapp template message are missing. Check the template message you are trying to send.
+</Accordion>
+
+<Accordion title="WhatsApp - {“code”:470,”href”:”https:\/\/developers.facebook.com\/docs\/whatsapp\/api\/errors\/”,”title”:”Message failed to send because more than 24 hours have passed since the customer last replied to this number”}">
+  The message failed to send because more than 24 hours have passed since the customer last replied to this number.
+</Accordion>
+
+<Accordion title="WhatsApp - {“meta”:{“api_status”:”stable”,”version”:”2.43.2″},”errors”:[{“code”:2012,”title”:”Parameter format does not match format in the created template”,”details”:”header: Format mismatch, expected Image, received Unknown”,”href”:”https:\/\/developers.facebook.com\/docs\/whatsapp\/faq#faq_1612022582274564″}]}">
+  Check the parameters on your template message. Make sure you provide the appropriate parameters.
+</Accordion>
+
+<Accordion title="WhatsApp - There can be no more than 30 product_items across sections.">
+  The maximum number of products that can be shown on WhatsApp at a time is 30.
+</Accordion>
+
+<Accordion title="WhatsApp - “code”:131053,”title”:”Unsupported Image mime type image\/gif. Please use one of image\/png, image\/jpeg.”}">
+  WhatsApp bot does not support GIF. The image type should be PNG or JPEG.
+</Accordion>
+
+<Accordion title="WhatsApp - Invalid catalog Id.">
+  1. Make sure the catalog is connected to the WhatsApp manager. Please check and follow our documentation. We clearly state how to connect the catalog to your WhatsApp manager in our documentation.
+
+  <br />
+
+  2. We advise you to add your product to the catalog via spreadsheet. Please follow this documentation
+
+  - [Import a data feed file to Google Sheets](https://www.facebook.com/business/help/1104628230079278)
+  - [How to upload items to a catalogue with a data feed in Commerce Manager](https://www.facebook.com/business/help/1104628230079278)
+  - [Data feed fields and specifications for catalogues in Commerce Manager](https://www.facebook.com/business/help/1104628230079278)
+</Accordion>
+
+<Accordion title="WhatsApp - {“code”:1005,”href”:”https:\/\/www.facebook.com\/business\/help\/1104628230079278″,”title”:”Additional compliance information for your business and catalog items may be required before being able to send Multi-Product or Single Product messages.”}.">
+  We advise you to add your product to the catalogue via spreadsheet. Please follow this documentation
+
+  - [Import a data feed file to Google Sheets](https://www.facebook.com/business/help/1104628230079278)
+  - [How to upload items to a catalogue with a data feed in Commerce Manager](https://www.facebook.com/business/help/1104628230079278)
+  - [Data feed fields and specifications for catalogues in Commerce Manager](https://www.facebook.com/business/help/1104628230079278)
+</Accordion>
+
+<Accordion title="WhatsApp - {“code”:131053,”title”:”Downloading media from weblink failed with http code 404, status message Not Found”}">
+  This happens mostly when our system cannot download the image/media from the url you provided.
+
+  <br />
+
+  The best approach to this issue is to try with a different image/media URL (from a different domain).
+</Accordion>
+
+<Accordion title="WhatsApp - {“code”:131053,”title”:”Unsupported Audio mime type image\/jpeg. Please use one of audio\/ogg; codecs=opus, audio\/mpeg, audio\/amr, audio\/mp4, audio\/aac.”}">
+  The Audio file provided is not supported. Please use a file with mpeg, amr, mp4, aac extension.
+</Accordion>
+
+<Accordion title="WhatsApp - (#100) The parameter text[‘body’] is required.">
+  This happens when you try to send an empty message.
+    ![Error #551 examples](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036606711/original/lfRYpSR8fV4XbYM5gS0a692aBpI68vciww.png?1699890679)
+
+    ![Error #551 examples](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036611263/original/TdGsPhyri34YhRvRIE_YJdVLM7m6Pa110w.png?1699892278)
+
+    You cannot send an empty message.
+</Accordion>
+
+<Accordion title="WhatsApp - Error validating access token: Session has expired">
+  It is necessary to create a new token and replace it with a permanent token to prevent it from happening again.
+</Accordion>
+
+### OTHER ERRORS
+
+<Accordion title="Send SMS - Please connect Twilio account.">
+  You are trying to SMS within your flow when you do not have Twilio or ClickSend account connected to your account.
+</Accordion>
+
+<Accordion title="External Request - Fail to execute the request">
+  External request action failed to execute. Check the header and the body of your request.
+</Accordion>
+
+<Accordion title="OpenAI - No thread found with id 'thread_...'.">
+  **Description:** This error occurs when an API key is changed or updated, and the new API key does not recognize elements like Assistant that were created before the update. This can happen because the new API key does not have access to the previously created resources.
+
+  <br />
+
+  **Solution:** To resolve this issue, ensure that the new API key is active and connected. Then, recreate the Assistant and its associated resources.
+
+  <br />
+
+  **Note:** The thread ID will change as it is associated with that specific Assistant on that specific API key. Recreating the Assistant will generate a new thread ID linked to the new API key.
+</Accordion>
+
+<Accordion title="OpenAI - Error 502: Bad Gateway">
+  Error 502: Bad Gateway - Temporary Issue in the OpenAI Service. This suggests a temporary problem in the OpenAI infrastructure, causing a service disruption.
+</Accordion>
+
+<Accordion title="SendMail - SMTP Error: Could not authenticate.">
+  Check your login credentials (Email and Password) make sure they are correct.
+
+  If you are using Gmail and you still get this error even when you are sure the login credentials are correct, create App Password on your Google Account and use the App Password as your Gmail password on ChatbotBuilder SMTP settings.
+
+  You can learn how to create an app password on [this link](https://support.google.com/accounts/answer/185833).
+
+    ![Error #551 examples](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036612167/original/Lo23z5tMovS3IYi-_pkO_ZSyRCPU5xJAMQ.png?1699892565)
+</Accordion>
+
+<Accordion title="SendMail - No email address (TO).">
+  Please check if the contact you are sending an email has an email address.
+
+  Check if the `{{email}}` custom field of the contact has any value
+</Accordion>
+
+<Accordion title="Google Sheets - {“error”:”invalid_grant”,”error_description”:”Bad Request”}">
+  Disconnect and reconnect your Google sheet integration.
+</Accordion>

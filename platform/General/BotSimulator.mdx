@@ -1,0 +1,55 @@
+---
+title: "Bot Simulator"
+description: "Learn how to use the Bot Simulator to showcase your bot in action on any website without the need to integrate code."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+**Bot Simulator** is a powerful tool that showcases your bot in action on any website without the need to integrate code. This is particularly valuable for agencies looking to provide clients with a dynamic bot demo directly on their websites. Imagine the impact of testing the bot simulator on a client's website, bringing the experience to life.
+
+You can explore the Bot Simulator in action on the localpie.com website [HERE](https://localpie.com/).
+
+### Using the Bot Simulator Tool
+
+Navigate to **Menu \> Marketing \> Bot Simulator** and just provide the website address you want to see how the bot will look like.
+
+![Bot Simulator Tool](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150054364402/original/AGajcFgsCzpqXhPNOOXk1dwNeSqpEJG9qA.png?1710943381)
+
+### Generate the Link
+
+There are many situations where you may need to manually generate the bot simulator link. For example, you may have a bot where you ask your potential clients for their website, and you could generate the link inside the bot to let them know how the chatbot will work on their website.
+
+<CardGroup cols={2}>
+  <Card title="ChatBotBuilder.io">
+    **Messenger**
+    `https://app.chatgptbuilder.io/bots/ACCOUNT_ID/sm/?url=LINK`
+
+    <br />
+
+    **Webchat**
+    `https://app.chatgptbuilder.io/bots/ACCOUNT_ID/sw/?url=LINK`
+  </Card>
+  <Card title="White Label">
+    **Messenger**
+    `https://SUBDOMAIN/bots/ACCOUNT_ID/sm/?url=LINK`
+
+    <br />
+
+    **Webchat**
+    `https://SUBDOMAIN/bots/ACCOUNT_ID/sw/?url=LINK`
+  </Card>
+</CardGroup>
+
+### Advanced
+
+You can change the color and specify the flow that is triggered when a person interacts with the bot.
+
+![Advanced Options](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150054366672/original/-tlugTay48_dyu5Fz2VgaJ5_EmijVbXx5g.png?1710943860)
+
+Also, it is possible to use options available to customize the **webchat** by appending the option to the end of the generated link. For example, if you want to hide the header on the webchat, use the below configuration.
+
+`https://app.chatgptbuilder.io/bots/ACCOUNT_ID/sw/?url=LINK&hideHeader=true`
+
+<Note>
+  This tool will not work with all websites.
+</Note>

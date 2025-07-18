@@ -1,0 +1,100 @@
+---
+title: "Entry Point Links and Referral Parameters (Payload)"
+description: "Learn how to use entry point links to direct customers to your bot, invoke specific conversation flows, and track link effectiveness."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+Entry Points Links are bot links that allow your customers to easily reach your bot. In addition, they enable you to invoke a specified conversation flow when the link is opened and track the most effective links.
+
+You can use bot links on your website, email newsletters, and more.
+
+In addition to linking your customers to your bot, Entry Point Links also support passing arbitrary parameters via these links. This can be used for many purposes, such as tracking different links placed in different channels, invoking specific conversation flows when the link is opened, or tying a user to a session or account in an external app.
+
+### How to create an Entry Point Link
+
+<Steps>
+    <Step>
+        Go to **Menu > Marketing > Entry Point Links** and click the **“Add”** button.
+    </Step>
+    <Step>
+        After you create your Entry Point Link, click the three dots and select the **Get Link** option. Depending on the channel, the link will look like this:
+        <CardGroup>
+            <Card title="Messenger">
+                `https://m.me/FB_PAGE_ID?ref=giveaway`
+            </Card>
+            <Card title="Instagram">
+                `https://ig.me/m/INSTAGRAM_USERNAME?ref=giveaway`
+            </Card>
+            <Card title="WhatsApp">
+                `https://wa.me/PHONE_NUMBER?text=giveaway`
+            </Card>
+            <Card title="Telegram">
+                `https://t.me/BOT_USERNAME?start=giveaway`
+            </Card>
+            <Card title="WebChat">
+                `https://app.chatgptbuilder.io/webchat/?p=CHATBOTBUILDER_ACCOUNT_ID&ref=giveaway`
+            </Card>
+        </CardGroup>
+    </Step>
+</Steps>
+
+### How to save payload data to a custom field
+
+When you create an Entry Point Link, you can specify that your link may contain data that is saved to a user’s custom field once the link is opened.
+
+#### Show user_external_identifier
+
+You can append any data to an Entry Point Link, and when a user opens your link, the data is saved into the user’s custom field. Append “--payload” at the end of the link, where the payload is any data you want to save to a custom field. In the example below, we used a Messenger link, but this concept applies to all channels.
+
+`https://m.me/FB_PAGE_ID?ref=giveaway--456`
+
+In this link, `456` is the payload. When a user opens this link, `456` is saved to the customer field `user_external_identifier`.
+
+### How to pass multiple payloads in an Entry Point Link
+
+You can append as many values as needed to save them to multiple custom fields.
+
+<Note>
+    Ensure that you are NOT using the custom field name, as only built-in system fields will work by name. Instead, simply use the custom field ID. To find this ID, head over to **Flows > Custom Fields > Find Custom Field > click on the three dots to the right > copy the ID**.
+</Note>
+
+You should pass an array of IDs and values, e.g.:
+`[{id: "email", value: "...@gmail.com"}, {id:000000, value: "value_here"}]`
+
+In the example below, we used a Messenger link, and this concept applies to other channels as well:
+
+`https://m.me/<FB_PAGE_ID>?ref=giveaway--value1--738--value2--514--value3`
+
+In this link:
+- `value1` will be saved on the custom field you choose when you create the Entry Point Link.
+- The numbers `738` and `514` are custom field IDs.
+- `value1` and `value2` are the data to be saved in the respective custom fields.
+
+`--id1--value1`
+`--id1--value1--id2--value2`
+`--id1--value1--id2--value2--id3--value3`
+
+To get a Custom Field ID, go to **Menu > Flows > Custom Fields**, click the three dots, and select **Get ID**.
+
+#### Example 2:
+
+`“{{webchat}}&ref=FLOW_ID_HERE--email--{{email}}--account_id--CUF_ID_HERE--full_name--{{full_name}}”`
+
+In this link:
+
+- `FLOW_ID_HERE` is the ID of the flow that will be triggered when the link is opened.
+- `{{email}}` is a dynamic value that will be saved in the email custom field when the link is used.
+- `CUF_ID_HERE` is the custom field ID where the account_id value will be saved.
+- `{{full_name}}` is another dynamic value that will be saved in the full_name custom field.
+
+Just like in other examples:
+- `--email--{{email}}` will save the email address to the custom field for email.
+- `--account_id--CUF_ID_HERE` will save the account ID in the specified custom field.
+- `--full_name--{{full_name}}` will save the full name in the custom field for full name.
+
+The structure can be expanded to include additional values, for example:
+
+`--id1--value1`
+`--id1--value1--id2--value2`
+`--id1--value1--id2--value2--id3--value3`

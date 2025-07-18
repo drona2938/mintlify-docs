@@ -1,0 +1,85 @@
+---
+title: "Set Up a Custom Domain for a Business Account / Bot"
+description: "Learn how to set up and use a custom domain for your webchat, e-commerce, appointment scheduling, and other client-facing features to enhance your brand's trust."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+Utilizing a custom domain enables a business to leverage its own branded domain for webchat, e-commerce, appointment scheduling, omnichannel links, landing pages, and bot extensions like Get User Data. This instills greater trust as clients observe your brand domain rather than the Chatbot Builder domain.
+
+<Note>
+  It's essential to note that the dashboard domain will persist on the Chatbot Builder or Whitelabel domain. However, **this domain exclusively impacts client-interacting features**. If you're interested in Whitelabeling the Chatbot Builder dashboard, refer to our documentation. The documentation is valid for our Whitelabel clients, and they have to follow as instructed.
+</Note>
+
+### Costs
+
+Please check with the support team on current pricing.
+
+### How to set up
+
+<Steps>
+  <Step>
+    Generate a subdomain, such as `app.mydomain.com`, within the DNS settings of your domain manager. Establish an A record directing to the IP address **34.117.54.182**.
+  </Step>
+  <Step>
+    If you are unfamiliar with adjusting DNS settings, contact your domain provider's support for assistance.
+  </Step>
+  <Step>
+    Typically, your subdomain becomes accessible online in under 1 hour. However, please be aware that the full propagation of your new configuration across the internet may take up to 24 hours.
+  </Step>
+</Steps>
+
+### How to test
+
+Custom domain works with external client-facing links. These are:
+
+1. Published web-chat links
+2. Published landing page links
+3. Appointment booking links
+
+<Info>
+  The bot simulator is NOT part of the custom domain package.
+</Info>
+
+### Request Custom Domain Setup
+
+Create a ticket with the information below to set up your custom domain.
+
+<Card title="Custom Domain Setup Request">
+  <p>
+  Email Subject:
+
+   Custom Domain Setup Request</p>
+
+  
+  <p>
+  Hello Support Team,</p>
+
+  
+  <p>
+  I hope this message finds you well. I am reaching out to request the setup of a custom domain for my business account. Below, you'll find the necessary information for the process:</p>
+
+  <ul>
+  <li>
+  Account ID:
+
+   [Your Business Account ID] (To obtain the Account ID, please go to Menu \> Settings and scroll down to the bottom of the page)
+
+  </li>
+
+  
+  <li>
+  Subdomain:
+
+   app.example.com</li>
+
+  
+  <li>
+  Email:
+
+   [The email used to pay the setup fee]</li>
+
+  </ul>
+</Card>
+
+Upon submission of this information, we shall set up your custom domain within 48 hours.

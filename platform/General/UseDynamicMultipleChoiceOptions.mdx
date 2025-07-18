@@ -1,0 +1,52 @@
+---
+title: "Use Dynamic Multiple Choice Options"
+description: "Learn how to use Dynamic Multiple Choice options to engage users with real-time questions and options fetched from APIs or Google Sheets."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+Dynamic Multiple Choice empowers your bot to engage users with questions and generate options in real time. It achieves this by fetching data from **APIs** or **Google Sheets**. This feature proves invaluable for businesses aiming to craft quizzes or pose qualifying questions to potential leads.
+
+To create Dynamic Multiple Choice, you use the **Get User Data** action.
+
+![Data from Google Sheets](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036844702/original/7XF7hW77CDFpteqEJaTfuAIqW-QT4J4Qng.png?1699993295)
+
+![Get User Data](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036847109/original/nmMmpR7S-AnN_bSsqVA42nou3Crsj9zzDA.png?1699994315)
+
+The reply type should be **Multiple Choice**. All your options must be stored in a single custom field.
+
+### Format of data for Dynamic Multiple Choice
+
+Let’s imagine you want to ask the question “What’s your favorite fruit?” and you could offer the option Apple, Banana, Orange, Berry, Melon
+
+![Data from Google Sheets](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036847906/original/XFq7_AoSA6QwzFAPj3EsPEmYd0JTgJS_2w.png?1699994530)
+
+#### 1 – Separate options with a comma
+
+`Apple, Banana, Orange, Berry, Melon`
+
+You can get data from any source like Google Sheets where the options are separated by a comma.
+
+![Data from Google Sheets](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036849364/original/inhITxwDcjy46R9m08bNcW3puhQiubiILQ.png?1699994934)
+
+#### 2 – Array of options (From API)
+
+`["Apple", "Banana", "Orange", "Berry", "Melon"]`
+
+You can use our External Request feature to get data from any API and use response mapping to extract the data you need. In the response below, you use response mapping to save the data to the custom field that is used to store the options.
+
+```json
+{
+  "data": ["Apple", "Banana", "Orange", "Berry", "Melon"]
+}
+```
+
+#### 3 - Check what option the user chose.
+
+Use Condition to check what option the user chose.
+
+![Data from Google Sheets](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036851710/original/rcnZcGDKCW9DvNSHronHLnfQJY8ju1bUvw.png?1699995483)
+
+Also, you can always personalize your messages with the option that the user chose.
+
+![Data from Google Sheets](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150036852481/original/aAnh6dLJqe7z88a7oEGoOLka3F_5K6iAnA.png?1699995701)
