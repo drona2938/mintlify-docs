@@ -1,0 +1,187 @@
+---
+title: "How to Calculate the Difference Between Two Dates"
+description: "A step-by-step guide to calculating the difference between two dates in Chatbot Builder AI, enhancing the interactivity and usefulness of your chatbot."
+---
+
+import { Card, CardGroup, Steps, Note, Info, Accordion } from '@mintlify/components';
+
+### Introduction
+
+Calculating the difference between two dates is a common requirement in chatbot applications. For instance, in reservation bots, you may need to determine the number of days between a customer's check-in and check-out dates. This guide will walk you through the steps to compute the difference between two dates, or between a specific date and the current date, using Chatbot Builder AI.
+
+### Prerequisites
+
+- Basic knowledge of Chatbot Builder AI.
+- Understanding of custom fields and variables in Chatbot Builder AI.
+
+### Steps Overview
+
+<Steps>
+  <Step>
+    **Collect the Dates:** Obtain the two dates you wish to compare.
+  </Step>
+  <Step>
+    **Convert Dates to Seconds:** Transform the dates into total seconds since the Unix epoch.
+  </Step>
+  <Step>
+    **Store in Custom Fields:** Save the converted seconds in number-type custom fields.
+  </Step>
+  <Step>
+    **Calculate the Difference:** Subtract the earlier date from the later one.
+  </Step>
+  <Step>
+    **Convert Seconds to Days:** Divide the difference by 86,400 to get days.
+  </Step>
+  <Step>
+    **Display the Result:** Present the calculated days to the user.
+  </Step>
+</Steps>
+
+### Step 1: Collect the Dates
+
+First, ensure that you have collected the two dates you want to compare. These dates can be user-provided dates (e.g., check-in and check-out dates).
+
+![Collecting Dates](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150087354777/original/-P58kbDQlyFxVxkTP_OwXjMdMAq44HoHTQ.png?1730208342)
+
+![Collecting Dates](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150087354793/original/tEUcsGlXsYGRpsIwZury6JKCU9H8O_-6iw.png?1730208345)
+
+### Step 2: Convert Dates to Total Number of Seconds
+
+To calculate the difference between two dates, you need to convert each date into a numerical format representing the total number of seconds since January 1, 1970 (the Unix epoch).
+
+#### Conversion Process
+
+<Steps>
+  <Step>
+    In the Flow Builder, add a new block.
+  </Step>
+  <Step>
+    Select: **'Add Content' \> 'Actions' \> 'Tools' \> 'Format Date'**.
+  </Step>
+  <Step>
+    **Configure the Check-In Date:**
+
+    - Under **Date & Time**, select the custom field with the first date, such as the `'check_in_date'` custom field.
+    - In the **Format** field, enter `'"U"'` to format the date as seconds since the Unix epoch.
+    - Choose a new custom field, such as `'check_in_seconds'`, to save the formatted date.
+    - Click **Save**.
+  </Step>
+  <Step>
+    **Repeat for the Check-Out Date:** Follow the same steps to format `'check_out_date'` into seconds, saving it to a new custom field, such as `'check_out_seconds'`.
+  </Step>
+</Steps>
+
+This setup allows you to perform arithmetic calculations on the two date fields, enabling accurate difference calculations in seconds.
+
+![Convert to Seconds](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150087354795/original/uG-bnUlwMz3hbjLSZdxwxDPbmawbzfJDfg.png?1730208345)
+
+![Convert to Seconds](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150087354796/original/R7iRoNzXb408XMkq5AcGVwtZkGiu8X4Lng.png?1730208346)
+
+![Convert to Seconds](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150087354778/original/i8IoLJHXKaY1fvF3dzmApFwv18RzhF-Qfg.png?1730208343)
+
+### Step 3: Store the Converted Seconds in Custom Number Fields
+
+Create custom number fields to store the total seconds for each date:
+
+- `'check_in_seconds'`: Stores the total seconds for the check-in date.
+- `'check_out_seconds'`: Stores the total seconds for the check-out date.
+
+### Step 4: Calculate the Difference in Seconds
+
+<Steps>
+  <Step>
+    **Add a New Action:** In the Flow Builder, click on **'Actions' \> 'Set Custom Field'**.
+  </Step>
+  <Step>
+    **Calculate the Difference:**
+
+    - Under **Operation**, choose **'Set to'**.
+    - In the **Value** field, enter the formula to calculate the difference in seconds: `'{{check_out_seconds}} - {{check_in_seconds}}'`.
+    - Save the result in a new custom number field, such as `'difference_in_seconds'`.
+  </Step>
+</Steps>
+
+### Step 5: Convert Seconds to Days
+
+To convert the difference from seconds to days:
+
+<Steps>
+  <Step>
+    **Add Another Action:** In the Flow Builder, click on **'Actions' \> 'Set Custom Field'**.
+  </Step>
+  <Step>
+    **Calculate the Difference in Days:**
+
+    - Under **Operation**, choose **'Set to'**.
+    - In the **Value** field, enter the formula: `'{{difference_in_seconds}} / 86400'`.
+    - Save the result in a custom number field, such as `'difference_in_days'`.
+  </Step>
+</Steps>
+
+#### Why Divide by 86,400?
+
+This formula converts the time difference from seconds into days, based on the number of seconds in one day:
+
+- 60 seconds = 1 minute
+- 60 minutes = 1 hour
+- 24 hours = 1 day
+
+So,
+
+`'60 * 60 * 24 = 86,400'` seconds per day.
+
+Dividing by 86,400 gives the exact number of days between the check-in and check-out dates.
+
+![Convert to Days](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150087354788/original/7Fw5cLkGCZ2KB3KKGUVUpRltIZvftrvbBA.png?1730208344)
+
+### Step 6: Output the Result
+
+Use the `'difference_in_days'` field to inform the user of the number of days between the two dates.
+
+**Example:**
+
+> Your stay is for {difference_in_days} nights.
+
+![Convert to Days](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150087354797/original/CbADmeuWq104Bj1Px5nagvR8ugdHHjUAxA.png?1730208346)
+
+### Advanced Usage
+
+<Accordion title="Calculating Age">
+  To calculate a user's age based on their birth date:
+
+  1. Get the Current Date and the user's birth date.
+  2. Convert Both Dates to Seconds.
+  3. Calculate the Difference: Subtract the birth date from the current date.
+  4. Divide by the Number of Seconds in a Year (approximately 31,536,000).
+</Accordion>
+
+<Accordion title="Countdown Timers">
+  For events occurring in the future:
+
+  1. Get the Current Date and the event date.
+  2. Convert Both Dates to Seconds.
+  3. Calculate the Difference.
+  4. Convert to Days, Hours, or Minutes as needed.
+</Accordion>
+
+### Frequently Asked Questions
+
+<Accordion title="Q1: Can I calculate the difference in weeks or months?">
+  - **Weeks:** Divide the difference in seconds by 604,800 (seconds in a week).
+  - **Months:** Since months vary in length, consider using a library or API for accurate month calculations.
+</Accordion>
+
+<Accordion title="Q2: What if the user inputs dates in different formats?">
+  Utilize our [Date and Time Format Documentation](/support/solutions/articles/150000161735-format-date-and-time) to handle various date formats.
+</Accordion>
+
+### Additional Resources
+
+- [Math Calculations Inside Your Bot](/support/solutions/articles/150000166310-math-calculations-inside-your-bot)
+- [Date and Time Format Documentation](/support/solutions/articles/150000161735-format-date-and-time)
+
+### Conclusion
+
+By following these steps, you can accurately calculate the difference between two dates in Chatbot Builder AI. This method enhances the interactivity and usefulness of your chatbot, allowing you to provide personalized experiences, automate scheduling, and much more.
+
+To simplify your workflow, you can utilize our pre-built template for calculating the difference between two dates. Access the template here: [Calculate Date Difference Template](https://chatbotbuilder.ai/flow-template/calculate-date-difference).

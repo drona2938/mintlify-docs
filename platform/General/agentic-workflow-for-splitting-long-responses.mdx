@@ -1,0 +1,134 @@
+---
+title: "Agentic Workflow for Splitting Long Responses"
+description: "This guide outlines how to build an agentic workflow that dynamically splits a long AI-generated message into smaller, sequentially displayed individual messages using structured JSON parsing."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+![Convert to Days](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150098302794/original/YC1cJxyhqDjS0SoGKuGFF81YW-6Dvy6eTw.jpeg?1737587761)
+
+### Introduction
+
+This workflow is designed to:
+
+1. Generate a long response in a structured JSON format using the **OpenAI: Generate text** action.
+2. Split the response into smaller, more digestible parts using the **Get Data from JSON** action.
+3. Present the split content as individual, sequential messages for a better user experience.
+
+### Workflow Structure
+
+An agentic workflow for splitting long messages includes:
+
+1. **OpenAI: Generate text node:** Produces a structured JSON response where each key represents a smaller part of the overall message.
+2. **Get Data from JSON action:** Extracts each section of the JSON response and maps it to individual variables.
+3. **Send Messages nodes:** Sequentially displays each part of the message to avoid overwhelming the user with one long block of text.
+
+### Step-by-Step Implementation
+
+<Steps>
+  <Step>
+    **Configure the OpenAI: Generate Text Node**
+
+    1. Add an **OpenAI: Generate text** node to your workflow.
+    2. In the **Custom Instructions/Prompt** section, instruct the AI to format its response as JSON with clearly defined parts. For example:
+
+       ```json
+       Please split your response into multiple parts as a JSON object, with keys like "part1", "part2", "part3", etc. Each part should contain concise information. Example format:
+       {
+         "part1": "This is the introduction...",
+         "part2": "This is the detailed explanation...",
+         "part3": "This is the conclusion..."
+       }
+       ```
+    3. Save the AI-generated JSON response to a custom variable, such as `{{ai_json}}`.
+  </Step>
+  <Step>
+    **Use the Get Data from JSON Action to Extract Sections**
+
+    1. Add the **Get Data from JSON** action immediately after the **OpenAI: Generate text** node.
+    2. In the **JSON Data** field, reference the variable where the JSON response is stored (e.g., `{{ai_json}}`).
+    3. Map each JSON key to custom variables:
+       - `.part1` → `MessagePart1`
+       - `.part2` → `MessagePart2`
+       - `.part3` → `MessagePart3`
+    4. Add as many mappings as needed to cover all the parts of the JSON response.
+
+    ![Convert to Days](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150098302419/original/XFKn2zUIWtnhROugY97eg91ngXYgeyiKNg.jpeg?1737587437)
+
+    **Example JSON:**
+
+    ```json
+    {
+      "part1": "Step 1: Understand the basics of nutrition.",
+      "part2": "Step 2: Include more vegetables in your meals.",
+      "part3": "Step 3: Stay consistent with healthy eating habits."
+    }
+    ```
+
+    **Mapped variables:**
+
+    - `{{MessagePart1}}` → “Step 1: Understand the basics of nutrition.”
+    - `{{MessagePart2}}` → “Step 2: Include more vegetables in your meals.”
+    - `{{MessagePart3}}` → “Step 3: Stay consistent with healthy eating habits.”
+  </Step>
+  <Step>
+    **Display the Extracted Sections as Split Messages**
+
+    1. Add **Send Messages** nodes to display the extracted sections sequentially.
+    2. Insert each mapped variable into separate messages:
+       - First message: `{{MessagePart1}}`
+       - Typing delay
+       - Second message: `{{MessagePart2}}`
+       - Typing delay
+       - Third message: `{{MessagePart3}}`
+
+    This approach ensures that each part of the response is displayed as an individual message, breaking up the long content for clarity.
+  </Step>
+</Steps>
+
+### Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Validate JSON Structure">
+    Ensure the AI consistently generates valid JSON by providing clear and explicit prompts.
+  </Card>
+  <Card title="Set Typing Delays">
+    Add slight typing delays between messages to make the interaction feel natural.
+  </Card>
+  <Card title="Handle Varying Lengths">
+    If the number of parts varies, create fallback logic or extra mappings to handle additional or missing sections.
+  </Card>
+  <Card title="Test Thoroughly">
+    Run tests with varied inputs to ensure the splitting logic works consistently.
+  </Card>
+</CardGroup>
+
+### Example Workflow
+
+**User Input:**
+
+“Can you explain the steps to improve focus and productivity?”
+
+**AI JSON Output:**
+
+```json
+{
+  "part1": "Step 1: Set clear and achievable goals.",
+  "part2": "Step 2: Minimize distractions by creating a focused workspace.",
+  "part3": "Step 3: Use techniques like the Pomodoro method to stay productive.",
+  "part4": "Step 4: Take breaks to avoid burnout and maintain focus."
+}
+```
+
+**Displayed Output:**
+
+1. **Message 1:** Step 1: Set clear and achievable goals.
+2. **Message 2:** Step 2: Minimize distractions by creating a focused workspace.
+3. **Message 3:** Step 3: Use techniques like the Pomodoro method to stay productive.
+4. **Message 4:** Step 4: Take breaks to avoid burnout and maintain focus.
+
+### Conclusion
+
+This agentic workflow effectively splits long responses into smaller, user-friendly messages, ensuring clarity and engagement. By using structured JSON parsing, you can control how information is presented, delivering a smooth and intuitive user experience.
+
+To get started quickly, use this **free template:** [Dynamic Message Splitting Workflow Template](https://www.google.com/search?q=https://chatbotbuilder.ai/flow-template/dynamic-message-splitting).

@@ -1,0 +1,101 @@
+---
+title: "How to Use Conditions in CBB: A Step-by-Step Guide"
+description: "This guide empowers you to leverage the power of Conditions within Chatbot Builder AI (CBB) Flows. Conditions allow you to personalize user journeys by directing them to specific parts of the flow based on pre-defined criteria."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+This guide empowers you to leverage the power of Conditions within Chatbot Builder AI (CBB) Flows. Conditions allow you to personalize user journeys by directing them to specific parts of the flow based on pre-defined criteria.
+
+### What are Conditions?
+
+Conditions act like decision points within your flow. You set a specific criterion, and depending on whether the user meets that criterion, they are directed down a particular path within the flow. This enables you to create more dynamic and personalized chatbot interactions.
+
+### Getting Started
+
+    ![Accessing Magic Links](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150069090422/original/ZbhYLKYyEm-iYvTAbtS75nwFULoEuYnz1g.png?1719190402)
+
+<Steps>
+    <Step>
+        Navigate to **Flows > Add Flow**.
+    </Step>
+    <Step>
+        **Name your Flow** according to its purpose (e.g., "Welcome Flow with Email Capture").
+          ![Accessing Magic Links](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150069090425/original/nPe1YTCM5gWu_dYSoShoqmxSmo9jmB_JAg.png?1719190404)
+    </Step>
+</Steps>
+
+### Understanding Conditions through Examples
+
+We'll explore three common use cases to illustrate how Conditions work:
+
+<Accordion title="Example 1: Targeting Recent Interactions">
+    **Scenario:** You want to send a specific message to users who interacted within the last 24 hours.
+
+    **Steps:**
+    1.  **Add a Condition Block:** Click the "+" button at the bottom of the flow or double-click on the canvas and select "Conditions."
+    
+          ![Accessing Magic Links](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150069090424/original/TtGTXQSJsqzmp4Rsl53nAc6LRrdDOt9MvA.png?1719190403)
+    
+    2.  **Define the Condition:** Click within the Condition block and click the "+ Condition" button. Choose "Interacted in last 24hrs."
+
+              ![Accessing Magic Links](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150069090423/original/J8-BiDPcqy1wg9d8v8fAT6ZJGfnDidG_oQ.png?1719190403)
+
+    **Branching the Flow:**
+    -   **Green Path (Yes):** If the user interacted recently, messages are sent via Messenger (drag and drop a message block).
+    -   **Red Path (No):** If the user hasn't interacted recently, messages are sent via SMS (drag and drop a message block).
+
+              ![Accessing Magic Links](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150069090426/original/_2V_wny0TUVQfuPUl-1nc-d8viVYPqUqAA.png?1719190404)
+</Accordion>
+
+<Accordion title="Example 2: Capturing Missing Email Addresses">
+    **Scenario:** You want to collect email addresses from users who haven't provided one yet.
+
+    **Steps:**
+    1.  **Add a Condition Block:** Click "+" or double-click on the canvas and select "Conditions."
+    2.  **Define the Condition:** Click within the block and click "+ Condition." Choose "Email" and then "Has any Value."
+
+      ![Accessing Magic Links](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150069090430/original/07WkWKv8VBuoMJ7Cy_xuV9jsT6inPOYbPw.png?1719190405)
+
+    **Branching the Flow:**
+    -   **Green Path (Yes):** If the user has an email address, they continue without providing one again.
+    -   **Red Path (No):** If the user doesn't have an email address, a message is sent asking them to enter it (drag and drop a message block).
+
+      ![Accessing Magic Links](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150069090429/original/58739v55s2iHgEbljKXoLkpArEHgXymXsw.png?1719190405)
+</Accordion>
+
+<Accordion title="Example 3: Leveraging User Tags">
+    **Scenario:** You want to personalize the flow based on a specific user tag.
+
+    **Steps:**
+    1.  **Add a Condition Block.**
+    2.  **Define the Condition:** Click within the block and click "+ Condition." Choose the specific tag you want to check for (e.g., "joined").
+
+        ![Accessing Magic Links](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150069090428/original/VlTfZhIAgxANzjRvhvxRcelasseSSpYnJg.png?1719190405)
+
+    **Branching the Flow:**
+    -   **Green Path (Yes):** If the user has the tag, they continue to the next step in the flow.
+    -   **Red Path (No):** If the user doesn't have the tag, a different action is taken (e.g., send the welcome flow).
+
+        ![Accessing Magic Links](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150069090427/original/R2_G_65161D8zbbD_8VmcY9YCLTSuFBczg.png?1719190404)
+        
+</Accordion>
+
+### Exploring a Wider Range of Conditions
+
+CBB offers a variety of conditions you can utilize to personalize your flows. Here are some additional options:
+
+<CardGroup>
+    <Card title="User Language"></Card>
+    <Card title="User's Full Name"></Card>
+    <Card title="User's Country/Continent"></Card>
+    <Card title="User Gender"></Card>
+    <Card title="Broadcast Subscription Status"></Card>
+    <Card title="Contact Creation Date and Time"></Card>
+    <Card title="Source of Interaction"></Card>
+    <Card title="... and many more!"></Card>
+</CardGroup>
+
+### Experiment and Discover
+
+By experimenting with different conditions, you can unlock the full potential of creating personalized and engaging chatbot experiences for your users.

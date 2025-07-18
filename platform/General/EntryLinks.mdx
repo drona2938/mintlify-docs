@@ -1,0 +1,49 @@
+---
+title: "Entry Links Use Case: Referral"
+description: "Learn how to expand your contact list by enabling your customers to refer your bot to their friends."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+Expanding your contact list can be as simple as having your customers recommend your bot to their friends. Chatbot Builder AI offers a feature that enables your bot to automatically keep track of referrals and carry out specific actions when a user refers your chatbot to someone new or to an existing user. It's important to note that a user cannot refer themselves. At the conclusion of this article, you'll find a link to a referral template that's ready for you to use.
+
+To get started with the built-in referral system, just follow these straightforward steps:
+
+### Creating a Shareable Link
+
+In this guide, we'll be using a Messenger Entry Point Link as an example. However, the same principles apply to all other channels. To understand how Entry Point Links vary across different channels, you might want to check out this article.
+
+To enable your users to refer friends, your bot needs to provide each user with a unique link. Let's say your Entry Point Link is named 'EXAMPLE1.' To create a unique link for the referral system, simply add `--CBB{{user_id}}` to the end of any Entry Point Link.
+
+For example:
+`https://m.me/FB_PAGE_ID?ref=EXAMPLE1--CBB{{user_id}}`
+
+### Sharing a Referral Link
+
+The referral link should be distributed to the user by your chatbot.
+
+### Increasing Points and Rewarding Users
+
+Whenever a user refers someone to your bot, either the "User referred a new contact" or "User referred existing contact" trigger is activated. You can set up these triggers by navigating to **Menu \> Marketing \> Automation Rules**.
+
+![Automation Rules](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150056246285/original/y58ELDWNGo2e3qT7-Dkr3IP-9CjLjt7Lrg.png?1711782495)
+
+Each time a user refers your bot to someone, you should increase (not set a new value for) a custom field that tracks the user's points. Then, initiate a flow that checks if the user's total points have reached a threshold that qualifies them for a reward.
+
+![Increase User Points](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150056261704/original/VlxGGxHoyRyvWGyV1KG_-2tnsItwVEgVQg.png?1711792882)
+
+![Increase User Points](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150056255768/original/lsNXdnmnY0ca1sDSloBzndfdkFaWWTbNww.png?1711792077)
+
+The following image demonstrates how to increase user points. Click on the "\+Action" button, then select "Set Custom Field."
+
+![Set Custom Field](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150056257621/original/u0J6HMBjjm5ggAqNtUlI-HkQ-IDRWSnUKw.png?1711792500)
+
+The flow that determines whether a user is rewarded should be similar to the image shown below.
+
+![Reward Flow](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150056258549/original/kISplxG-9rJzVhlJ7qN6iMh3YNeFI02NRg.png?1711792587)
+
+Essentially, you'll need a flow that sends the user their referral link, a trigger to increase the user's points, and another flow to evaluate the user's points and provide a reward. If you wish, you can create two separate triggers to award different points for referring a new user versus an existing user.
+
+<Note>
+  You can download a ready-to-use referral template [here](https://chatbotbuilder.ai/flow-template/referral-system).
+</Note>

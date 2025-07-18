@@ -3,9 +3,11 @@ title: "Appointment Scheduling Manager"
 description: "Learn how to use the Appointment Scheduling Manager to book and schedule appointments and meetings, and sync with your Google or Outlook calendar."
 ---
 
-import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+import { Card, CardGroup, Steps, Step, Note, Info } from '@mintlify/components';
 
 The Appointment Scheduling Manager enables you to book and schedule appointments and meetings. This feature enables your business to let others know about available appointments, information which they can then use to book a time slot.
+
+<iframe width="100%" height="400" src="https://www.guidejar.com/embed/af8aafdb-f05e-4d30-9c4b-337418c6a33d?type=1&controls=on" />
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/UAZ-9sy7nOo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
 
@@ -16,9 +18,7 @@ The Appointment Scheduling Manager enables you to book and schedule appointments
 Follow this guide to get started with scheduling appointments.
 
 <Steps>
-  <Step>
-    **Create your Calendar Inside ChatbotBuilder**
-
+  <Step title="Create your Calendar Inside ChatbotBuilder">
     Go to **Marketing \> Appointment Scheduling** and click the **Add** button.
 
     ![Add Calendar](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150054264783/original/AZfYHEtR7EW-6vVtJjBzwfUmPWcKM-sXQA.png?1710886294)
@@ -35,25 +35,21 @@ Follow this guide to get started with scheduling appointments.
 
     ![Set Availability](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150054265940/original/GeO-69S0n_d1sPCfPdVsu4RFnonW8NhpPQ.png?1710886935)
   </Step>
-  <Step>
-    **Connect Google Calendar or Outlook Calendar (optional)**
-
+  <Step title="Connect Google Calendar or Outlook Calendar (optional)">
     - **Google Calendar:** Go to **Settings \> Integration \> Google Calendar** and click the **Connect** button.
     - **Outlook Calendar:** Go to **Settings \> Integration \> Outlook Calendar** and click the **Connect** button.
 
     Once your calendar is connected, the appointment is automatically updated in your Calendar once a user schedules one. Also, we check your calendar events to avoid overbooking.
 
     <Info>
-      Be sure to collect the user’s email address before the user schedules an appointment to automatically send the user a calendar invitation through email.
+      Be sure to collect the user's email address before the user schedules an appointment to automatically send the user a calendar invitation through email.
     </Info>
   </Step>
-  <Step>
-    **Share the scheduling link during the bot conversation**
-
+  <Step title="Share the scheduling link during the bot conversation">
     1. **Get the scheduling link** by going to **Marketing \> Appointment Scheduling** and clicking the three dots on the Calendar you want to share the scheduling link.
 
        ![Get Scheduling Link](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150054266185/original/UtugMPZuQVvMsXo_TpZ48qxtCj1chf2wFw.png?1710887110)
-    2. **Use the scheduling link** as a button link for channels that support buttons that open a website. For channels that don’t support a button that opens a website link SMS channel, you can send the scheduling link as a TEXT message.
+    2. **Use the scheduling link** as a button link for channels that support buttons that open a website. For channels that don't support a button that opens a website link SMS channel, you can send the scheduling link as a TEXT message.
 
        ![View Scheduled Appointments](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150033360016/original/gyZOTb6syqbXUt1BfgEDVarozJUa3TTv-Q.png?1697635852)
     3. **Share the scheduling link from the inbox**

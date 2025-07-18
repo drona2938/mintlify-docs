@@ -1,0 +1,287 @@
+---
+title: "Math Calculations Inside your Bot"
+description: "Learn how to perform a wide range of mathematical and scientific calculations within your chatbot using advanced functions."
+---
+
+import { Card, CardGroup, Steps, Note, Info, Accordion } from '@mintlify/components';
+
+Explore beyond fundamental operations such as addition, subtraction, multiplication, and division. Dive into the realm of intricate mathematical and scientific calculations using advanced functions (listed below).
+
+Unlock the potential with practical examples that guide you through the process. Follow the step-by-step instructions to master the art of incorporating complex calculations seamlessly into your chatbot. Elevate your bot's capabilities and provide users with a sophisticated mathematical experience.
+
+<Steps>
+  <Step>
+    **Choose the Flow you want to include calculation operations.**
+  </Step>
+  <Step>
+    **Select Action on the block builder and choose Set Custom Field.**
+
+    ![Set Custom Field](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150038419849/original/AsG6KPyuz2Y3NwCDM8WjJ2Dscq-EjUnbbQ.png?1700655422)
+  </Step>
+  <Step>
+    **Choose "Custom Field" in your flow. Then, select the custom field where your values are stored as numbers. Opt for a custom formula and define it in the Value field. This way, you can easily customize calculations to fit your specific needs within the chatbot flow.**
+
+    ![Custom Formula](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150038420707/original/A-kmEG1lNbvVDecokEh1t4HSz6ZGaSiIuw.png?1700655930)
+  </Step>
+  <Step>
+    **Then save, that’s it.**
+  </Step>
+</Steps>
+
+We know that it might confuse you a bit, let me explain this procedure with one simple example.
+
+### Example: Performing (A\+B)\*(A-B) calculation
+
+Get the values of A & B from user input as numbers,
+
+![Get User Input](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150038421395/original/MOj6-FcHmisl0pf_uPz__jcv4mJO5ybkWA.png?1700656268)
+
+Now set the calculation formula on the flow. For that, choose action on the basic builder and select the set custom field. Then, setup the wizard by choosing the custom field (number) in which you want to store the calculated values (here, we created that as “amount_paid”).
+
+Now, the interesting part. Set the formula on the Value field (here we used the formula `( {{value a}} - {{value b}} ) * ( {{value a}} + {{value b}} )` to do the above said calculation.
+
+![Set Formula](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150038422294/original/wKAPIM6fZvX-xJgzDNKgicAWACSLjVRj_g.png?1700656712)
+
+![Set Formula](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150038422463/original/DThm7Ff_sKgL5DclFnW7d8HrcD6VBpbqDA.png?1700656820)
+
+That’s it, if you take A as 4 and B as 2, the result will be shown by a chatbot as 12 (as per the calculation).
+
+Calculation on Web chatbot example.
+
+![Web Chatbot Example](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150038422578/original/Av9GzRDJLilk7WxbpGDFB75y5jugh6stpw.png?1700656892)
+
+Here are some basic math examples that you can do:
+
+<CardGroup cols={2}>
+  <Card title="1+2*3-4">
+    
+  </Card>
+  <Card title="1 + 2 * 3 – 4">
+    
+  </Card>
+  <Card title="pi * 2">
+    
+  </Card>
+  <Card title="PI * 2">
+    
+  </Card>
+  <Card title="abs(1) + min(1,2) * max(1,2,3)">
+    
+  </Card>
+  <Card title="min(1+2, abs(-1))">
+    
+  </Card>
+  <Card title="1 + ((2 – 3) * (5 – 7))">
+    
+  </Card>
+  <Card title="2 * (-3)">
+    
+  </Card>
+</CardGroup>
+
+Here is the example of formats with syntax:
+
+<CardGroup cols={2}>
+  <Card title="1">
+    A term can consist of just a number
+  </Card>
+  <Card title="(1+((2)))">
+    Usage of obsolete brackets is allowed
+  </Card>
+  <Card title="00001">
+    Prefixing a number with obsolete zero digits is possible
+  </Card>
+  <Card title=".1">
+    Omitting a zero digit before a period character is okay
+  </Card>
+</CardGroup>
+
+Here are some awesome list to provide more value for this article:
+
+### Operators:
+
+<CardGroup cols={2}>
+  <Card title="+">
+    Addition
+  </Card>
+  <Card title="-">
+    Subtraction
+  </Card>
+  <Card title="*">
+    Multiplication
+  </Card>
+  <Card title="/">
+    Division
+  </Card>
+</CardGroup>
+
+### Functions:
+
+<CardGroup cols={2}>
+  <Card title="abs">
+    
+  </Card>
+  <Card title="aCos">
+    
+  </Card>
+  <Card title="aCosH">
+    
+  </Card>
+  <Card title="aSin">
+    
+  </Card>
+  <Card title="aSinH">
+    
+  </Card>
+  <Card title="aTan">
+    
+  </Card>
+  <Card title="aTanH">
+    
+  </Card>
+  <Card title="aTanTwo">
+    
+  </Card>
+  <Card title="ceil">
+    
+  </Card>
+  <Card title="cos">
+    
+  </Card>
+  <Card title="cosH">
+    
+  </Card>
+  <Card title="degToRad">
+    
+  </Card>
+  <Card title="en">
+    
+  </Card>
+  <Card title="exp">
+    
+  </Card>
+  <Card title="expMOne">
+    
+  </Card>
+  <Card title="floor">
+    
+  </Card>
+  <Card title="fMod">
+    
+  </Card>
+  <Card title="hypot">
+    
+  </Card>
+  <Card title="log">
+    
+  </Card>
+  <Card title="logOneP">
+    
+  </Card>
+  <Card title="logTen">
+    
+  </Card>
+  <Card title="max">
+    
+  </Card>
+  <Card title="min">
+    
+  </Card>
+  <Card title="pow">
+    
+  </Card>
+  <Card title="radToDeg">
+    
+  </Card>
+  <Card title="round">
+    
+  </Card>
+  <Card title="sin">
+    
+  </Card>
+  <Card title="sinH">
+    
+  </Card>
+  <Card title="sqrt">
+    
+  </Card>
+  <Card title="tan">
+    
+  </Card>
+  <Card title="tanH">
+    
+  </Card>
+</CardGroup>
+
+### Constants:
+
+<CardGroup cols={2}>
+  <Card title="e">
+    
+  </Card>
+  <Card title="euler">
+    
+  </Card>
+  <Card title="lnPi">
+    
+  </Card>
+  <Card title="lnTen">
+    
+  </Card>
+  <Card title="lnTwo">
+    
+  </Card>
+  <Card title="logTenE">
+    
+  </Card>
+  <Card title="logTwoE">
+    
+  </Card>
+  <Card title="onePi">
+    
+  </Card>
+  <Card title="pi">
+    
+  </Card>
+  <Card title="piFour">
+    
+  </Card>
+  <Card title="piTwo">
+    
+  </Card>
+  <Card title="sqrtOneTwo">
+    
+  </Card>
+  <Card title="sqrtPi">
+    
+  </Card>
+  <Card title="sqrtThree">
+    
+  </Card>
+  <Card title="sqrtTwo">
+    
+  </Card>
+  <Card title="twoPi">
+    
+  </Card>
+  <Card title="twoSqrtPi">
+    
+  </Card>
+</CardGroup>
+
+### Others:
+
+<CardGroup cols={2}>
+  <Card title="(">
+    right-faced brackets
+  </Card>
+  <Card title=")">
+    left-faced brackets
+  </Card>
+  <Card title=",">
+    comma
+  </Card>
+  <Card title=".">
+    dot
+  </Card>
+</CardGroup>

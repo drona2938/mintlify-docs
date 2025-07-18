@@ -1,0 +1,120 @@
+---
+title: "How to Make Your Bot Respond to Only Valuable Messages"
+description: "Learn how to streamline your chatbot to focus on responding to high-priority or valuable messages, improving user experience and resource management."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+In some scenarios, it’s important to streamline your chatbot so that it focuses on responding to high-priority or valuable messages. This not only improves user experience but also helps manage resources, ensuring your bot doesn’t respond to irrelevant or trivial inputs.
+
+In this guide, we’ll show you how to achieve this:
+
+### How to Set It Up:
+
+<Steps>
+    <Step>
+        **Set Up a Default Flow (Formerly Default Reply)**
+        
+        Start by setting up your Default Flow (Formerly Default Reply). This will serve as the backbone of your bot’s ability to filter out valuable messages from irrelevant ones.
+
+        ![Accessing Magic Links](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150088079231/original/SunIwnhUmLYtNo64gd42u1P16kV-VUXZZQ.png?1730719165)
+                  
+        1.  **Choose the AI Action**
+            In the first block of your Default Flow (Formerly Default Reply), you can set up an AI action. This AI will analyze messages and help determine the relevance of the user’s input.
+        2.  **Prompt User Feedback**
+            Next, create a message block that prompts the user for feedback. You can do this by asking users to clarify their request or provide more context about their inquiry.
+        3.  **Human Transfer for Follow-up**
+            After prompting the user for feedback, create an action block that transfers the conversation to a human agent. This is useful when the bot needs a human to clarify.
+        4.  **Wait for 10 Seconds (this can be any number)**
+            Add a wait block for 10 seconds. This is a buffer time for users to input their responses or for the system to handle transitions smoothly.
+
+        ![Accessing Magic Links](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150088079232/original/RKGxhYPLrFMpLRMkuG58l_DKwYWMe8M3DA.png?1730719166)
+    </Step>
+    <Step>
+        **Analyze User Messages**
+        
+        Once the bot has transferred the conversation to a human agent and waited for the response, the next step is to use OpenAI to analyze the conversation and determine its value.
+        1.  **OpenAI Message Analysis**
+            Add an OpenAI action block to analyze the user’s input through the `{{chat_history}}`. The AI will help determine if the message is valuable and requires a bot response.
+    </Step>
+    <Step>
+        **Transfer Conversation Back to Bot**
+        
+        Once OpenAI has analyzed the message, the conversation will automatically be transferred back to the bot.
+        1.  **Transfer Back to Bot**
+            Add a block to transfer the conversation back to the bot. This enables the bot to continue engaging with the user after the analysis is complete.
+        2.  **Deliver AI Response**
+            The next block will deliver the AI-analyzed response to the user based on the `{{chat_history}}`. This ensures the user gets an informed and relevant response.
+            
+          ![Accessing Magic Links](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150088079233/original/8NNtzbu1AlHfE9FyUieQk3yDJ7I7sRPDNg.png?1730719166)
+    </Step>
+    <Step>
+        **Create a Continuous Feedback Loop**
+        
+        This flow will repeat as a loop:
+        1.  **Wait for User's Response**
+            After the bot delivers the AI-analyzed message, it will wait for the user’s next input.
+        2.  **Transfer Back to Human**
+            If needed, the conversation can be transferred back to a human for further clarification.
+        3.  **Wait for 10 Seconds Again**
+            Add another 10-second wait block to maintain flow consistency.
+        4.  **Analyze New User Messages**
+            The OpenAI action will analyze new inputs, and the process continues.
+
+        ![Accessing Magic Links](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150088079234/original/A_u39Gr6-2UZvMf9uPDBdTLNqGRZCta02w.png?1730719166)
+    </Step>
+</Steps>
+
+### Why Use `{{chat_history}}`?
+
+<CardGroup>
+    <Card title="Context Awareness">
+        By analyzing all past messages, the bot gains a clearer understanding of the user's needs. For example, if a user starts with a greeting but follows up with a request, the bot can focus on the request and skip replying to the greeting.
+    </Card>
+    <Card title="Avoiding Redundant Responses">
+        Greetings, acknowledgments like "Thanks" or "Okay," and casual remarks can be ignored. By reviewing the conversation history, the bot can detect these low-priority messages and avoid replying unnecessarily.
+    </Card>
+</CardGroup>
+
+### Benefits of This Approach:
+
+<CardGroup>
+    <Card title="Reduced Redundancy">
+        By focusing on the entire conversation history, the bot can skip responding to unnecessary inputs like greetings, repetitive queries, or acknowledgments.
+    </Card>
+    <Card title="Improved Efficiency">
+        The bot's ability to evaluate the context ensures that it only responds to queries that require action or information, improving response quality.
+    </Card>
+    <Card title="Efficient Human Escalation">
+        The waiting period before transferring conversations to human agents ensures that only unresolved or complex queries are escalated, reducing the workload on your support team.
+    </Card>
+    <Card title="Better User Experience">
+        Users appreciate concise, relevant responses. By avoiding responses to trivial messages, the bot provides a more streamlined and professional experience.
+    </Card>
+</CardGroup>
+
+### Example Use Case:
+
+**Scenario:** A user engages your bot with the following sequence of messages:
+1.  User: "Hi!"
+2.  User: "Can I book a meeting for tomorrow?"
+3.  User: "Thanks!"
+
+With the default setup, the bot might respond to each message individually, leading to redundant responses like "Hello!" and "You’re welcome!" when the real focus should be on the meeting request.
+
+With the `{{chat_history}}` approach:
+- The bot reviews the entire conversation and identifies the meeting request as the most valuable input.
+- It skips the initial greeting and acknowledgment, responding only to the booking query with: "Sure! Let me check the availability for tomorrow."
+
+### Key Takeaways:
+
+<CardGroup>
+    <Card title="Transfer Conversations">
+        Use a waiting period before transferring the conversation to a human agent to ensure only valuable interactions are escalated.
+    </Card>
+    <Card title="Respond to Chat History">
+        Analyze the full conversation context to prioritize responses, ensuring the bot focuses on important messages and skips trivial ones.
+    </Card>
+</CardGroup>
+
+By following these steps, you can fine-tune your chatbot to respond only to high-value interactions, ensuring a more efficient and user-focused experience.

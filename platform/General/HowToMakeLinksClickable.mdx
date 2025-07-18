@@ -1,0 +1,206 @@
+---
+title: "How To Make Links Clickable"
+description: "Learn how to create clickable links in Chatbot Builder AI to provide users with easy access to websites, contact information, and other resources."
+---
+
+import { Card, CardGroup, Steps, Note, Info, Accordion } from '@mintlify/components';
+
+### Overview
+
+In Chatbot Builder AI, creating clickable links is essential for providing users with easy access to websites, contact information, and other resources. This documentation explains how to make various types of links clickable within your chatbot, such as website URLs, phone numbers, email addresses, and more.
+
+### Supported Clickable Link Types
+
+<CardGroup>
+    <Card title="Website URLs">
+        Direct users to a website.
+    </Card>
+    <Card title="Phone Numbers">
+        Allow users to call a number directly.
+    </Card>
+    <Card title="Email Addresses">
+        Enable users to send an email.
+    </Card>
+    <Card title="SMS Links">
+        Let users send a text message.
+    </Card>
+    <Card title="Google Maps Locations">
+        Provide a clickable link to a specific location on Google Maps.
+    </Card>
+    <Card title="Social Media Links">
+        Direct users to social media profiles or pages.
+    </Card>
+</CardGroup>
+
+### Creating Clickable Links
+
+<Accordion title="1. Clickable Website URLs">
+    To create a clickable link for a website, use the following HTML structure:
+
+    ```html
+    <a href="[https://www.example.com](https://www.example.com)" target="_blank">Example Website</a>
+    ```
+
+    -   **href:** The URL of the website you want the user to visit.
+    -   **target="_blank":** Opens the link in a new tab.
+    -   **Example Website:** The text that users will click on.
+
+    **Example:**
+
+    ```html
+    <a href="[https://www.pizzahut.com](https://www.pizzahut.com)" target="_blank">Pizza Hut</a>
+    ```
+</Accordion>
+
+<Accordion title="2. Clickable Phone Numbers">
+    To create a clickable link that allows users to dial a phone number directly, use the following structure:
+
+    ```html
+    <a href="tel:+18001234567">Call Us</a>
+    ```
+
+    -   **tel::** Indicates a telephone number.
+    -   **+18001234567:** The phone number users will call.
+    -   **Call Us:** The text that users will click on.
+
+    **Example:**
+
+    ```html
+    <a href="tel:+18006927753">1-800-MY-APPLE</a>
+    ```
+</Accordion>
+
+<Accordion title="3. Clickable Email Addresses">
+    To create a clickable link that opens the user’s default email client, use this format:
+
+    ```html
+    <a href="mailto:support@example.com">Email Us</a>
+    ```
+
+    -   **mailto::** Opens the default email client.
+    -   **support@example.com:** The email address that will be used.
+    -   **Email Us:** The text that users will click on.
+
+    **Example:**
+
+    ```html
+    <a href="mailto:support@microsoft.com">support@microsoft.com</a>
+    ```
+</Accordion>
+
+<Accordion title="4. Clickable SMS Links">
+    To allow users to send a text message directly from a link, use this structure:
+
+    ```html
+    <a href="sms:+18001234567">Send a Text</a>
+    ```
+
+    -   **sms::** Indicates an SMS action.
+    -   **+18001234567:** The phone number that the text message will be sent to.
+    -   **Send a Text:** The text that users will click on.
+
+    **Example:**
+
+    ```html
+    <a href="sms:+18001234567">Send a Text</a>
+    ```
+</Accordion>
+
+<Accordion title="5. Clickable Google Maps Locations">
+    To link to a specific location on Google Maps, use this structure:
+
+    ```html
+    <a href="[https://maps.google.com/?q=Location+Name](https://maps.google.com/?q=Location+Name)">View on Google Maps</a>
+    ```
+
+    -   **https://maps.google.com/?q=:** Base URL for Google Maps.
+    -   **Location+Name:** The location you want to display on the map.
+    -   **View on Google Maps:** The text that users will click on.
+
+    **Example:**
+
+    ```html
+    <a href="[https://maps.google.com/?q=Pizza+Hut](https://maps.google.com/?q=Pizza+Hut)">Pizza Hut Location</a>
+    ```
+</Accordion>
+
+<Accordion title="6. Clickable Social Media Links">
+    To create a clickable link to a social media profile or page, use this format:
+
+    ```html
+    <a href="[https://www.socialmedia.com/profile](https://www.socialmedia.com/profile)" target="_blank">Social Media</a>
+    ```
+
+    -   **https://www.socialmedia.com/profile:** The URL of the social media profile.
+    -   **target="_blank":** Opens the link in a new tab.
+    -   **Social Media:** The text that users will click on.
+
+    **Example:**
+
+    ```html
+    <a href="[https://twitter.com/pizzahut](https://twitter.com/pizzahut)" target="_blank">Pizza Hut Twitter</a>
+    ```
+</Accordion>
+
+### Using the Prompt Template Section in Chatbot Builder AI
+
+Chatbot Builder AI provides a Prompt Template section that simplifies adding instructions and formatted examples for training your bot. This feature allows you to create user and assistant message examples in the proper format, ensuring your bot learns how to send clickable links correctly.
+
+In the Prompt Template section, you can easily:
+
+1.  **Add Instructions:** Clearly outline how the bot should format clickable links, including websites, phone numbers, and emails.
+2.  **User and Bot Style Examples:**
+    -   Provide a user-style message requesting a link (e.g., "Can you send me the link to McDonald’s?").
+    -   Supply the assistant’s formatted response using HTML tags (e.g., `<a href="https://www.mcdonalds.com" target="_blank">McDonald's</a>`).
+3.  **Test Link Formatting:** By adding these prompts and responses, you can test how the bot will respond in real interactions, ensuring that clickable links are presented correctly.
+
+For example, you can input:
+
+-   **User Message:** "Can you send me the link to McDonald’s?"
+-   **Assistant Response:** Sure! You can click here: `<a href="https://www.mcdonalds.com" target="_blank">McDonald's</a>`
+
+This setup in the Prompt Template makes training your bot to send links intuitive and ensures consistent behavior when deploying your chatbot.
+
+### Best Practices
+
+<CardGroup>
+    <Card title="Use Clear Link Text">
+        The text users will click on should be descriptive and relevant. Avoid generic terms like “Click Here.”
+    </Card>
+    <Card title="Open External Links in a New Tab">
+        Always use `target="_blank"` to open external links (like websites and social media) in a new tab. This ensures that users can easily return to the chatbot conversation.
+    </Card>
+    <Card title="Use SMS Links Thoughtfully">
+        SMS links should be used sparingly, ensuring the phone number is formatted correctly and users are aware that clicking the link will open their messaging app.
+    </Card>
+    <Card title="Testing Links">
+        Always test your clickable links before deploying the chatbot. This ensures that the URLs, phone numbers, and email addresses are correct and function as expected.
+    </Card>
+</CardGroup>
+
+### Example Conversations to Include in your Prompt:
+
+<CardGroup>
+    <Card title="Website Link">
+        **User:** Can you send me the link to McDonald’s?
+        <br />
+        **Assistant:** Sure! You can click here: `<a href="https://www.mcdonalds.com" target="_blank">McDonald's</a>`.
+    </Card>
+    <Card title="Phone Number Link">
+        **User:** Can you send me the phone number for Apple customer service?
+        <br />
+        **Assistant:** Sure! You can call them here: `<a href="tel:+18006927753">1-800-MY-APPLE</a>`.
+    </Card>
+    <Card title="Email Link">
+        **User:** Can you send me the link to the Microsoft support email?
+        <br />
+        **Assistant:** Sure! You can email them here: `<a href="mailto:support@microsoft.com">support@microsoft.com</a>`.
+    </Card>
+    <Card title="Google Maps Link">
+        **User:** Can you send me the link to the Pizza Hut location on Google Maps?
+        <br />
+        **Assistant:** Sure! You can click here: `<a href="https://maps.google.com/?q=Pizza+Hut">Pizza Hut Location</a>`.
+    </Card>
+</CardGroup>
+
+By following this documentation, Chatbot Builder AI users will be able to successfully integrate clickable links into their chatbot conversations, enhancing user engagement and providing a seamless experience.

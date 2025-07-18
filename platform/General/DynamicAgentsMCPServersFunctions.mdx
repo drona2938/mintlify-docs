@@ -1,0 +1,189 @@
+---
+title: "Prompt-Driven Dynamic Agents (MCP Servers & Functions)"
+description: "Learn how to create full-featured agents without the visual Flow Builder by using a single system prompt and enforcing a strict JSON reply format."
+---
+
+import { Card, CardGroup, Steps, Note, Info, Accordion } from '@mintlify/components';
+
+### Creating Agents with Strict-JSON Prompt Engineering
+
+#### Why this matters
+
+Chatbot Builder AI now lets you launch full-featured agents **without** the visual Flow Builder. Write one system prompt, enforce a strict JSON reply format using the supplied schema below, and your agent is ready. You can still use a combination of flows, steps, and actions by returning the corresponding IDs and payloads.
+
+<CardGroup cols={2}>
+  <Card title="One prompt → no flows required">
+    Instant prototypes or production bots.
+  </Card>
+  <Card title="Dynamic">
+    Supports autonomous structured responses like text, images, videos, GIFs, cards, carousels, and quick replies in multiple languages, while keeping the JSON output consistent
+  </Card>
+  <Card title="MCP Servers & Functions">
+    Call external APIs or run serverless logic from the prompt.
+  </Card>
+</CardGroup>
+
+#### The required JSON wrapper
+
+Every reply must be one JSON object with a top-level key `"messages"`:
+
+```json
+{
+  "messages": [
+    {
+      "message": {
+        "text": "…or use an attachment/template here…",
+
+        /* Quick replies are OPTIONAL. If you add them: */
+        "quick_replies": [
+          {
+            "content_type": "text",
+            "title": "Main menu",
+            "payload": "Main menu"
+          }
+          /* 0 – 10 more, emoji first, title = payload */
+        ]
+      }
+    }
+  ]
+}
+```
+
+Code snippet
+
+````
+---
+title: "Prompt-Driven Dynamic Agents (MCP Servers & Functions)"
+description: "Learn how to create full-featured agents without the visual Flow Builder by using a single system prompt and enforcing a strict JSON reply format."
+---
+
+import { Card, CardGroup, Steps, Note, Info, Accordion } from '@mintlify/components';
+
+### Creating Agents with Strict-JSON Prompt Engineering
+
+#### Why this matters
+
+Chatbot Builder AI now lets you launch full-featured agents **without** the visual Flow Builder. Write one system prompt, enforce a strict JSON reply format using the supplied schema below, and your agent is ready. You can still use a combination of flows, steps, and actions by returning the corresponding IDs and payloads.
+
+<CardGroup>
+    <Card title="One prompt → no flows required">
+        Instant prototypes or production bots.
+    </Card>
+    <Card title="Dynamic">
+        Supports autonomous structured responses like text, images, videos, GIFs, cards, carousels, and quick replies in multiple languages, while keeping the JSON output consistent
+    </Card>
+    <Card title="MCP Servers & Functions">
+        Call external APIs or run serverless logic from the prompt.
+    </Card>
+</CardGroup>
+
+#### The required JSON wrapper
+
+Every reply must be one JSON object with a top-level key `"messages"`:
+
+```json
+{
+  "messages": [
+    {
+      "message": {
+        "text": "…or use an attachment/template here…",
+
+        /* Quick replies are OPTIONAL. If you add them: */
+        "quick_replies": [
+          {
+            "content_type": "text",
+            "title": "Main menu",
+            "payload": "Main menu"
+          }
+          /* 0 – 10 more, emoji first, title = payload */
+        ]
+      }
+    }
+  ]
+}
+````
+
+**Key points:**
+
+- Add `text`, an `attachment`, or a `template` under `"message"`.
+- Quick replies, cards, carousels, etc. are optional and channel-dependent.
+- If you do use quick replies, follow Messenger rules (emoji first, identical title-payload, ≤ 11 items).
+- Include the properly formatted search link in card buttons
+
+#### Copy-and-paste system prompt and Sample Reply Below
+
+(sample brand: AutoZone)
+
+```
+You are a helpful assistant for a car-parts retailer (sample brand: AutoZone).
+
+1. Persona
+   • Friendly, concise, plain language.
+   • Use relevant emojis when possible.
+
+2. Output format (MANDATORY)
+   • Reply with a single JSON object whose top-level key is "messages".
+   • Only include quick_replies, templates, or carousels if the channel supports them.
+   • Any quick replies must follow Messenger rules (title = payload).
+   • Product links must use:
+     [https://www.autozone.com/searchresult?searchText=](https://www.autozone.com/searchresult?searchText=){url_encoded_query}
+
+3. Capabilities
+   • If the user requests a product, add a web_url button that opens the search link.
+   • If the user types "agent", return a quick-reply payload "FLOW_SUPPORT_HANDOFF".
+
+4. MCP Servers
+   • mcp.checkStock({ "sku": "" }) → { "in_stock": bool, "nearest_store": string }
+
+5. Functions
+   • getOrderStatus(order_number: string) → status, eta
+
+6. Safety
+   • Never fabricate data. Ask follow-up questions when unsure.
+
+Always obey this format. Never send raw text outside the JSON wrapper.
+```
+
+#### Sample model reply
+
+**User:** “Do you carry floor mats for a 2017 Ford F-150?”
+
+**Assistant:**
+
+```json
+{
+  "messages": [
+    {
+      "message": {
+        "attachment": {
+          "type": "template",
+          "payload": {
+            "template_type": "button",
+            "text": "? We found matching floor mats. Tap below to browse options.",
+            "buttons": [
+              {
+                "type": "web_url",
+                "title": "View Floor Mats",
+                "url": "[https://www.autozone.com/searchresult?searchText=floor%20mat%202017%20Ford%20F-150](https://www.autozone.com/searchresult?searchText=floor%20mat%202017%20Ford%20F-150)"
+              }
+            ]
+          }
+        },
+        "quick_replies": [
+          { "content_type": "text", "title": "More parts",    "payload": "More parts" },
+          { "content_type": "text", "title": "Install tips",  "payload": "Install tips" },
+          { "content_type": "text", "title": "Order status", "payload": "Order status" },
+          { "content_type": "text", "title": "Ask a human",  "payload": "Ask a human" },
+          { "content_type": "text", "title": "Main menu",    "payload": "Main menu" }
+        ]
+      }
+    }
+  ]
+}
+```
+
+### Launch Dynamic AI Agents without building a single flow in five steps
+
+Prompt once, deploy anywhere. Advanced agents—no flows required.
+
+[Click here for the LLM-friendly Version in Markdown](https://docs.google.com/document/d/1K7Ktj1GNpNUtCFVXaBEjCNXiOVk8wTvs3MeQyUGnG3s/edit?tab=t.0)
