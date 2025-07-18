@@ -58,15 +58,31 @@
                 "group": "General",
                 "pages": [
                   "platform/General/AppointmentSchedulingManager",
+                  "platform/General/AutomationRules",
                   "platform/General/BotSimulator",
                   "platform/General/CommonErrorsandtheirSolutions",
+                  "platform/General/DynamicAgentsMCPServersFunctions",
+                  "platform/General/ElevenLabsIntegration",
                   "platform/General/EntryPointLinks",
                   "platform/General/ExternalRequests",
                   "platform/General/FindPlacesLocationsNear",
+                  "platform/General/FormatDateandTime",
+                  "platform/General/GoogleOutlookCalendarIntegration",
+                  "platform/General/GoogleSpeechtoTextIntergration",
+                  "platform/General/HowToMakeLinksClickable",
                   "platform/General/HowtoCollectaPhoneNumber",
+                  "platform/General/HowtoUseConditions",
+                  "platform/General/MagicLinksDocs",
+                  "platform/General/MarkaConversationasaFollow-Up",
+                  "platform/General/MathCalculations",
                   "platform/General/SetUpaCustomDomain",
                   "platform/General/Templates",
-                  "platform/General/UseDynamicMultipleChoiceOptions"
+                  "platform/General/UseDynamicMultipleChoiceOptions",
+                  "platform/General/YourOwnChatbotTranslations",
+                  "platform/General/agentic-workflow-for-splitting-long-responses",
+                  "platform/General/calculate-the-difference-between-two-dates",
+                  "platform/General/how-to-make-your-bot-respond-to-only-valuable-messages",
+                  "platform/General/media-format-and-file-size-guide"
                 ]
               }
             ]
