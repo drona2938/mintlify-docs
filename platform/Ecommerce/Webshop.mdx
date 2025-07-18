@@ -1,0 +1,49 @@
+---
+title: "Webshop"
+description: "Learn how to set up and use the Webshop feature to allow your customers to easily place orders online from any channel."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+Webshop allows your customers to easily place orders online.
+The webshop works on all channels. No matter if your customers use Messenger, SMS, WhatsApp, Telegram… they can buy from your business.
+
+![Webshop](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150038290515/original/AThC377h151QjU1Yf1VXMw1bXYpnYGakwQ.png?1700587121)
+
+Setting up a webshop is very easy. Go to **Tools \> Ecommerce** and add your products. After that, follow the instructions below.
+
+To let your customers access your web shop, use the system field `{{shop_link}}` as a button URL for channels that support buttons like Messenger or Telegram.
+
+![Webshop](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150038294916/original/LsKh0Vh6LrQ5P1tiXNxWHlsT4LN5JIP3qw.png?1700588188)
+
+For channels that don’t support buttons like SMS or WhatsApp, you can use the `{{shop_link}}` inside a text block like the image below.
+
+![Webshop](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150038295902/original/e6YLJO4uvXv8Tud8vJJwGE6Jp63sRJHUlA.png?1700588394)
+
+### Change the product view
+
+We provide many ways to display your products on the webshop. You can go to **Ecommerce \> Settings**
+Under **General**, you can change the web shop product view.
+
+<CardGroup cols={2}>
+  <Card title="List View">
+    ![List View](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150038448424/original/GtcuiwqxR-Gs5r-iW1gyUzA_2AGkYu1yEQ.png?1700665686)
+  </Card>
+  <Card title="List without Image">
+    ![List without Image](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150038449431/original/S6TkmqAEkwAa_ImBSTciDnuzNSJMS9iQ-A.png?1700665956)
+  </Card>
+  <Card title="Card View">
+    ![Card View](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150038450743/original/NB7CI8wkk1ZCmHYkMt-bIqI9frEVQnowvA.png?1700666362)
+  </Card>
+  <Card title="Image (Square) view">
+    ![Image (Square) view](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150038451428/original/mZOgf7EQs0HlBdCLcBZhDEXxPVj6c7w40g.png?1700666570)
+  </Card>
+</CardGroup>
+
+### Load webshop on a specific category
+
+`{{shop_link}}&t=CATEGORY_ID`
+
+To get a category ID, go to the list of categories, click the 3 dots, and click “Get ID”.
+
+**Example:** If your CATEGORY ID is 2000, your webchat link will be `{{shop_link}}&t=2000`

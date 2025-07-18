@@ -1,0 +1,52 @@
+---
+title: "Delivery Cost Based on Location"
+description: "Learn how to set up delivery costs based on location in just a few minutes, allowing for diverse delivery costs for various locations."
+---
+
+import { Card, CardGroup, Steps, Note, Info } from '@mintlify/components';
+
+Setting delivery costs based on location is a straightforward process within our platform, taking only minutes to configure diverse delivery costs for various locations.
+
+Here's a step-by-step guide:
+
+<Steps>
+    <Step>
+        **Create a Google Sheet or Microsoft Excel Document.**
+        
+        Download the Google Sheets template [HERE](https://docs.google.com/spreadsheets/d/1_9Z_0_z_z_z_z_z_z_z_z_z_z_z_z_z_z_z_z_z_z_z/edit?usp=sharing)
+    </Step>
+    <Step>
+        **Fill-in Details:**
+        -   In the country column, use **ISO Alpha-2 codes** (e.g., "US" for the United States, "FR" for France).
+        -   There are no specific restrictions for state, city, and address columns.
+
+![Import from CSV](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150037287927/original/Q22KlKNipSMc1n-1ar3hMWYuTo9bMaoR5w.png?1700239736)
+    </Step>
+    <Step>
+        **Configure Delivery Costs:**
+        
+        Set different delivery costs for various states, cities, or addresses for multiple products.
+    </Step>
+</Steps>
+
+This streamlined process ensures precise control over delivery costs, enhancing your **eCommerce** customization.
+
+Customize delivery charges effortlessly based on location with our platform. For 'state-specific' charges, leave **city and address** cells **empty**; for 'city-specific' charges, leave address cells empty. The image below provides a sample guide to implementing diverse delivery costs for different states.
+
+![Import from CSV](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150037296939/original/L5QnKjVvU93ve6PeZ84MMJVfnEoGMCjqIw.png?1700243138)
+
+<Note>
+    In the "Price" column, exclude currency symbols and spaces. Enter values directly; for instance, if the cost is 1,000.5 USD, simply input `1000.5` for seamless integration and accurate pricing.
+</Note>
+
+No need to re-enter the currency symbol; it's already chosen in the eCommerce settings.
+
+After entering your data in the file, export it as a CSV. Then, in **Marketing > eCommerce > Settings > Shipping > Delivery cost**, click "Set cost per location" for seamless configuration.
+
+    ![Import from CSV](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150037297339/original/sOrcBtSTNAJsSDCKqDR8sTT7SDsZDGuE-A.png?1700243338)
+
+<Info>
+    Remember, each new file upload overwrites the old pricing.
+    <br />
+    To reset a flat rate cost, upload a new file without any data. This ensures a clean slate for your pricing structure.
+</Info>

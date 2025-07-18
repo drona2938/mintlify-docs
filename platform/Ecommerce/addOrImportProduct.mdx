@@ -1,0 +1,93 @@
+---
+title: "Add or Import Products"
+description: "Learn how to add or import products into your e-commerce store in Chatbot Builder AI from various sources like Google Sheets, Meta Catalog, and WooCommerce."
+---
+
+import { Card, CardGroup, Steps, Note, Info, Accordion } from '@mintlify/components';
+
+### Add Product
+
+<Steps>
+  <Step>
+    Go to **Tools \> Ecommerce \> Add Product**
+
+    ![Add Product](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150037265064/original/MwUhx85CepG0Uv9iysx56KtJmnLZmJUdGg.png?1700231738)
+
+    ![Add Product](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150037265406/original/urE5OSQ2nlsgWZ03INKg_QK9xag8c7BiHQ.png?1700231858)
+  </Step>
+  <Step>
+    Add your product information.
+
+    ![Product Information](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150037266108/original/WhaJ6t2bvAtAg2yvynzrggfTz4_xESOayA.png?1700232084)
+
+    ![Product Information](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150037266152/original/zVl7wVq-xcqEMnODOFAEj7DGIvYhBxKuug.png?1700232093)
+
+    ![Product Information](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150037266315/original/RgV_EGQhzvNqbOFMGaTlQLakKYWrWuhPhg.png?1700232133)
+  </Step>
+</Steps>
+
+### Import Product From Google Sheet/CSV File
+
+<Steps>
+  <Step>
+    Click on **Import Products \> Download Template \> Add your products to Google Sheet/CSV file \> Import your Products.**
+
+    ![Import from CSV](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150037271027/original/ua5z8z_YMZ1ygJqVJcHFuMwg1F3nt0tW7w.png?1700233656)
+
+    ![Import from CSV](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150037271159/original/j2L_y176CBVa65iEY1XfEZ5N9aBGYF86hQ.png?1700233696)
+
+    ![Import from CSV](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150037271201/original/YYcu6569iPFrIQrAiFxSPszn3EvMceAsiw.png?1700233712)
+
+    ![Import from CSV](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150037271558/original/sgiZVGI2Y2Hw9CS83D4DXAj7K0Yw_n2HVg.png?1700233863)
+  </Step>
+</Steps>
+
+### Import Products from Meta Catalog (WhatsApp Commerce)
+
+<Steps>
+  <Step>
+    To import products from WhatsApp Catalog, you need to first follow all the steps on [this documentation](/support/solutions/articles/150000163766-e-commerce), then come back to your E-commerce section and click **Sync Meta Catalog**.
+
+    ![Sync Meta Catalog](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150037272597/original/0GDwAph6MO7vXozTwq5UaXlsJ_slU4PjGQ.png?1700234203)
+  </Step>
+</Steps>
+
+### Import Products from your WooCommerce Store.
+
+<Steps>
+  <Step>
+    To connect import products from your WooCommerce store, first, you need to go to **Settings \> Integrations \> WooCommerce** & **connect** your store.
+  </Step>
+  <Step>
+    After connecting your WooCommerce store in the Integrations section, go to **Tools \> Ecommerce**. Under the Product tab, click ‘Connect to WooCommerce’ and follow the prompt.
+
+    ![Connect to WooCommerce](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150037273390/original/zpbZUYR-aJR5Wy5HhK9u-MWz-LJE13VUjg.png?1700234467)
+  </Step>
+</Steps>
+
+### Import Products from .CSV with External Checkout Links
+
+In Chatbot Builder AI, you can easily import products into your chatbot using a .CSV file. This feature allows you to add multiple products, each with an external checkout link. The chatbot will use this data to recommend products or direct users to the external checkout page.
+
+#### CSV Format Requirements
+
+Your .CSV file must include the following headers, formatted exactly as shown:
+
+- **Name:** The product name.
+- **Price:** The product price (e.g., 29.99).
+- **Category:** The product category (e.g., Electronics, Apparel).
+- **Short Description:** A brief description of the product (e.g., “High-quality wireless headphones”).
+- **Image:** The URL of the product image.
+- **Link:** The external checkout link.
+
+**Example CSV:**
+
+```csv
+Name,Price,Category,Short Description,Image,Link
+Wireless Headphones,49.99,Electronics,High-quality wireless headphones,[http://imageurl.com/headphones,http://checkouturl.com/headphones](http://imageurl.com/headphones,http://checkouturl.com/headphones)
+Smart Watch,99.99,Accessories,Stylish smartwatch with health tracking,[http://imageurl.com/smartwatch,http://checkouturl.com/smartwatch](http://imageurl.com/smartwatch,http://checkouturl.com/smartwatch)
+```
+
+#### Importing Process:
+
+These products will now be available for chatbot recommendations, allowing users to follow the external checkout links to complete their purchases.

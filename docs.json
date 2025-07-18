@@ -84,6 +84,18 @@
                   "platform/General/how-to-make-your-bot-respond-to-only-valuable-messages",
                   "platform/General/media-format-and-file-size-guide"
                 ]
+              },
+              {
+                "group": "Ecommerce",
+                "pages": [
+                  "platform/ChatbotBuilder101/SignUpandLogin"
+                ]
+              },
+              {
+                "group": "Marketing",
+                "pages": [
+                  "platform/ChatbotBuilder101/SignUpandLogin"
+                ]
               }
             ]
           },

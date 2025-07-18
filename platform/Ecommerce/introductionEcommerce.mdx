@@ -1,0 +1,120 @@
+---
+title: "E-Commerce Introduction"
+description: "Learn how to showcase and sell your products directly inside WhatsApp using Chatbot Builder AI's E-Commerce features."
+---
+
+import { Card, CardGroup, Steps, Note, Info, Accordion } from '@mintlify/components';
+
+Businesses can showcase and share their products and services with customers directly inside WhatsApp for them to browse items and add to a cart without leaving the chat.
+
+WhatsApp commerce is fully integrated with **ChatBot Builder**, allowing your business to easily sell your products inside your WhatsApp bot.
+
+### Setup
+
+Follow the below guides:
+
+<Steps>
+  <Step>
+    **Create a Meta Catalog**
+
+    All products used on WhatsApp Commerce must belong to a Facebook Catalog. If a business already has a Facebook catalog set up, we suggest that you leverage that catalog for WhatsApp commerce use cases. If you don’t have a Facebook catalog, follow this [documentation](https://www.facebook.com/business/help/1423183344648332) to learn how to create it.
+  </Step>
+  <Step>
+    **Connect Your Catalog to a WABA**
+
+    Follow this [documentation](https://developers.facebook.com/docs/whatsapp/cloud-api/waba/catalog) to learn how to connect your Catalog to your WhatsApp Business Account. Please be aware that you can only connect one Catalog to a WABA. A Catalog can be connected to multiple WABA.
+  </Step>
+  <Step>
+    **Connect ChatGPT Builder to your Catalog**
+
+    Navigate to **Menu \> Tools \> Ecommerce** and click the “Connect Meta Catalog” button and follow the instructions.
+
+    ![Connect Meta Catalog](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150033651275/original/_VD6CTuqpRqgSOzTuosLbCbIXLpTXwR1vg.png?1697789815)
+  </Step>
+  <Step>
+    **Link ChatGPT Builder products to Catalog products**
+
+    We automatically import all products from **Facebook Catalog** when you connect your bot to Catalog, but Facebook doesn’t allow apps to get product SKUs from their API. All communications with WhatsApp Commerce are through SKU (Content ID in Facebook Catalog). You will need to manually copy the **Content ID** in Facebook Catalog and set it as SKU.
+
+    ![Copy Content ID](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150033652096/original/Gah_x-RFD2_b-RrCkhfj5DyWotIpG2jU_w.png?1697790286)
+
+    ![Copy Content ID](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150033652116/original/icsFPLzWLuYbuBBJZQRs7alNW-zlF3gNng.png?1697790311)
+
+    Copy the **Content ID** for each Product and edit your ChatGPT Builder Product.
+
+    ![Edit ChatGPT Builder Product](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150033652181/original/YwjTzxQgNIEani4vL4UShQuZmtAqEPLlWg.png?1697790350)
+
+    For products with variants, you will need to repeat the above process for all variants. Please be aware that inside the WhatsApp bot, only variants can be sent due to WhatsApp limitations. You can’t send the main product that contains variants.
+  </Step>
+</Steps>
+
+### Send products during a conversation.
+
+<CardGroup cols={2}>
+  <Card title="Collection">
+    You can use the **Collection** element on the flow builder to send a product to a user. Please be aware that with the collection, you can’t send products with variants on WhatsApp.
+
+    ![Collection Element](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150033656567/original/n7x5m_fynh_GvVqOzaBCUx7sl6AHIUkI2A.png?1697792626)
+  </Card>
+  <Card title="Send Products">
+    If you choose **WhatsApp** as the **message type**, you see the **Send Products** element. The Send Product element will only show products that are ready to be sent in WhatsApp, including a variant of a product. Please be aware that if a product or variant doesn’t have an SKU defined, it can’t be sent to users on WhatsApp.
+
+    ![Send Products Element](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150033652345/original/d3VXaKwRnOnDAI4weQg7v1QjFVqv-FKuuQ.png?1697790470)
+  </Card>
+  <Card title="Send products from the inbox">
+    From the inbox, you can easily select products and send them to the user.
+
+    ![Send Products from Inbox](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150033652418/original/mTd60YM4sZgLZFQAUnArlp2BROiTFFKXOw.png?1697790490)
+  </Card>
+</CardGroup>
+
+### Platform behaviour when a user asks a question about a product
+
+- The question and the product are shown in the Inbox.
+- The Platform triggers the “User Asked About a Product“. You can learn more about this new trigger in the session “Trigger and Actions” on this documentation.
+- Automated responses are triggered. Please be aware that the default reply is triggered if the bot does not know how to respond to the user’s question.
+
+### Platform behaviour when a user sends a shopping cart
+
+- The shopping is shown in the Inbox.
+- The Platform triggers the “WhatsApp Shopping Cart Sent“. You can use this trigger to notify admins.
+- The user receives a message with the shopping cart information ready to checkout.
+
+<Note>
+  Please be aware that an order is created only after the user completes the checkout. If you want to create an order every time a customer sends a shopping cart, use the trigger “WhatsApp Shopping Cart Sent” and use the E-commerce action “Mark Order As Paid”.
+</Note>
+
+### Checkout
+
+ChatGPT Bot Builder has a built checkout page that allows your business to accept payments using Stripe, Paypal, or Razorpay. After the user sends a Shopping cart in WhatsApp, our platform will automatically ask the user to check. You can use a flow as a checkout option.
+
+### Abandoned cart recovery message
+
+Our platform will automatically send an abandoned cart recovery message if the user sends a shopping cart and doesn’t checkout within a certain amount of time based on your configuration. You can disable or change the delay of the abandoned cart recovery message by navigating to **Tools \> E-commerce \> Settings \> General \> Abandoned cart message**
+
+![Abandoned Cart Message](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150033652922/original/8_ZkW8wjyPmjKFvJYPyeyjk9FNM1TEDoTg.png?1697790739)
+
+Scroll down to the abandoned cart message
+
+![Abandoned Cart Message Settings](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150033653284/original/J7InxMt4u8JhxxmUtX8H5fWBzlc5_nxuqg.png?1697790957)
+
+### Product discovery
+
+By default, your product names are searchable, meaning that your customers can send messages to automatically find products. We automatically handle this process for you with our built-in AI. You can disable searching at the product level or at the account level. Products with variants aren’t searchable inside WhatsApp. To disable search in your account navigate to **Tools \> E-commerce \> Settings \> General \> Search Products**
+
+![Abandoned Cart Message Settings](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150033653763/original/fUVB3XSBFmYhBwg7O2bdv7JEV1GFQTte7g.png?1697791212)
+
+### Triggers and Actions
+
+All triggers related to e-commerce work in WhatsApp commerce except “Product Add to Cart” and “Category Add to Cart“. Also, we introduced two new triggers that work only with WhatsApp commerce.
+
+<CardGroup cols={2}>
+  <Card title="WhatsApp Shopping Cart Sent">
+    It is triggered when a user sends a shopping cart to the business. You could use this trigger to notify admins.
+  </Card>
+  <Card title="User Asked About a Product">
+    It is triggered when a user asks a question about a product. Use the system field `{{product_id}}` or `{{product_name}}` to know which product the user is referring to.
+  </Card>
+</CardGroup>
+
+![Abandoned Cart Message Settings](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/150033654974/original/kXQeh8akG3UCbPps8CRNVp-taD5yFKyK2A.png?1697791748)
