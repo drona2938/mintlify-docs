@@ -88,13 +88,21 @@
               {
                 "group": "Ecommerce",
                 "pages": [
-                  "platform/ChatbotBuilder101/SignUpandLogin"
+                  "platform/Ecommerce/introductionEcommerce",
+                  "platform/Ecommerce/addOrImportProduct",
+                  "platform/Ecommerce/CheckoutSettings",
+                  "platform/Ecommerce/DeliveryCostBasedonLocation",
+                  "platform/Ecommerce/Webshop",
+                  "platform/Ecommerce/linking-products-to-external-product-pages",
+                  "platform/Ecommerce/WooCommerceIntegration",
+                  "platform/Ecommerce/StripeIntegration"
                 ]
               },
               {
                 "group": "Marketing",
                 "pages": [
-                  "platform/ChatbotBuilder101/SignUpandLogin"
+                  "platform/Marketing/DripCampaigns",
+                  "platform/Marketing/QuestionnaireTool"
                 ]
               }
             ]
