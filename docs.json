@@ -54,7 +54,21 @@
                   "platform/ChatbotBuilder101/ManagingPipelines"
                 ]
               },
-              "platform/General/ExternalRequests"
+              {
+                "group": "General",
+                "pages": [
+                  "platform/General/AppointmentSchedulingManager",
+                  "platform/General/BotSimulator",
+                  "platform/General/CommonErrorsandtheirSolutions",
+                  "platform/General/EntryPointLinks",
+                  "platform/General/ExternalRequests",
+                  "platform/General/FindPlacesLocationsNear",
+                  "platform/General/HowtoCollectaPhoneNumber",
+                  "platform/General/SetUpaCustomDomain",
+                  "platform/General/Templates",
+                  "platform/General/UseDynamicMultipleChoiceOptions"
+                ]
+              }
             ]
           },
           {
