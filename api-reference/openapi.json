@@ -899,77 +899,99 @@
         }
       }
     },
-    "/users": {
-      "post": {
-        "tags": [
-          "Users"
-        ],
-        "description": "Create a new SMS or WhatsApp.",
-        "operationId": "createNewContact",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "phone": {
-                    "type": "string",
-                    "description": "The phone number with country code"
-                  },
-                  "first_name": {
-                    "type": "string"
-                  },
-                  "last_name": {
-                    "type": "string"
-                  },
-                  "gender": {
-                    "type": "string",
-                    "enum": [
-                      "male",
-                      "female",
-                      "unknown"
-                    ]
-                  },
-                  "actions": {
-                    "type": "array",
-                    "description": "Actions can be send flow, add/remove tags, set/unset custom field ..."
-                  }
-                },
-                "example": {
-                  "phone": "+1234567890",
-                  "first_name": "John",
-                  "last_name": "Smith",
-                  "gender": "male",
-                  "actions": [
-                    {
-                      "action": "send_flow",
-                      "flow_id": 11111
+  "/users": {
+  "post": {
+    "tags": ["Users"],
+    "description": "Create a new SMS or WhatsApp.",
+    "operationId": "createNewContact",
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "phone": {
+                "type": "string",
+                "description": "The phone number with country code"
+              },
+              "first_name": {
+                "type": "string"
+              },
+              "last_name": {
+                "type": "string"
+              },
+              "gender": {
+                "type": "string",
+                "enum": ["male", "female", "unknown"]
+              },
+              "actions": {
+                "type": "array",
+                "description": "Actions can be send_flow, add_tag, set_field_value...",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "action": {
+                      "type": "string",
+                      "enum": ["send_flow", "add_tag", "set_field_value"],
+                      "description": "Type of action"
                     },
-                    {
-                      "action": "add_tag",
-                      "tag_name": "YOU_TAG_NAME"
+                    "flow_id": {
+                      "type": "integer",
+                      "description": "Required if action is send_flow"
                     },
-                    {
-                      "action": "set_field_value",
-                      "field_name": "YOU_CUSTOM_FIELD_NAME",
-                      "value": "ANY_VALUE"
+                    "tag_name": {
+                      "type": "string",
+                      "description": "Required if action is add_tag"
+                    },
+                    "field_name": {
+                      "type": "string",
+                      "description": "Required if action is set_field_value"
+                    },
+                    "value": {
+                      "type": "string",
+                      "description": "Used with set_field_value"
                     }
-                  ]
+                  },
+                  "required": ["action"]
                 }
               }
+            },
+            "required": ["phone"],
+            "example": {
+              "phone": "+1234567890",
+              "first_name": "John",
+              "last_name": "Smith",
+              "gender": "male",
+              "actions": [
+                {
+                  "action": "send_flow",
+                  "flow_id": 11111
+                },
+                {
+                  "action": "add_tag",
+                  "tag_name": "YOU_TAG_NAME"
+                },
+                {
+                  "action": "set_field_value",
+                  "field_name": "YOU_CUSTOM_FIELD_NAME",
+                  "value": "ANY_VALUE"
+                }
+              ]
             }
-          },
-          "required": true
-        },
-        "responses": {
-          "default": {
-            "description": "successful operation",
-            "content": {}
           }
-        },
-        "x-codegen-request-body-name": "content"
+        }
+      },
+      "required": true
+    },
+    "responses": {
+      "default": {
+        "description": "successful operation",
+        "content": {}
       }
     },
+    "x-codegen-request-body-name": "content"
+  }
+},
     "/users/{user_id}/custom_fields": {
       "get": {
         "tags": [

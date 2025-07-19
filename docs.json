@@ -224,17 +224,17 @@
       "anchors": [
         {
           "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "href": "https://docs.chatbotbuilder.ai/",
           "icon": "book-open-cover"
         },
         {
           "anchor": "Community",
-          "href": "https://mintlify.com/community",
+          "href": "https://discord.gg/chatbotbuilderai-1143098203428900864",
           "icon": "discord"
         },
         {
           "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "href": "https://www.chatbotbuilder.ai/blog",
           "icon": "newspaper"
         }
       ]
