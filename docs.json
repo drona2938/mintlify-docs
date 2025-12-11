@@ -9,9 +9,9 @@
     }
   },
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#38d5b6"
+    "primary": "#7420e6",
+    "light": "#9c4af7",
+    "dark": "#5a0b9d"
   },
   "favicon": "/favicon.svg",
   "navigation": {
