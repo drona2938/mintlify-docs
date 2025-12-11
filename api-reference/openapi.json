@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "https://app.chatgptbuilder.io/api/"
+      "url": "https://app.fliqr.ai/api/"
     }
   ],
   "security": [
