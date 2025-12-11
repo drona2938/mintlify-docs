@@ -9,13 +9,13 @@ import { Card, CardGroup } from '@mintlify/components';
 
 ### What are Custom Fields?
 
-In Chatbot Builder AI, **fields** are crucial for building personalized and effective chatbot interactions. Think of Custom User Fields (CUFs) as your chatbot's **permanent memory**, allowing it to store and recall important user details across multiple conversations. This is different from `{{chat_history}}`, which only tracks messages within a single session. With CUFs, your chatbot can remember user preferences, past actions, or important information for future interactions, making conversations more engaging and providing a better user experience.
+In Fliqr AI, **fields** are crucial for building personalized and effective chatbot interactions. Think of Custom User Fields (CUFs) as your chatbot's **permanent memory**, allowing it to store and recall important user details across multiple conversations. This is different from `{{chat_history}}`, which only tracks messages within a single session. With CUFs, your chatbot can remember user preferences, past actions, or important information for future interactions, making conversations more engaging and providing a better user experience.
 
 <Info>
   Due to the large number of CUFs available across the platform, not all are listed in every dropdown menu. However, all CUFs mentioned in this document will function seamlessly wherever you use them in your chatbot flows.
 </Info>
 
-Chatbot Builder AI offers three main types of fields for managing and storing data:
+Fliqr AI offers three main types of fields for managing and storing data:
 
 <CardGroup cols={2}>
   <Card title="System Fields">
@@ -106,7 +106,7 @@ Custom fields on platforms offer immense value for personalization, enabling you
 
 **1. Understanding User Input**
 
-In Chatbot Builder AI, the **Get User Data** element helps you capture and store information provided by users, such as messages, responses, or other data. User input is essential for chatbot interactions and can come in many forms—text messages, voice commands, button clicks, or form submissions. This input represents what users communicate to the chatbot, including their questions, preferences, or requests.
+In Fliqr AI, the **Get User Data** element helps you capture and store information provided by users, such as messages, responses, or other data. User input is essential for chatbot interactions and can come in many forms—text messages, voice commands, button clicks, or form submissions. This input represents what users communicate to the chatbot, including their questions, preferences, or requests.
 
 **2. Setting Up User Input Prompts**
 
@@ -135,14 +135,14 @@ To create successful chatbot interactions, it’s important to set up prompts th
   | `{{user_country}}`               | The user’s country, helpful for location-based services, offers, or region-specific messaging.                                                                                     |
   | `{{user_state}}`                 | The user’s state or region, relevant for more localized interactions or offers.                                                                                                    |
   | `{{user_city}}`                  | The user’s city, useful for ultra-local personalized messaging or promotions.                                                                                                      |
-  | `{{inbox_link}}`                 | The link to the inbox on Chatbot Builder AI, allowing agents or admins to access user interactions directly.                                                                       |
+  | `{{inbox_link}}`                 | The link to the inbox on Fliqr AI, allowing agents or admins to access user interactions directly.                                                                       |
   | `{{gender}}`                     | The user’s gender, used for personalized messaging that can be gender-specific.                                                                                                    |
   | `{{locale}}`                     | User’s full locale (e.g., en_US), indicating both language and regional preferences for communication.                                                                             |
   | `{{locale2}}`                    | A shortened version of the locale (e.g., en) to determine the user’s preferred language only.                                                                                      |
   | `{{username}}`                   | The Instagram username of the user, used for social interactions or reference.                                                                                                     |
   | `{{profile_pic}}`                | URL of the user’s profile picture, allowing richer personalization with visual elements.                                                                                           |
   | `{{timezone}}`                   | The user’s timezone, enabling the bot to send time-specific messages and perform actions based on the user’s local time.                                                           |
-  | `{{user_id}}`                    | A unique identifier for the user in the Chatbot Builder AI system, typically used for internal tracking and API interactions.                                                      |
+  | `{{user_id}}`                    | A unique identifier for the user in the Fliqr AI system, typically used for internal tracking and API interactions.                                                      |
   | `{{subscribed_date}}`            | The date the user subscribed or was added to the system, useful for calculating user tenure or for subscription-based campaigns.                                                   |
   | `{{fb_chat_link}}`               | A direct link to the user’s Facebook Messenger inbox for easy access to ongoing chats.                                                                                             |
   | `{{me}}`                         | A link allowing users to view or delete their data to comply with GDPR regulations, ensuring transparency and user control.                                                        |
@@ -306,6 +306,6 @@ This approach simplifies the subscription process by using the email address alr
 
 ## CUFs Empower You to Build Better Chatbots
 
-Custom User Fields (CUFs), system fields, and account fields in Chatbot Builder AI are essential tools that enable you to craft more intelligent and personalized chatbot experiences. By storing and utilizing user information effectively, you can enhance interactions, make conversations more engaging, and ensure that your chatbot delivers relevant, tailored responses every time.
+Custom User Fields (CUFs), system fields, and account fields in Fliqr AI are essential tools that enable you to craft more intelligent and personalized chatbot experiences. By storing and utilizing user information effectively, you can enhance interactions, make conversations more engaging, and ensure that your chatbot delivers relevant, tailored responses every time.
 
 Whether it's personalizing greetings, recommending products, or integrating with tools like Google Sheets, these fields give you the power to build better, more responsive chatbots that connect with users on a deeper level.
