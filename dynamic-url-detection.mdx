@@ -16,7 +16,7 @@ With Fliqr AI, your webchat agent can now automatically detect the current URL o
 By default, you can embed the Fliqr AI script as shown below. No further configuration is needed for basic functionality:
 
 ```html
-<script src="https://app.chatgptbuilder.io/webchat/plugin.js?v=6"></script>
+<script src="https://app.fliqr.ai/webchat/plugin.js?v=6"></script>
 
 <script>
   ktt10.setup({
@@ -46,7 +46,7 @@ function initializeWebchat() {
   const parentUrl = encodeURIComponent(window.location.href); // dynamically load the chatbot script with the 'parent' parameter
 
   const script = document.createElement('script');
-  script.src = `https://app.chatgptbuilder.io/webchat/plugin.js?v=6&parent=${parentUrl}`; // configure the chatbot after the script loads
+  script.src = `https://app.fliqr.ai/webchat/plugin.js?v=6&parent=${parentUrl}`; // configure the chatbot after the script loads
 
   script.onload = () => {
     window.ktt10.setup({
@@ -79,7 +79,7 @@ If you embed the chatbot within an `<iframe>`, you must manually pass the parent
 
 ```html
 <iframe  
-  src="https://app.chatgptbuilder.io/webchat/?v=6&p=1970516&hideheader=true&parent=encoded_url"  
+  src="https://app.fliqr.ai/webchat/?v=6&p=1970516&hideheader=true&parent=encoded_url"  
   width="400"  
   height="600">
 </iframe>
@@ -97,9 +97,9 @@ Where `encoded_url` = `encodeURIComponent(window.location.href)`.
 
 | Scenario                  | Embed Method                                      | Script URL                                          | URL Access                                  |
 |---------------------------|--------------------------------------------------|----------------------------------------------------|---------------------------------------------|
-| Default Setup             | Inline `<script>` with `ktt10.setup`            | `https://app.chatgptbuilder.io/webchat/plugin.js?v=6` | Automatically sets `{{webchat_parent_url}}` |
-| Advanced / Dynamic        | Dynamically load `<script>` in JavaScript       | `https://app.chatgptbuilder.io/webchat/plugin.js?v=6&parent=encoded_url` | Must encode `window.location.href` manually  |
-| Iframe Embedding          | `<iframe>` with src set to Fliqr AI URL | `https://app.chatgptbuilder.io/webchat/?v=6&parent=encoded_url` | Pass parent in the query string              |
+| Default Setup             | Inline `<script>` with `ktt10.setup`            | `https://app.fliqr.ai/webchat/plugin.js?v=6` | Automatically sets `{{webchat_parent_url}}` |
+| Advanced / Dynamic        | Dynamically load `<script>` in JavaScript       | `https://app.fliqr.ai/webchat/plugin.js?v=6&parent=encoded_url` | Must encode `window.location.href` manually  |
+| Iframe Embedding          | `<iframe>` with src set to Fliqr AI URL | `https://app.fliqr.ai/webchat/?v=6&parent=encoded_url` | Pass parent in the query string              |
 
 ## Important Notes & Best Practices
 

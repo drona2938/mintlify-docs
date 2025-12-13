@@ -14,7 +14,7 @@ With Fliqr AI, your webchat agent can now automatically detect the current URL o
 By default, you can embed the Fliqr AI script as shown below. No further configuration is needed for basic functionality:
 
 ```html
-<script src="https://app.chatgptbuilder.io/webchat/plugin.js?v=6"></script>
+<script src="https://app.fliqr.ai/webchat/plugin.js?v=6"></script>
 
 <script>  
 ktt10.setup({    
@@ -46,7 +46,7 @@ function initializewebchat() {
     const parenturl = encodeURIComponent(window.location.href);  // dynamically load the chatbot script with the 'parent' parameter  
 
     const script = document.createElement('script');  
-    script.src = `https://app.chatgptbuilder.io/webchat/plugin.js?v=6&parent=${parenturl}`;  // configure the chatbot after the script loads  
+    script.src = `https://app.fliqr.ai/webchat/plugin.js?v=6&parent=${parenturl}`;  // configure the chatbot after the script loads  
     script.onload = () => {    
         window.ktt10.setup({      
             id: "c7rhymsmxuh",       // replace with your chatbot id      
@@ -76,7 +76,7 @@ If you embed the chatbot within an `<iframe>`, you must manually pass the parent
 
 ```html
 <iframe  
-    src="https://app.chatgptbuilder.io/webchat/?v=6&p=1970516&hideheader=true&parent=encoded_url"  
+    src="https://app.fliqr.ai/webchat/?v=6&p=1970516&hideheader=true&parent=encoded_url"  
     width="400"  
     height="600"> 
 </iframe>
